@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="choiceColor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1600.0" style="-fx-background-color: #9966CC;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="english.Running">
+   <children>
+      <MenuBar fx:id="barColor" prefHeight="25.0" prefWidth="1600.0" style="-fx-background-color: #9966CC; -fx-font-weight: bold; -fx-font-style: italic; -fx-text-fill: blue;">
+        <menus>
+          <Menu mnemonicParsing="false" text="Задания">
+            <items>
+                  <Menu mnemonicParsing="false" text="Present Simple">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#approvalsPS" text="Утверждения" />
+                        <MenuItem mnemonicParsing="false" onAction="#negativePS" text="Отрицания" />
+                        <MenuItem mnemonicParsing="false" text="Вопросы" />
+                        <MenuItem mnemonicParsing="false" text="Показать все" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Форма &quot;to be&quot;">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#approvalsPS" text="Утверждения" />
+                        <MenuItem mnemonicParsing="false" text="Отрицания" />
+                        <MenuItem mnemonicParsing="false" text="Вопросы" />
+                        <MenuItem mnemonicParsing="false" text="Показать все" />
+                     </items>
+                  </Menu>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Контрольные">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Практика №1" />
+                  <MenuItem mnemonicParsing="false" text="Практика №2" />
+                  <MenuItem mnemonicParsing="false" text="Практика №3" />
+                  <MenuItem mnemonicParsing="false" text="Контрольная №1" />
+                  <MenuItem mnemonicParsing="false" text="Контрольная №2" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Настройки">
+            <items>
+                  <Menu mnemonicParsing="false" text="Цвет приложения">
+                     <items>
+                        <MenuItem fx:id="whiteColor" mnemonicParsing="false" onAction="#setColorWhite" text="Белый" />
+                    <MenuItem fx:id="blackColor" mnemonicParsing="false" onAction="#setColorBlack" text="Чёрный" />
+                        <MenuItem fx:id="purpleColor" mnemonicParsing="false" onAction="#setColorPurpie" text="По умолчанию" />
+                     </items>
+                  </Menu>
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Подсказки">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Топ фраз" />
+                  <MenuItem mnemonicParsing="false" text="Правила времён" />
+                  <MenuItem mnemonicParsing="false" text="О программе" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <Label layoutX="14.0" layoutY="869.0" prefHeight="17.0" prefWidth="152.0" text="Дата и время" />
+   </children>
+</Pane>

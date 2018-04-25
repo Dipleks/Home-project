@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SerializebleTest:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SerializebleTest_jar</output-path>
+    <root id="archive" name="SerializebleTest.jar">
+      <element id="module-output" name="SerializebleTest" />
+    </root>
+  </artifact>
+</component>
