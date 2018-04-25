@@ -1,20 +1,24 @@
 package ghostInter.interfaceRoot.buttonPS;
 
+import ghostInter.SceletVBox;
 import ghostInter.dataBase.StringFiles;
-import ghostInter.interfaceRoot.CompletionOfTheSheet;
 import ghostInter.interfaceRoot.Root;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-
-import java.io.IOException;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 public class JobControl implements Root, StringFiles
 {
     private Button buttonPS = new Button("Задание 1");
 
-    private Button jBut(){
+    private SceletVBox sceletVBox = new SceletVBox(new Label[15], new Label[16], new String[32],new String[32],
+            fileAppEnPSA, fileAppRuPSA);
+
+    private Button exercise1(){
             buttonPS.setLayoutX(200);
             buttonPS.setLayoutY(200);
 
@@ -22,17 +26,10 @@ public class JobControl implements Root, StringFiles
         {
             @Override
             public void handle(ActionEvent event) {
-                Label[] label = new Label[31];
-                String[] str1 = new String[31];
-                String[] str2 = new String[31];
-                CompletionOfTheSheet completionOfTheSheet = new CompletionOfTheSheet(label, str1, str2,
-                        fileAppEnPSA, fileAppRuPSA, 0, 31, 15, 1.2, 4.2, 1, 0.3);
 
-                try {
-                    completionOfTheSheet.getArrayOfOffers();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                sceletVBox.getLeft();
+                sceletVBox.getRight();
+
                 ROOT.getChildren().remove(buttonPS);
             }
         });
@@ -40,8 +37,7 @@ public class JobControl implements Root, StringFiles
     }
 
     public Button getButton() {
-        jBut();
+        exercise1();
         return buttonPS;
     }
-
 }
