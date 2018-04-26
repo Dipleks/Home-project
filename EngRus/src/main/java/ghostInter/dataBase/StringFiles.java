@@ -32,10 +32,12 @@ public interface StringFiles
     String fileQuesEnPSD = "src/main/java/ghostInter/dataBase/presenSimpl/questions/quesPSlessonEnD.data";
     String fileQuesEnPSE = "src/main/java/ghostInter/dataBase/presenSimpl/questions/quesPSlessonEnE.data";
     String fileQuesEnPSF = "src/main/java/ghostInter/dataBase/presenSimpl/questions/quesPSlessonEnF.data";
+    String fileQuesEnPSG = "src/main/java/ghostInter/dataBase/presenSimpl/questions/quesPSlessonEnG.data";
     String fileQuesRuPSA = "src/main/java/ghostInter/dataBase/presenSimpl/questions/quesPSlessonRuA.data";
     String fileQuesRuPSB = "src/main/java/ghostInter/dataBase/presenSimpl/questions/quesPSlessonRuB.data";
     String fileQuesRuPSC = "src/main/java/ghostInter/dataBase/presenSimpl/questions/quesPSlessonRuC.data";
     String fileQuesRuPSD = "src/main/java/ghostInter/dataBase/presenSimpl/questions/quesPSlessonRuD.data";
     String fileQuesRuPSE = "src/main/java/ghostInter/dataBase/presenSimpl/questions/quesPSlessonRuE.data";
     String fileQuesRuPSF = "src/main/java/ghostInter/dataBase/presenSimpl/questions/quesPSlessonRuF.data";
+    String fileQuesRuPSG = "src/main/java/ghostInter/dataBase/presenSimpl/questions/quesPSlessonRuG.data";
 }

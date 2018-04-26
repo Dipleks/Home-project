@@ -1,10 +1,14 @@
 package ghostInter.interfaceRoot;
 
+import ghostInter.interfaceRoot.buttonPS.AddButAndLabel;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.Pagination;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
+import javafx.stage.Stage;
 
 public interface Root
 {
@@ -18,7 +22,13 @@ public interface Root
     VBox leftColumm = new VBox();
     VBox rightColumm = new VBox();
 
-    Pagination englishListAppPs = new Pagination(8,0);
+//    AddButAndLabel addButAndLabel = new AddButAndLabel();
+
+//    HBox lengthButtonApp = new HBox();
+//    HBox lengthButtonNeg = new HBox();
+//    HBox lengthButtonQues = new HBox();
+
+//    Pagination englishListAppPs = new Pagination(8,0);
 
 
 

@@ -1,13 +1,14 @@
 package ghostInter.interfaceRoot;
 
+import ghostInter.SceletVBox;
+import ghostInter.dataBase.StringFiles;
+import ghostInter.interfaceRoot.buttonPS.AddButAndLabel;
 import ghostInter.interfaceRoot.buttonPS.JobControl;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
 
-public class MenuBarEngRus implements IMenuBar, Root
+public class MenuBarEngRus implements IMenuBar, Root, StringFiles
 {
     private final MenuBar menuBar = new MenuBar();
 
@@ -33,8 +34,15 @@ public class MenuBarEngRus implements IMenuBar, Root
         {
             @Override
             public void handle(ActionEvent event) {
-                JobControl jobControl = new JobControl();
-                ROOT.getChildren().addAll(jobControl.getButton());
+
+                leftColumm.getChildren().clear();
+                rightColumm.getChildren().clear();
+                ROOT.getChildren().clear();
+                MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
+                menuBarEngRus.getMenu();
+               AddButAndLabel addButAndLabel = new AddButAndLabel();
+               addButAndLabel.AddMenuButton();
+
             }
         });
 

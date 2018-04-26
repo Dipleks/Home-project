@@ -3,7 +3,6 @@ package ghostInter;
 import ghostInter.dataBase.StringFiles;
 import ghostInter.interfaceRoot.*;
 import javafx.application.Application;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class StartEnRu extends Application implements Root, StringFiles
