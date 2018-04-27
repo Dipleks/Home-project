@@ -37,11 +37,12 @@ public class MenuBarEngRus implements IMenuBar, Root, StringFiles
 
                 leftColumm.getChildren().clear();
                 rightColumm.getChildren().clear();
+                groupRadBut.getChildren().clear();
                 ROOT.getChildren().clear();
                 MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
                 menuBarEngRus.getMenu();
-               AddButAndLabel addButAndLabel = new AddButAndLabel();
-               addButAndLabel.AddMenuButton();
+                AddButAndLabel addButAndLabel = new AddButAndLabel();
+                addButAndLabel.AddMenuButton();
 
             }
         });

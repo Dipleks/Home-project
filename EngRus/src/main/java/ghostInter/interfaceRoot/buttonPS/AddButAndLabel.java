@@ -18,6 +18,7 @@ public class AddButAndLabel implements Root, StringFiles
     }
 
     private void getUpr(){
+
         sceletVBox1[0] = new SceletVBox(new Label[15], new Label[16], new String[32], new String[32],
                 fileAppEnPSA, fileAppRuPSA);
         sceletVBox1[1] = new SceletVBox(new Label[13], new Label[14], new String[27], new String[27],

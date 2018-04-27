@@ -5,6 +5,8 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Pagination;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
@@ -29,6 +31,9 @@ public interface Root
 //    HBox lengthButtonQues = new HBox();
 
 //    Pagination englishListAppPs = new Pagination(8,0);
+
+    HBox groupRadBut = new HBox();
+
 
 
 

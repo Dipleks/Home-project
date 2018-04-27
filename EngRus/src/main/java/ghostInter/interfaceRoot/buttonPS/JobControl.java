@@ -2,11 +2,14 @@ package ghostInter.interfaceRoot.buttonPS;
 
 import ghostInter.SceletVBox;
 import ghostInter.dataBase.StringFiles;
+import ghostInter.interfaceRoot.MenuBarEngRus;
 import ghostInter.interfaceRoot.Root;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.HBox;
 
 public class JobControl implements Root, StringFiles
@@ -15,13 +18,18 @@ public class JobControl implements Root, StringFiles
     private HBox lengthButtonNeg = new HBox();
     private HBox lengthButtonQues = new HBox();
 
+    private ToggleGroup group = new ToggleGroup();
+    private RadioButton enBut = new RadioButton("English");
+    private RadioButton ruBut = new RadioButton("Русский");
+    private RadioButton exit = new RadioButton("В меню");
+
     public void exercise1(final SceletVBox[] app, final SceletVBox[] neg, final SceletVBox[] ques,
                           final Button[] buttonPSapp, final Button[] buttonPSneg, final Button[] buttonPSques)
     {
-//        Runnable runnable1 = new Runnable()
-//        {
-//            @Override
-//            public void run() {
+        Runnable runnable1 = new Runnable()
+        {
+            @Override
+            public void run() {
                 for (int i = 0; i < buttonPSapp.length; i++) {
                     buttonPSapp[i] = new Button();
                     buttonPSapp[i].setText("Задание " + (i+1));
@@ -31,8 +39,50 @@ public class JobControl implements Root, StringFiles
                     buttonPSapp[i].setOnAction(new EventHandler<ActionEvent>() {
                         @Override
                         public void handle(ActionEvent event) {
-//                            leftColumm.getChildren().clear();
-//                            rightColumm.getChildren().clear();
+
+                            enBut.setToggleGroup(group);
+                            enBut.setSelected(true);
+                            ruBut.setToggleGroup(group);
+                            groupRadBut.getChildren().addAll(enBut, ruBut, exit);
+                            groupRadBut.setSpacing(widthSize-widthSize/1.03);
+//                            groupRadBut.setStyle("-fx-border-color: RED");
+                            groupRadBut.setPadding(new Insets(10, 10, 10, 10));
+                            groupRadBut.setLayoutX(widthSize-widthSize/1.5);
+                            groupRadBut.setLayoutY(heightSize-heightSize/1.04);
+                            ROOT.getChildren().addAll(groupRadBut);
+                            enBut.setOnAction(e ->
+                            {
+                                leftColumm.getChildren().clear();
+                                rightColumm.getChildren().clear();
+                                ROOT.getChildren().clear();
+                                MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
+                                menuBarEngRus.getMenu();
+                                ROOT.getChildren().addAll(groupRadBut);
+                                app[finalI].getLeft();
+                                app[finalI].getRight();
+                            });
+                            ruBut.setOnAction(e ->
+                            {
+                                leftColumm.getChildren().clear();
+                                rightColumm.getChildren().clear();
+                                ROOT.getChildren().clear();
+                                MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
+                                menuBarEngRus.getMenu();
+                                ROOT.getChildren().addAll(groupRadBut);
+                                app[finalI].getLeft1();
+                                app[finalI].getRight1();
+                            });
+                            exit.setOnAction(e ->
+                            {
+                                leftColumm.getChildren().clear();
+                                rightColumm.getChildren().clear();
+                                groupRadBut.getChildren().clear();
+                                ROOT.getChildren().clear();
+                                MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
+                                menuBarEngRus.getMenu();
+                                AddButAndLabel addButAndLabel = new AddButAndLabel();
+                                addButAndLabel.AddMenuButton();
+                            });
                             app[finalI].getLeft();
                             app[finalI].getRight();
                             ROOT.getChildren().remove(lengthButtonApp);
@@ -44,7 +94,7 @@ public class JobControl implements Root, StringFiles
                         }
                     });
                 }
-                lengthButtonApp.setStyle("-fx-border-color: RED");
+//                lengthButtonApp.setStyle("-fx-border-color: RED");
                 lengthButtonApp.setSpacing(widthSize-widthSize/1.03);
                 lengthButtonApp.setPrefWidth((buttonPSapp[0].getPrefWidth()+lengthButtonApp.getSpacing())*buttonPSapp.length);
                 lengthButtonApp.setLayoutX(widthSize/2-((lengthButtonApp.getPrefWidth())/2));
@@ -53,14 +103,14 @@ public class JobControl implements Root, StringFiles
                 lengthButtonApp.getChildren().addAll(buttonPSapp);
 
                 ROOT.getChildren().addAll(lengthButtonApp);
-//            }
-//        };
-//        runnable1.run();
-//
-//        Runnable runnable2 = new Runnable()
-//        {
-//            @Override
-//            public void run() {
+            }
+        };
+        runnable1.run();
+
+        Runnable runnable2 = new Runnable()
+        {
+            @Override
+            public void run() {
                 for (int i = 0; i < buttonPSneg.length; i++) {
                     buttonPSneg[i] = new Button();
                     buttonPSneg[i].setText("Задание " + (i + 1));
@@ -71,8 +121,50 @@ public class JobControl implements Root, StringFiles
                     {
                         @Override
                         public void handle(ActionEvent event) {
-//                            leftColumm.getChildren().clear();
-//                            rightColumm.getChildren().clear();
+
+                            enBut.setToggleGroup(group);
+                            enBut.setSelected(true);
+                            ruBut.setToggleGroup(group);
+                            groupRadBut.getChildren().addAll(enBut, ruBut, exit);
+                            groupRadBut.setSpacing(widthSize-widthSize/1.03);
+//                            groupRadBut.setStyle("-fx-border-color: RED");
+                            groupRadBut.setPadding(new Insets(10, 10, 10, 10));
+                            groupRadBut.setLayoutX(widthSize-widthSize/1.5);
+                            groupRadBut.setLayoutY(heightSize-heightSize/1.04);
+                            ROOT.getChildren().addAll(groupRadBut);
+                            enBut.setOnAction(e ->
+                            {
+                                leftColumm.getChildren().clear();
+                                rightColumm.getChildren().clear();
+                                ROOT.getChildren().clear();
+                                MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
+                                menuBarEngRus.getMenu();
+                                ROOT.getChildren().addAll(groupRadBut);
+                                neg[finalI].getLeft();
+                                neg[finalI].getRight();
+                            });
+                            ruBut.setOnAction(e ->
+                            {
+                                leftColumm.getChildren().clear();
+                                rightColumm.getChildren().clear();
+                                ROOT.getChildren().clear();
+                                MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
+                                menuBarEngRus.getMenu();
+                                ROOT.getChildren().addAll(groupRadBut);
+                                neg[finalI].getLeft1();
+                                neg[finalI].getRight1();
+                            });
+                            exit.setOnAction(e ->
+                            {
+                                leftColumm.getChildren().clear();
+                                rightColumm.getChildren().clear();
+                                groupRadBut.getChildren().clear();
+                                ROOT.getChildren().clear();
+                                MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
+                                menuBarEngRus.getMenu();
+                                AddButAndLabel addButAndLabel = new AddButAndLabel();
+                                addButAndLabel.AddMenuButton();
+                            });
                             neg[finalI].getLeft();
                             neg[finalI].getRight();
                             ROOT.getChildren().remove(lengthButtonApp);
@@ -84,7 +176,7 @@ public class JobControl implements Root, StringFiles
                         }
                     });
                 }
-                lengthButtonNeg.setStyle("-fx-border-color: RED");
+//                lengthButtonNeg.setStyle("-fx-border-color: RED");
                 lengthButtonNeg.setSpacing(widthSize-widthSize/1.03);
                 lengthButtonNeg.setPrefWidth((buttonPSneg[0].getPrefWidth()+lengthButtonNeg.getSpacing())*buttonPSneg.length);
                 lengthButtonNeg.setLayoutX(widthSize/2-((lengthButtonNeg.getPrefWidth())/2));
@@ -92,14 +184,14 @@ public class JobControl implements Root, StringFiles
                 lengthButtonNeg.setPadding(new Insets(10, 10, 10, 10));
                 lengthButtonNeg.getChildren().addAll(buttonPSneg);
                 ROOT.getChildren().addAll(lengthButtonNeg);
-//            }
-//        };
-//        runnable2.run();
-//
-//        Runnable runnable3 = new Runnable()
-//        {
-//            @Override
-//            public void run() {
+            }
+        };
+        runnable2.run();
+
+        Runnable runnable3 = new Runnable()
+        {
+            @Override
+            public void run() {
                 for (int i = 0; i < buttonPSques.length; i++) {
                     buttonPSques[i] = new Button();
                     buttonPSques[i].setText("Задание " + (i + 1));
@@ -110,8 +202,50 @@ public class JobControl implements Root, StringFiles
                     {
                         @Override
                         public void handle(ActionEvent event) {
-//                            leftColumm.getChildren().clear();
-//                            rightColumm.getChildren().clear();
+
+                            enBut.setToggleGroup(group);
+                            enBut.setSelected(true);
+                            ruBut.setToggleGroup(group);
+                            groupRadBut.getChildren().addAll(enBut, ruBut, exit);
+                            groupRadBut.setSpacing(widthSize-widthSize/1.03);
+//                            groupRadBut.setStyle("-fx-border-color: RED");
+                            groupRadBut.setPadding(new Insets(10, 10, 10, 10));
+                            groupRadBut.setLayoutX(widthSize-widthSize/1.5);
+                            groupRadBut.setLayoutY(heightSize-heightSize/1.04);
+                            ROOT.getChildren().addAll(groupRadBut);
+                            enBut.setOnAction(e ->
+                            {
+                                leftColumm.getChildren().clear();
+                                rightColumm.getChildren().clear();
+                                ROOT.getChildren().clear();
+                                MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
+                                menuBarEngRus.getMenu();
+                                ROOT.getChildren().addAll(groupRadBut);
+                                ques[finalI].getLeft();
+                                ques[finalI].getRight();
+                            });
+                            ruBut.setOnAction(e ->
+                            {
+                                leftColumm.getChildren().clear();
+                                rightColumm.getChildren().clear();
+                                ROOT.getChildren().clear();
+                                MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
+                                menuBarEngRus.getMenu();
+                                ROOT.getChildren().addAll(groupRadBut);
+                                ques[finalI].getLeft1();
+                                ques[finalI].getRight1();
+                            });
+                            exit.setOnAction(e ->
+                            {
+                                leftColumm.getChildren().clear();
+                                rightColumm.getChildren().clear();
+                                groupRadBut.getChildren().clear();
+                                ROOT.getChildren().clear();
+                                MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
+                                menuBarEngRus.getMenu();
+                                AddButAndLabel addButAndLabel = new AddButAndLabel();
+                                addButAndLabel.AddMenuButton();
+                            });
                             ques[finalI].getLeft();
                             ques[finalI].getRight();
                             ROOT.getChildren().remove(lengthButtonApp);
@@ -123,7 +257,7 @@ public class JobControl implements Root, StringFiles
                         }
                     });
                 }
-                lengthButtonQues.setStyle("-fx-border-color: RED");
+//                lengthButtonQues.setStyle("-fx-border-color: RED");
                 lengthButtonQues.setSpacing(widthSize-widthSize/1.03);
                 lengthButtonQues.setPrefWidth((buttonPSques[0].getPrefWidth()+lengthButtonQues.getSpacing())*buttonPSques.length);
                 lengthButtonQues.setLayoutX(widthSize/2-((lengthButtonQues.getPrefWidth())/2));
@@ -131,8 +265,8 @@ public class JobControl implements Root, StringFiles
                 lengthButtonQues.setPadding(new Insets(10, 10, 10, 10));
                 lengthButtonQues.getChildren().addAll(buttonPSques);
                 ROOT.getChildren().addAll(lengthButtonQues);
-//            }
-//        };
-//        runnable3.run();
+            }
+        };
+        runnable3.run();
     }
 }
