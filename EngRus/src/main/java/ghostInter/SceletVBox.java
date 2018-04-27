@@ -52,8 +52,7 @@ public class SceletVBox implements Root, StringFiles
     }
 
     private void getLeftColummLab() {
-
-        Thread thread1 = new Thread(new Runnable()
+        Runnable runnable1 = new Runnable()
         {
             @Override
             public void run() {
@@ -88,23 +87,21 @@ public class SceletVBox implements Root, StringFiles
                         e.printStackTrace();
                     }
                 }
-
 //                leftColumm.setStyle("-fx-border-color: RED");
                 leftColumm.setSpacing(heightSize-heightSize/1.009);
-//                leftColumm.setLayoutX(widthSize-widthSize/1.24);
                 leftColumm.setLayoutX(widthSize/10);
                 leftColumm.setLayoutY(heightSize-heightSize/1.1);
                 leftColumm.setPadding(new Insets(0, 0, 0, 0));
                 leftColumm.setPrefSize(widthSize/2, heightSize/1.25);
                 leftColumm.getChildren().addAll(arrayOfOffersLeft);
+
                 ROOT.getChildren().addAll(leftColumm);
             }
-        });
-        thread1.run();
+        };
+        runnable1.run();
     }
-    ///////////////////////
     private void getRightColummLab() {
-        Thread thread2 = new Thread(new Runnable()
+        Runnable runnable2 = new Runnable()
         {
             @Override
             public void run() {
@@ -149,7 +146,6 @@ public class SceletVBox implements Root, StringFiles
                 }
 
 //                rightColumm.setStyle("-fx-border-color: RED");
-//                rightColumm.setLayoutX(widthSize-widthSize/2.24);
                 rightColumm.setLayoutX(widthSize/1.8);
                 rightColumm.setLayoutY(heightSize-heightSize/1.1);
                 rightColumm.setSpacing(heightSize-heightSize/1.009);
@@ -158,13 +154,12 @@ public class SceletVBox implements Root, StringFiles
                 rightColumm.getChildren().addAll(arrayOfOffersRight);
                 ROOT.getChildren().addAll(rightColumm);
             }
-        });
-        thread2.run();
+        };
+        runnable2.run();
     }
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
     private void getLeftColummLab1() {
 
-        Thread thread1 = new Thread(new Runnable()
+        Runnable runnable1 = new Runnable()
         {
             @Override
             public void run() {
@@ -202,7 +197,6 @@ public class SceletVBox implements Root, StringFiles
 
 //                leftColumm.setStyle("-fx-border-color: RED");
                 leftColumm.setSpacing(heightSize-heightSize/1.009);
-//                leftColumm.setLayoutX(widthSize-widthSize/1.24);
                 leftColumm.setLayoutX(widthSize/10);
                 leftColumm.setLayoutY(heightSize-heightSize/1.1);
                 leftColumm.setPadding(new Insets(0, 0, 0, 0));
@@ -210,12 +204,11 @@ public class SceletVBox implements Root, StringFiles
                 leftColumm.getChildren().addAll(arrayOfOffersLeft);
                 ROOT.getChildren().addAll(leftColumm);
             }
-        });
-        thread1.run();
+        };
+        runnable1.run();
     }
-    ///////////////////////
     private void getRightColummLab1() {
-        Thread thread2 = new Thread(new Runnable()
+        Runnable runnable2 = new Runnable()
         {
             @Override
             public void run() {
@@ -227,7 +220,6 @@ public class SceletVBox implements Root, StringFiles
                 }
                 for (int i = 0; i < arrayOfOffersRight.length; i++) {
                     arrayOfOffersRight[i] = new Label();
-//                    label1[i].setText(map.get(i));
                     try {
                         arrayOfOffersRight[i].setFont(EffectFont.fontText);
                         arrayOfOffersRight[i].setTextFill(EffectColor.colorText);
@@ -260,7 +252,6 @@ public class SceletVBox implements Root, StringFiles
                 }
 
 //                rightColumm.setStyle("-fx-border-color: RED");
-//                rightColumm.setLayoutX(widthSize-widthSize/2.24);
                 rightColumm.setLayoutX(widthSize/1.8);
                 rightColumm.setLayoutY(heightSize-heightSize/1.1);
                 rightColumm.setSpacing(heightSize-heightSize/1.009);
@@ -269,9 +260,10 @@ public class SceletVBox implements Root, StringFiles
                 rightColumm.getChildren().addAll(arrayOfOffersRight);
                 ROOT.getChildren().addAll(rightColumm);
             }
-        });
-        thread2.run();
+        };
+        runnable2.run();
     }
+
     private String[] addLabStr() throws IOException {
         File file = new File(fileEn);
         FileInputStream fis = new FileInputStream(file);

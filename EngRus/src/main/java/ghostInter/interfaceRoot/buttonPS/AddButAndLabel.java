@@ -11,6 +11,7 @@ public class AddButAndLabel implements Root, StringFiles
     private SceletVBox[] sceletVBox1 = new SceletVBox[7];
     private SceletVBox[] sceletVBox2 = new SceletVBox[4];
     private SceletVBox[] sceletVBox3 = new SceletVBox[7];
+    private SceletVBox[] sceletVBox4 = new SceletVBox[7];
     private JobControl jobControlTest = new JobControl();
 
     public void AddMenuButton(){
@@ -58,6 +59,7 @@ public class AddButAndLabel implements Root, StringFiles
         sceletVBox3[6] = new SceletVBox(new Label[14], new Label[15], new String[29], new String[29],
                 fileQuesEnPSG, fileQuesRuPSG);
 
-        jobControlTest.exercise1(sceletVBox1, sceletVBox2, sceletVBox3, new Button[7], new Button[4], new Button[7]);
+        jobControlTest.exercise1(sceletVBox1, sceletVBox2, sceletVBox3, sceletVBox4,
+                new Button[7], new Button[4], new Button[7], new Button[7]);
     }
 }

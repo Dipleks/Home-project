@@ -8,6 +8,6 @@ public class EffectFont implements Root
 {
     public static final Font fontText = Font.font("Time New Roman", FontWeight.BOLD,
             FontPosture.ITALIC, heightSize*0.022);
-    public static final Font fontNumber = Font.font("Time New Roman", FontWeight.BOLD,
+    public static final Font fontTitle = Font.font("Time New Roman", FontWeight.BOLD,
             FontPosture.ITALIC, heightSize*0.018);
 }
