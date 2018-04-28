@@ -19,8 +19,11 @@ public class MenuBarEngRus implements IMenuBar, Root, StringFiles
     private final MenuBar menuBar = new MenuBar();
 
     private final Menu menuExercise = new Menu("Задания");
+    private final Menu menuExams = new Menu("Контрольные");
     private final MenuItem menuPS = new MenuItem("Present Simple");
+    private final MenuItem examPS = new MenuItem("Контрольная PS");
     private final MenuItem menuToBe = new MenuItem("Форма \"to be\"");
+    private final MenuItem examToBe = new MenuItem("Контрольная \"to be\"");
 
     private final Menu menuHelp = new Menu("Подсказки");
 
@@ -43,11 +46,28 @@ public class MenuBarEngRus implements IMenuBar, Root, StringFiles
                 leftColumm.getChildren().clear();
                 rightColumm.getChildren().clear();
                 groupRadBut.getChildren().clear();
+                groupExam.getChildren().clear();
                 ROOT.getChildren().clear();
                 MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
                 menuBarEngRus.getMenu();
                 AddButAndLabel addButAndLabel = new AddButAndLabel();
                 addButAndLabel.AddMenuButton();
+
+            }
+        });
+        examPS.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+
+                leftColumm.getChildren().clear();
+                rightColumm.getChildren().clear();
+                groupRadBut.getChildren().clear();
+                groupExam.getChildren().clear();
+                ROOT.getChildren().clear();
+                MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
+                menuBarEngRus.getMenu();
+                AddButAndLabel addButAndLabel = new AddButAndLabel();
+                addButAndLabel.AddMenuButton1();
 
             }
         });
@@ -80,7 +100,8 @@ public class MenuBarEngRus implements IMenuBar, Root, StringFiles
         menuSetting.getItems().addAll(menuWHITE, menuBLACK);
         menuServes.getItems().addAll(menuSetting, about);
         menuExercise.getItems().addAll(menuPS, menuToBe);
-        menuBar.getMenus().addAll(menuExercise, menuHelp, menuServes);
+        menuExams.getItems().addAll(examPS, examToBe);
+        menuBar.getMenus().addAll(menuExercise, menuExams, menuHelp, menuServes);
         return menuBar;
     }
 }

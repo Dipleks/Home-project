@@ -40,4 +40,7 @@ public interface StringFiles
     String fileQuesRuPSE = "src/main/java/ghostInter/dataBase/presenSimpl/questions/quesPSlessonRuE.data";
     String fileQuesRuPSF = "src/main/java/ghostInter/dataBase/presenSimpl/questions/quesPSlessonRuF.data";
     String fileQuesRuPSG = "src/main/java/ghostInter/dataBase/presenSimpl/questions/quesPSlessonRuG.data";
+
+    String fileExamEnPSA = "src/main/java/ghostInter/dataBase/presenSimpl/exam/examPSlessonEnA.data";
+    String fileExamRuPSA = "src/main/java/ghostInter/dataBase/presenSimpl/exam/examPSlessonRuA.data";
 }

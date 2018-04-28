@@ -11,11 +11,15 @@ public class AddButAndLabel implements Root, StringFiles
     private SceletVBox[] sceletVBox1 = new SceletVBox[7];
     private SceletVBox[] sceletVBox2 = new SceletVBox[4];
     private SceletVBox[] sceletVBox3 = new SceletVBox[7];
-    private SceletVBox[] sceletVBox4 = new SceletVBox[7];
+    private SceletVBox[] sceletVBox4 = new SceletVBox[/*7*/1];
     private JobControl jobControlTest = new JobControl();
+    private JobControl jobControlTest1 = new JobControl();
 
     public void AddMenuButton(){
         getUpr();
+    }
+    public void AddMenuButton1(){
+        getUpr1();
     }
 
     private void getUpr(){
@@ -37,7 +41,7 @@ public class AddButAndLabel implements Root, StringFiles
 
         sceletVBox2[0] = new SceletVBox(new Label[16], new Label[17], new String[33], new String[33],
                 fileNegEnPSA, fileNegRuPSA);
-        sceletVBox2[1] = new SceletVBox(new Label[15], new Label[15], new String[30], new String[30],
+        sceletVBox2[1] = new SceletVBox(new Label[11], new Label[11], new String[22], new String[22],
                 fileNegEnPSB, fileNegRuPSB);
         sceletVBox2[2] = new SceletVBox(new Label[17], new Label[17], new String[34], new String[34],
                 fileNegEnPSC, fileNegRuPSC);
@@ -59,7 +63,14 @@ public class AddButAndLabel implements Root, StringFiles
         sceletVBox3[6] = new SceletVBox(new Label[14], new Label[15], new String[29], new String[29],
                 fileQuesEnPSG, fileQuesRuPSG);
 
-        jobControlTest.exercise1(sceletVBox1, sceletVBox2, sceletVBox3, sceletVBox4,
-                new Button[7], new Button[4], new Button[7], new Button[7]);
+        jobControlTest.exercise1(sceletVBox1, sceletVBox2, sceletVBox3,
+                new Button[7], new Button[4], new Button[7]);
+    }
+    private void getUpr1(){
+
+        sceletVBox4[0] = new SceletVBox(new Label[50], new String[50], new String[50],
+                fileExamEnPSA, fileExamRuPSA, new Label[50], new Label[50]);
+
+        jobControlTest1.examMethod(sceletVBox4,new Button[/*7*/1]);
     }
 }

@@ -10,10 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
@@ -37,8 +34,7 @@ public class JobControl implements Root, StringFiles
     private Label psExam = new Label();
 
     public void exercise1(final SceletVBox[] app, final SceletVBox[] neg, final SceletVBox[] ques,
-                          final SceletVBox[] exam, final Button[] buttonPSapp, final Button[] buttonPSneg,
-                          final Button[] buttonPSques, final Button[] buttonPSexam)
+                          final Button[] buttonPSapp, final Button[] buttonPSneg, final Button[] buttonPSques)
     {
         Runnable runAppLab = new Runnable() {
             @Override
@@ -85,21 +81,6 @@ public class JobControl implements Root, StringFiles
             }
         };
         runQuesLab.run();
-        Runnable runExamLab = new Runnable() {
-            @Override
-            public void run() {
-                psExam.setText("Контрольные работы");
-//                psQues.setStyle("-fx-border-color: RED");
-                psExam.setPrefWidth(widthSize-widthSize/1.25);
-                psExam.setAlignment(Pos.CENTER);
-                psExam.setFont(EffectFont.fontTitle);
-                psExam.setTextFill(EffectColor.colorTitle);
-                psExam.setLayoutX((widthSize/2)-(widthSize-widthSize/1.25)/2);
-                psExam.setLayoutY(psQues.getLayoutY()+heightSize-heightSize/1.2);
-                ROOT.getChildren().add(psExam);
-            }
-        };
-        runExamLab.run();
 
         Runnable runnable1 = new Runnable()
         {
@@ -168,7 +149,7 @@ public class JobControl implements Root, StringFiles
                             lengthButtonApp.getChildren().removeAll(buttonPSapp);
                             lengthButtonNeg.getChildren().removeAll(buttonPSneg);
                             lengthButtonQues.getChildren().removeAll(buttonPSques);
-                            lengthButtonExam.getChildren().removeAll(buttonPSexam);
+//                            lengthButtonExam.getChildren().removeAll(buttonPSexam);
 
                         }
                     });
@@ -253,7 +234,7 @@ public class JobControl implements Root, StringFiles
                             lengthButtonApp.getChildren().removeAll(buttonPSapp);
                             lengthButtonNeg.getChildren().removeAll(buttonPSneg);
                             lengthButtonQues.getChildren().removeAll(buttonPSques);
-                            lengthButtonExam.getChildren().removeAll(buttonPSexam);
+//                            lengthButtonExam.getChildren().removeAll(buttonPSexam);
 
                         }
                     });
@@ -338,7 +319,7 @@ public class JobControl implements Root, StringFiles
                             lengthButtonApp.getChildren().removeAll(buttonPSapp);
                             lengthButtonNeg.getChildren().removeAll(buttonPSneg);
                             lengthButtonQues.getChildren().removeAll(buttonPSques);
-                            lengthButtonExam.getChildren().removeAll(buttonPSexam);
+//                            lengthButtonExam.getChildren().removeAll(buttonPSexam);
 
                         }
                     });
@@ -354,15 +335,31 @@ public class JobControl implements Root, StringFiles
             }
         };
         runnable3.run();
-
+    }
+    public void examMethod(final SceletVBox[] exam, final Button[] buttonPSexam){
+        Runnable runExamLab = new Runnable() {
+            @Override
+            public void run() {
+                psExam.setText("Контрольные работы");
+//                psQues.setStyle("-fx-border-color: RED");
+                psExam.setPrefWidth(widthSize-widthSize/1.25);
+                psExam.setAlignment(Pos.CENTER);
+                psExam.setFont(EffectFont.fontTitle);
+                psExam.setTextFill(EffectColor.colorTitle);
+                psExam.setLayoutX((widthSize/2)-(widthSize-widthSize/1.25)/2);
+                psExam.setLayoutY(heightSize-heightSize/1.15);
+                ROOT.getChildren().add(psExam);
+            }
+        };
+        runExamLab.run();
         Runnable runnable4 = new Runnable()
         {
             @Override
             public void run() {
                 for (int i = 0; i < buttonPSexam.length; i++) {
                     buttonPSexam[i] = new Button();
-                    buttonPSexam[i].setText("Контрольная №" + (i + 1));
-                    buttonPSexam[i].setPrefWidth(widthSize-widthSize/1.09);
+                    buttonPSexam[i].setText("Часть №" + (i + 1));
+                    buttonPSexam[i].setPrefWidth(widthSize-widthSize/1.06);
                     buttonPSexam[i].setPrefHeight(widthSize-widthSize/1.03);
                     int finalI = i;
                     buttonPSexam[i].setOnAction(new EventHandler<ActionEvent>()
@@ -374,39 +371,34 @@ public class JobControl implements Root, StringFiles
                             groupRadBut.setSpacing(widthSize-widthSize/1.03);
 //                            groupRadBut.setStyle("-fx-border-color: RED");
                             groupRadBut.setPadding(new Insets(10, 10, 10, 10));
-                            groupRadBut.setLayoutX(widthSize-widthSize/1.5);
-                            groupRadBut.setLayoutY(heightSize-heightSize/1.04);
+                            groupRadBut.setLayoutX(widthSize-widthSize/2.8);
+                            groupRadBut.setLayoutY(heightSize-heightSize/1.09);
                             ROOT.getChildren().addAll(groupRadBut);
                             exit.setOnAction(e ->
                             {
                                 leftColumm.getChildren().clear();
                                 rightColumm.getChildren().clear();
                                 groupRadBut.getChildren().clear();
+                                groupExam.getChildren().clear();
                                 ROOT.getChildren().clear();
                                 MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
                                 menuBarEngRus.getMenu();
                                 AddButAndLabel addButAndLabel = new AddButAndLabel();
-                                addButAndLabel.AddMenuButton();
+                                addButAndLabel.AddMenuButton1();
                             });
-//                            exam[finalI].getLeft();
-//                            exam[finalI].getRight();
 
+                            ///////////////////////
                             //Временная заставка:
+                            exam[finalI].getExamC();
                             Label labelWW = new Label("В разработке...");
                             labelWW.setFont(Font.font("Time New Roman", FontWeight.BOLD,
                                     FontPosture.ITALIC, heightSize*0.05));
-                            labelWW.setLayoutX(widthSize/2-100);
-                            labelWW.setLayoutY(heightSize/2-200);
+                            labelWW.setLayoutX(widthSize-widthSize/1.03);
+                            labelWW.setLayoutY(heightSize-heightSize/1.08);
                             ROOT.getChildren().add(labelWW);
 
-                            ROOT.getChildren().remove(lengthButtonApp);
-                            ROOT.getChildren().remove(lengthButtonNeg);
-                            ROOT.getChildren().remove(lengthButtonQues);
                             ROOT.getChildren().remove(lengthButtonExam);
-                            ROOT.getChildren().removeAll(psApp, psNeg, psQues, psExam);
-                            lengthButtonApp.getChildren().removeAll(buttonPSapp);
-                            lengthButtonNeg.getChildren().removeAll(buttonPSneg);
-                            lengthButtonQues.getChildren().removeAll(buttonPSques);
+                            ROOT.getChildren().removeAll(/*psApp, psNeg, psQues, */psExam);
                             lengthButtonExam.getChildren().removeAll(buttonPSexam);
                         }
                     });
