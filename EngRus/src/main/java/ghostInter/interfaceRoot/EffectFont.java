@@ -6,8 +6,10 @@ import javafx.scene.text.FontWeight;
 
 public class EffectFont implements Root
 {
-    static final Font fontText = Font.font("Time New Roman", FontWeight.BOLD,
-            FontPosture.ITALIC, heightSize*0.025);
-    public static final Font fontNumber = Font.font("Time New Roman", FontWeight.BOLD,
-            FontPosture.ITALIC, heightSize*0.02);
+    public static final Font fontText = Font.font("Time New Roman", FontWeight.BOLD,
+            FontPosture.ITALIC, heightSize*0.020);
+    public static final Font fontTextExam = Font.font("Time New Roman", FontWeight.BOLD,
+            FontPosture.ITALIC, heightSize*0.018);
+    public static final Font fontTitle = Font.font("Time New Roman", FontWeight.BOLD,
+            FontPosture.ITALIC, heightSize*0.018);
 }

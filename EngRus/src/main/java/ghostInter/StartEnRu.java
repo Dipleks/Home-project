@@ -1,15 +1,10 @@
 package ghostInter;
 
-import ghostInter.dataBase.StringFiles;
-import ghostInter.interfaceRoot.CompletionOfTheSheet;
-import ghostInter.interfaceRoot.IMenuBar;
-import ghostInter.interfaceRoot.MenuBarEngRus;
-import ghostInter.interfaceRoot.Root;
+import ghostInter.interfaceRoot.*;
 import javafx.application.Application;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-public class StartEnRu extends Application implements Root, StringFiles
+public class StartEnRu extends Application implements Root
 {
     private IMenuBar iMenuBar = new MenuBarEngRus();
 
