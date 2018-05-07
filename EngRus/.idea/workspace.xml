@@ -21,8 +21,8 @@
       <file leaf-file-name="SceletVBox.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/controlPS/SceletVBox.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="226" column="59" selection-start-line="226" selection-start-column="59" selection-end-line="226" selection-end-column="59" />
+            <state relative-caret-position="663">
+              <caret line="263" column="23" lean-forward="true" selection-start-line="263" selection-start-column="23" selection-end-line="263" selection-end-column="23" />
               <folding>
                 <element signature="method#getLeftColummLabEn#0;class#SceletVBox#0" />
                 <element signature="method#getRightColummLabEn#0;class#SceletVBox#0" />
@@ -36,7 +36,7 @@
       <file leaf-file-name="AddButAndLabel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/controlPS/AddButAndLabel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
+            <state relative-caret-position="990">
               <caret line="52" column="88" selection-start-line="52" selection-start-column="88" selection-end-line="52" selection-end-column="88" />
             </state>
           </provider>
@@ -152,7 +152,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -209,7 +209,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -325,7 +325,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32936507" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20837927" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21278942" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -450,19 +450,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getAppPSfileEn#0;class#AppPSlessonEnRu#0" />
-            <element signature="method#getAppPSfileRu#0;class#AppPSlessonEnRu#0" />
-            <element signature="method#getStrEn#0;class#AppPSlessonEnRu#0" />
-            <element signature="method#getStrRu#0;class#AppPSlessonEnRu#0" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/controlPS/AddButAndLabel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
+        <state relative-caret-position="990">
           <caret line="52" column="88" selection-start-line="52" selection-start-column="88" selection-end-line="52" selection-end-column="88" />
         </state>
       </provider>
@@ -478,20 +471,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="127" column="43" selection-start-line="127" selection-start-column="43" selection-end-line="127" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getExamEn#0;class#ExamPS#0" />
-            <element signature="method#getExamRu#0;class#ExamPS#0" />
-            <element signature="method#getStrEn#0;class#ExamPS#0" />
-            <element signature="method#getStrRu#0;class#ExamPS#0" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/controlPS/SceletVBox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="226" column="59" selection-start-line="226" selection-start-column="59" selection-end-line="226" selection-end-column="59" />
+        <state relative-caret-position="663">
+          <caret line="263" column="23" lean-forward="true" selection-start-line="263" selection-start-column="23" selection-end-line="263" selection-end-column="23" />
           <folding>
             <element signature="method#getLeftColummLabEn#0;class#SceletVBox#0" />
             <element signature="method#getRightColummLabEn#0;class#SceletVBox#0" />
