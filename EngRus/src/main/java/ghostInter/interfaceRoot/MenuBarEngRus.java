@@ -1,7 +1,6 @@
 package ghostInter.interfaceRoot;
 
-import ghostInter.dataBase.StringFiles;
-import ghostInter.interfaceRoot.buttonPS.AddButAndLabel;
+import ghostInter.controlPS.AddButAndLabel;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -14,7 +13,7 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class MenuBarEngRus implements IMenuBar, Root, StringFiles
+public class MenuBarEngRus implements IMenuBar, Root
 {
     private final MenuBar menuBar = new MenuBar();
 
@@ -63,6 +62,8 @@ public class MenuBarEngRus implements IMenuBar, Root, StringFiles
                 rightColumm.getChildren().clear();
                 groupRadBut.getChildren().clear();
                 groupExam.getChildren().clear();
+                iprColumm.getChildren().clear();
+                numberColumm.getChildren().clear();
                 ROOT.getChildren().clear();
                 MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
                 menuBarEngRus.getMenu();
@@ -82,7 +83,7 @@ public class MenuBarEngRus implements IMenuBar, Root, StringFiles
                 label.setPrefSize(widthSize/4, heightSize/4);
                 label.setText("Автор программы Ghost \n" + "\n" + "Программа предназначена " +
                         "\nдля изучения Английского языка." +
-                        "\n\n                                    Версия программы: 1.3");
+                        "\n\n                                    Версия программы: 1.5");
                 label.setFont(Font.font("Time New Roman", FontWeight.BOLD,
                         FontPosture.ITALIC, heightSize*0.015));
                 label.setAlignment(Pos.CENTER);
