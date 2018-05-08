@@ -3,16 +3,16 @@ package ghostInter.controlToBe;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AppToBeLessonEnRu
+class ExerciseToBe
 {
     private Map<Integer, String> appToBefileEn = new HashMap<>();
     private Map<Integer, String> appToBefileRu = new HashMap<>();
 
-    public Map<Integer, String> getAppToBefileEn() {
+    Map<Integer, String> getAppToBefileEn() {
         getStrEn();
         return appToBefileEn;
     }
-    public Map<Integer, String> getAppToBefileRu() {
+    Map<Integer, String> getAppToBefileRu() {
         getStrRu();
         return appToBefileRu;
     }

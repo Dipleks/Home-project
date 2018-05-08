@@ -3,16 +3,16 @@ package ghostInter.controlPS;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AppPSLessonEnRu
+class ExercisePS
 {
     private Map<Integer, String> appPSfileEn = new HashMap<>();
     private Map<Integer, String> appPSfileRu = new HashMap<>();
 
-    public Map<Integer, String> getAppPSfileEn() {
+    Map<Integer, String> getAppPSfileEn() {
         getStrEn();
         return appPSfileEn;
     }
-    public Map<Integer, String> getAppPSfileRu() {
+    Map<Integer, String> getAppPSfileRu() {
         getStrRu();
         return appPSfileRu;
     }

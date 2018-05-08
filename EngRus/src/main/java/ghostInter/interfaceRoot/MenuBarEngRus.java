@@ -1,7 +1,7 @@
 package ghostInter.interfaceRoot;
 
-import ghostInter.controlPS.AddButAndLabelPS;
-import ghostInter.controlToBe.AddButAndLabelToBe;
+import ghostInter.controlPS.AddExercisePS;
+import ghostInter.controlToBe.AddExerciseToBe;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -43,16 +43,16 @@ public class MenuBarEngRus implements Root
             clearMethod();
             MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
             menuBarEngRus.getMenu();
-            AddButAndLabelPS addButAndLabelPS = new AddButAndLabelPS();
-            addButAndLabelPS.AddMenuButton();
+            AddExercisePS addExercisePS = new AddExercisePS();
+            addExercisePS.AddMenuButton();
         });
         examPS.setOnAction(event -> {
 
             clearMethod();
             MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
             menuBarEngRus.getMenu();
-            AddButAndLabelPS addButAndLabelPS = new AddButAndLabelPS();
-            addButAndLabelPS.AddMenuButtonExamPS();
+            AddExercisePS addExercisePS = new AddExercisePS();
+            addExercisePS.AddMenuButtonExamPS();
         });
         about.setOnAction(event -> {
             Stage window = new Stage();
@@ -79,16 +79,16 @@ public class MenuBarEngRus implements Root
             clearMethod();
             MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
             menuBarEngRus.getMenu();
-            AddButAndLabelToBe addButAndLabelToBe = new AddButAndLabelToBe();
-            addButAndLabelToBe.AddMenuButton();
+            AddExerciseToBe addExerciseToBe = new AddExerciseToBe();
+            addExerciseToBe.AddMenuButton();
         });
         examToBe.setOnAction(event -> {
 
             clearMethod();
             MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
             menuBarEngRus.getMenu();
-            AddButAndLabelToBe addButAndLabelToBe = new AddButAndLabelToBe();
-            addButAndLabelToBe.AddMenuButtonExamToBe();
+            AddExerciseToBe addExerciseToBe = new AddExerciseToBe();
+            addExerciseToBe.AddMenuButtonExamToBe();
         });
         menuBLACK.setOnAction(event -> {
             EffectColor.setColorText(Color.WHITE);

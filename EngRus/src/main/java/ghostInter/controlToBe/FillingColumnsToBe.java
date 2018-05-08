@@ -8,7 +8,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
-public class SceletVBoxToBe implements Root
+class FillingColumnsToBe implements Root
 {
     private Label[] arrayOfOffersLeft;
     private Label[] arrayOfOffersRight;
@@ -18,11 +18,11 @@ public class SceletVBoxToBe implements Root
     private int START;
     private int CLOSE;
 
-    private AppToBeLessonEnRu text = new AppToBeLessonEnRu();
+    private ExerciseToBe text = new ExerciseToBe();
     private ExamToBe examToBe = new ExamToBe();
 
 
-    public SceletVBoxToBe(Label[] arrayOfOffersLeft, Label[] arrayOfOffersRight, int START, int CLOSE)
+    FillingColumnsToBe(Label[] arrayOfOffersLeft, Label[] arrayOfOffersRight, int START, int CLOSE)
     {
         //Для заданий
         this.arrayOfOffersLeft = arrayOfOffersLeft;
@@ -30,7 +30,7 @@ public class SceletVBoxToBe implements Root
         this.START = START;
         this.CLOSE = CLOSE;
     }
-    public SceletVBoxToBe(Label[] arrayOfOffersExam, Label[] number, Label[] correctly, int START)
+    FillingColumnsToBe(Label[] arrayOfOffersExam, Label[] number, Label[] correctly, int START)
     {
         //Для контрольных
         this.arrayOfOffersExam = arrayOfOffersExam;
@@ -39,19 +39,19 @@ public class SceletVBoxToBe implements Root
         this.START = START;
     }
 
-    public void getLeftEn(){
+    void getLeftEn(){
         getLeftColummLabEn();
     }
-    public void getRightEn(){
+    void getRightEn(){
         getRightColummLabEn();
     }
-    public void getLeftRu(){
+    void getLeftRu(){
         getLeftColummLabRu();
     }
-    public void getRightRu(){
+    void getRightRu(){
         getRightColummLabRu();
     }
-    public void getExamList(){
+    void getExamList(){
         getExamColummLab();
     }
 
