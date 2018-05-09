@@ -18,7 +18,7 @@ public interface Root
     double heightSize = SCREEN.getBounds().getHeight();
 
     Group ROOT = new Group();
-    Scene SCENE_ROOT = new Scene(ROOT, widthSize*0.95, heightSize*0.95);
+    Scene SCENE_ROOT = new Scene(ROOT, widthSize*0.95, heightSize*0.95, EffectColor.colorScene);
 
     VBox leftColumm = new VBox();
     VBox rightColumm = new VBox();
@@ -27,11 +27,27 @@ public interface Root
 
     HBox groupRadBut = new HBox();
     HBox groupExam = new HBox();
+    VBox groupText = new VBox();
 
     TextField improve = new TextField();
     Label improveClick1 = new Label("Введите текст и нажмите на предложение из списка! " +
             "Красный - не верно! Зеленый - верно!\n " +
             "     Если вы уверены в своем переводе нажмите на номер предложения!");
     ScrollPane examPane = new ScrollPane();
+    ScrollPane textPane = new ScrollPane();
+    ScrollPane leftTextPane = new ScrollPane();
+    ScrollPane leftTextPane1 = new ScrollPane();
+    ScrollPane leftTextPane2 = new ScrollPane();
+    ScrollPane rightTextPane = new ScrollPane();
+
+    default void clearMethod(){
+        leftColumm.getChildren().clear();
+        rightColumm.getChildren().clear();
+        groupRadBut.getChildren().clear();
+        groupExam.getChildren().clear();
+        iprColumm.getChildren().clear();
+        numberColumm.getChildren().clear();
+        ROOT.getChildren().clear();
+    }
 
 }

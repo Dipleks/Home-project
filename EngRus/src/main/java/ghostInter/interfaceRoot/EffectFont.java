@@ -10,6 +10,8 @@ public class EffectFont implements Root
             FontPosture.ITALIC, heightSize*0.020);
     public static final Font fontTextExam = Font.font("Time New Roman", FontWeight.BOLD,
             FontPosture.ITALIC, heightSize*0.018);
+    public static final Font fontTextLevel = Font.font("Time New Roman",
+            FontPosture.ITALIC, heightSize*0.015);
     public static final Font fontTitle = Font.font("Time New Roman", FontWeight.BOLD,
             FontPosture.ITALIC, heightSize*0.018);
 }

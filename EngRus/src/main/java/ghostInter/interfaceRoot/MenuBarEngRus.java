@@ -1,28 +1,31 @@
 package ghostInter.interfaceRoot;
 
-import ghostInter.controlPS.AddButAndLabel;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import ghostInter.controlPS.AddExercisePS;
+import ghostInter.controlToBe.AddExerciseToBe;
+import ghostInter.texts.TextLevelOne;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class MenuBarEngRus implements IMenuBar, Root
+public class MenuBarEngRus implements Root
 {
     private final MenuBar menuBar = new MenuBar();
 
     private final Menu menuExercise = new Menu("Задания");
     private final Menu menuExams = new Menu("Контрольные");
+    private final Menu menuTexts = new Menu("Тексты");
     private final MenuItem menuPS = new MenuItem("Present Simple");
     private final MenuItem examPS = new MenuItem("Контрольная PS");
     private final MenuItem menuToBe = new MenuItem("Форма \"to be\"");
     private final MenuItem examToBe = new MenuItem("Контрольная \"to be\"");
+    private final MenuItem textsLevelOne = new MenuItem("Уровень 1");
 
     private final Menu menuHelp = new Menu("Подсказки");
 
@@ -38,71 +41,83 @@ public class MenuBarEngRus implements IMenuBar, Root
 
     private MenuBar getMenuBar(){
 
-        menuPS.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
+        menuPS.setOnAction(event -> {
 
-                leftColumm.getChildren().clear();
-                rightColumm.getChildren().clear();
-                groupRadBut.getChildren().clear();
-                groupExam.getChildren().clear();
-                ROOT.getChildren().clear();
-                MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
-                menuBarEngRus.getMenu();
-                AddButAndLabel addButAndLabel = new AddButAndLabel();
-                addButAndLabel.AddMenuButton();
-
-            }
+            clearMethod();
+            MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
+            menuBarEngRus.getMenu();
+            AddExercisePS addExercisePS = new AddExercisePS();
+            addExercisePS.AddMenuButton();
         });
-        examPS.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
+        examPS.setOnAction(event -> {
 
-                leftColumm.getChildren().clear();
-                rightColumm.getChildren().clear();
-                groupRadBut.getChildren().clear();
-                groupExam.getChildren().clear();
-                iprColumm.getChildren().clear();
-                numberColumm.getChildren().clear();
-                ROOT.getChildren().clear();
-                MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
-                menuBarEngRus.getMenu();
-                AddButAndLabel addButAndLabel = new AddButAndLabel();
-                addButAndLabel.AddMenuButton1();
-
-            }
+            clearMethod();
+            MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
+            menuBarEngRus.getMenu();
+            AddExercisePS addExercisePS = new AddExercisePS();
+            addExercisePS.AddMenuButtonExamPS();
         });
-        about.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                Stage window = new Stage();
-                StackPane stackPane = new StackPane();
-                Scene scene = new Scene(stackPane, widthSize/3, heightSize/3);
-                Label label = new Label();
+        about.setOnAction(event -> {
+            Stage window = new Stage();
+            StackPane stackPane = new StackPane();
+            Scene scene = new Scene(stackPane, widthSize/3, heightSize/3);
+            Label label = new Label();
 //                label.setStyle("-fx-border-color: RED");
-                label.setPrefSize(widthSize/4, heightSize/4);
-                label.setText("Автор программы Ghost \n" + "\n" + "Программа предназначена " +
-                        "\nдля изучения Английского языка." +
-                        "\n\n                                    Версия программы: 1.5");
-                label.setFont(Font.font("Time New Roman", FontWeight.BOLD,
-                        FontPosture.ITALIC, heightSize*0.015));
-                label.setAlignment(Pos.CENTER);
+            label.setPrefSize(widthSize/4, heightSize/4);
+            label.setText("Автор программы Ghost \n" + "\n" + "Программа предназначена " +
+                    "\nдля изучения Английского языка." +
+                    "\n\n                                    Версия программы: 1.6");
+            label.setFont(Font.font("Time New Roman", FontWeight.BOLD,
+                    FontPosture.ITALIC, heightSize*0.015));
+            label.setAlignment(Pos.CENTER);
 
-                stackPane.getChildren().addAll(label);
+            stackPane.getChildren().addAll(label);
 
-                window.setScene(scene);
-                window.setTitle("О программе");
-                window.initModality(Modality.APPLICATION_MODAL);
-                window.show();
-            }
+            window.setScene(scene);
+            window.setTitle("О программе");
+            window.initModality(Modality.APPLICATION_MODAL);
+            window.show();
+        });
+        menuToBe.setOnAction(event -> {
+            clearMethod();
+            MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
+            menuBarEngRus.getMenu();
+            AddExerciseToBe addExerciseToBe = new AddExerciseToBe();
+            addExerciseToBe.AddMenuButton();
+        });
+        examToBe.setOnAction(event -> {
+
+            clearMethod();
+            MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
+            menuBarEngRus.getMenu();
+            AddExerciseToBe addExerciseToBe = new AddExerciseToBe();
+            addExerciseToBe.AddMenuButtonExamToBe();
+        });
+        menuBLACK.setOnAction(event -> {
+//            EffectColor.setColorText(Color.WHITE);
+//            EffectColor.setColorTextClic();
+//            EffectColor.setColorTextClicPERU();
+//            EffectColor.setColorTextClicRED();
+//            EffectColor.setColorTextImpr();
+//            EffectColor.setColorScene();
+//            SCENE_ROOT.setFill(Color.BLACK);
+//            EffectColor.setColorTitle();
+        });
+        textsLevelOne.setOnAction(event -> {
+            clearMethod();
+            MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
+            menuBarEngRus.getMenu();
+            TextLevelOne textLevelOne = new TextLevelOne();
+            textLevelOne.text1();
         });
 
         menuBar.setMinWidth(widthSize);
+        menuTexts.getItems().addAll(textsLevelOne);
         menuSetting.getItems().addAll(menuWHITE, menuBLACK);
         menuServes.getItems().addAll(menuSetting, about);
         menuExercise.getItems().addAll(menuPS, menuToBe);
         menuExams.getItems().addAll(examPS, examToBe);
-        menuBar.getMenus().addAll(menuExercise, menuExams, menuHelp, menuServes);
+        menuBar.getMenus().addAll(menuExercise, menuExams, menuTexts, menuHelp, menuServes);
         return menuBar;
     }
 }

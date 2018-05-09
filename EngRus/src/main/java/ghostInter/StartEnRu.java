@@ -6,11 +6,11 @@ import javafx.stage.Stage;
 
 public class StartEnRu extends Application implements Root
 {
-    private IMenuBar iMenuBar = new MenuBarEngRus();
+    private MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
 
     public void start(final Stage primaryStage) throws Exception {
 
-        iMenuBar.getMenu();
+        menuBarEngRus.getMenu();
 
         ROOT.getChildren().addAll();
 
