@@ -1,12 +1,11 @@
 package ghostInter.interfaceRoot;
 
-import ghostInter.controlPS.AddExercisePS;
-import ghostInter.controlToBe.AddExerciseToBe;
+import ghostInter.control.AddExercise;
+import ghostInter.texts.TextLevelOne;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
@@ -19,10 +18,12 @@ public class MenuBarEngRus implements Root
 
     private final Menu menuExercise = new Menu("Задания");
     private final Menu menuExams = new Menu("Контрольные");
+    private final Menu menuTexts = new Menu("Тексты");
     private final MenuItem menuPS = new MenuItem("Present Simple");
     private final MenuItem examPS = new MenuItem("Контрольная PS");
     private final MenuItem menuToBe = new MenuItem("Форма \"to be\"");
     private final MenuItem examToBe = new MenuItem("Контрольная \"to be\"");
+    private final MenuItem textsLevelOne = new MenuItem("Уровень 1");
 
     private final Menu menuHelp = new Menu("Подсказки");
 
@@ -38,22 +39,44 @@ public class MenuBarEngRus implements Root
 
     private MenuBar getMenuBar(){
 
+        getMenuPS();
+        getExamPS();
+        getAbout();
+        getMenuToBe();
+        getExamToBe();
+        getMenuBLACK();
+        getMenuWHITE();
+        getTextsLevelOne();
+
+        menuBar.setMinWidth(widthSize);
+        menuTexts.getItems().addAll(textsLevelOne);
+        menuSetting.getItems().addAll(menuWHITE, menuBLACK);
+        menuServes.getItems().addAll(menuSetting, about);
+        menuExercise.getItems().addAll(menuPS, menuToBe);
+        menuExams.getItems().addAll(examPS, examToBe);
+        menuBar.getMenus().addAll(menuExercise, menuExams, menuTexts, menuHelp, menuServes);
+
+        return menuBar;
+    }
+    private void getMenuPS(){
         menuPS.setOnAction(event -> {
-
             clearMethod();
             MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
             menuBarEngRus.getMenu();
-            AddExercisePS addExercisePS = new AddExercisePS();
-            addExercisePS.AddMenuButton();
+            AddExercise addExercise = new AddExercise();
+            addExercise.AddMenuButtonPS();
         });
+    }
+    private void getExamPS(){
         examPS.setOnAction(event -> {
-
             clearMethod();
             MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
             menuBarEngRus.getMenu();
-            AddExercisePS addExercisePS = new AddExercisePS();
-            addExercisePS.AddMenuButtonExamPS();
+            AddExercise addExercise = new AddExercise();
+            addExercise.AddMenuButtonExamPS();
         });
+    }
+    private void getAbout(){
         about.setOnAction(event -> {
             Stage window = new Stage();
             StackPane stackPane = new StackPane();
@@ -63,7 +86,7 @@ public class MenuBarEngRus implements Root
             label.setPrefSize(widthSize/4, heightSize/4);
             label.setText("Автор программы Ghost \n" + "\n" + "Программа предназначена " +
                     "\nдля изучения Английского языка." +
-                    "\n\n                                    Версия программы: 1.5");
+                    "\n\n                                    Версия программы: 1.6");
             label.setFont(Font.font("Time New Roman", FontWeight.BOLD,
                     FontPosture.ITALIC, heightSize*0.015));
             label.setAlignment(Pos.CENTER);
@@ -75,38 +98,49 @@ public class MenuBarEngRus implements Root
             window.initModality(Modality.APPLICATION_MODAL);
             window.show();
         });
+    }
+    private void getMenuToBe(){
         menuToBe.setOnAction(event -> {
             clearMethod();
             MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
             menuBarEngRus.getMenu();
-            AddExerciseToBe addExerciseToBe = new AddExerciseToBe();
-            addExerciseToBe.AddMenuButton();
+            AddExercise addExercise = new AddExercise();
+            addExercise.AddMenuButtonToBe();
         });
+    }
+    private void getExamToBe(){
         examToBe.setOnAction(event -> {
-
             clearMethod();
             MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
             menuBarEngRus.getMenu();
-            AddExerciseToBe addExerciseToBe = new AddExerciseToBe();
-            addExerciseToBe.AddMenuButtonExamToBe();
+            AddExercise addExercise = new AddExercise();
+            addExercise.AddMenuButtonExamToBe();
         });
+    }
+    private void getMenuBLACK(){
         menuBLACK.setOnAction(event -> {
-            EffectColor.setColorText(Color.WHITE);
-//            EffectColor.setColorTextClic();
-//            EffectColor.setColorTextClicPERU();
-//            EffectColor.setColorTextClicRED();
+//            EffectColor.setColorText(Color.WHITE);
+//            EffectColor.setColorTextClick();
+//            EffectColor.setColorTextClickPERU();
+//            EffectColor.setColorTextClickRED();
 //            EffectColor.setColorTextImpr();
 //            EffectColor.setColorScene();
-            SCENE_ROOT.setFill(Color.BLACK);
+//            SCENE_ROOT.setFill(Color.BLACK);
 //            EffectColor.setColorTitle();
         });
+    }
+    private void getMenuWHITE(){
+        menuBLACK.setOnAction(event -> {
 
-        menuBar.setMinWidth(widthSize);
-        menuSetting.getItems().addAll(menuWHITE, menuBLACK);
-        menuServes.getItems().addAll(menuSetting, about);
-        menuExercise.getItems().addAll(menuPS, menuToBe);
-        menuExams.getItems().addAll(examPS, examToBe);
-        menuBar.getMenus().addAll(menuExercise, menuExams, menuHelp, menuServes);
-        return menuBar;
+        });
+    }
+    private void getTextsLevelOne(){
+        textsLevelOne.setOnAction(event -> {
+            clearMethod();
+            MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
+            menuBarEngRus.getMenu();
+            TextLevelOne textLevelOne = new TextLevelOne();
+            textLevelOne.text1();
+        });
     }
 }
