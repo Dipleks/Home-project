@@ -20,23 +20,25 @@ public class Control implements Root
     private RadioButton ruBut = new RadioButton("Русский");
     private RadioButton exit = new RadioButton("В меню");
 
-    private Label psApp = new Label();
-    private Label psNeg = new Label();
-    private Label psQues = new Label();
-    private Label psExam = new Label();
+    private Label appL = new Label();
+    private Label negL = new Label();
+    private Label quesL = new Label();
+    private Label examL = new Label();
 
     public void exercise(final FillingColumns[] app, final FillingColumns[] neg, final FillingColumns[] ques,
-                         final Button[] buttonPSapp, final Button[] buttonPSneg, final Button[] buttonPSques, String m)
+                         final Button[] buttonApp, final Button[] buttonNeg, final Button[] buttonQues, String m)
     {
         methodAppNegQues();
         Runnable runnable1 = () -> {
-            for (int i = 0; i < buttonPSapp.length; i++) {
-                buttonPSapp[i] = new Button();
-                buttonPSapp[i].setText("Задание " + (i+1));
-                buttonPSapp[i].setPrefWidth(widthSize-widthSize/1.07);
-                buttonPSapp[i].setPrefHeight(widthSize-widthSize/1.03);
+            for (int i = 0; i < buttonApp.length; i++) {
+                buttonApp[i] = new Button();
+                buttonApp[i].setText("Задание " + (i+1));
+                buttonApp[i].setPrefWidth(widthSize-widthSize/1.07);
+                buttonApp[i].setPrefHeight(widthSize-widthSize/1.03);
                 int finalI = i;
-                buttonPSapp[i].setOnAction(event -> {
+                buttonApp[i].setOnAction(event -> {
+                    Runnable r = this::soundClick;
+                    r.run();
                     radioBut();
                     enBut.setOnAction(e ->
                     {
@@ -54,29 +56,31 @@ public class Control implements Root
                     app[finalI].getLeftEn();
                     app[finalI].getRightEn();
                     removeBut();
-                    lengthButtonApp.getChildren().removeAll(buttonPSapp);
-                    lengthButtonNeg.getChildren().removeAll(buttonPSneg);
-                    lengthButtonQues.getChildren().removeAll(buttonPSques);
+                    lengthButtonApp.getChildren().removeAll(buttonApp);
+                    lengthButtonNeg.getChildren().removeAll(buttonNeg);
+                    lengthButtonQues.getChildren().removeAll(buttonQues);
                 });
             }
 //          lengthButtonApp.setStyle("-fx-border-color: RED");
             lengthButtonApp.setSpacing(widthSize-widthSize/1.03);
-            lengthButtonApp.setPrefWidth((buttonPSapp[0].getPrefWidth()+lengthButtonApp.getSpacing())*buttonPSapp.length);
+            lengthButtonApp.setPrefWidth((buttonApp[0].getPrefWidth()+lengthButtonApp.getSpacing())*buttonApp.length);
             lengthButtonApp.setLayoutX(widthSize/2-((lengthButtonApp.getPrefWidth())/2));
             lengthButtonApp.setLayoutY(heightSize-heightSize/1.2);
             lengthButtonApp.setPadding(new Insets(10, 10, 10, 10));
-            lengthButtonApp.getChildren().addAll(buttonPSapp);
+            lengthButtonApp.getChildren().addAll(buttonApp);
             ROOT.getChildren().addAll(lengthButtonApp);
         };
         runnable1.run();
         Runnable runnable2 = () -> {
-            for (int i = 0; i < buttonPSneg.length; i++) {
-                buttonPSneg[i] = new Button();
-                buttonPSneg[i].setText("Задание " + (i + 1));
-                buttonPSneg[i].setPrefWidth(widthSize-widthSize/1.07);
-                buttonPSneg[i].setPrefHeight(widthSize-widthSize/1.03);
+            for (int i = 0; i < buttonNeg.length; i++) {
+                buttonNeg[i] = new Button();
+                buttonNeg[i].setText("Задание " + (i + 1));
+                buttonNeg[i].setPrefWidth(widthSize-widthSize/1.07);
+                buttonNeg[i].setPrefHeight(widthSize-widthSize/1.03);
                 int finalI = i;
-                buttonPSneg[i].setOnAction(event -> {
+                buttonNeg[i].setOnAction(event -> {
+                    Runnable r = this::soundClick;
+                    r.run();
                     radioBut();
                     enBut.setOnAction(e ->
                     {
@@ -94,30 +98,32 @@ public class Control implements Root
                     neg[finalI].getLeftEn();
                     neg[finalI].getRightEn();
                     removeBut();
-                    lengthButtonApp.getChildren().removeAll(buttonPSapp);
-                    lengthButtonNeg.getChildren().removeAll(buttonPSneg);
-                    lengthButtonQues.getChildren().removeAll(buttonPSques);
+                    lengthButtonApp.getChildren().removeAll(buttonApp);
+                    lengthButtonNeg.getChildren().removeAll(buttonNeg);
+                    lengthButtonQues.getChildren().removeAll(buttonQues);
 
                 });
             }
 //          lengthButtonNeg.setStyle("-fx-border-color: RED");
             lengthButtonNeg.setSpacing(widthSize-widthSize/1.03);
-            lengthButtonNeg.setPrefWidth((buttonPSneg[0].getPrefWidth()+lengthButtonNeg.getSpacing())*buttonPSneg.length);
+            lengthButtonNeg.setPrefWidth((buttonNeg[0].getPrefWidth()+lengthButtonNeg.getSpacing())*buttonNeg.length);
             lengthButtonNeg.setLayoutX(widthSize/2-((lengthButtonNeg.getPrefWidth())/2));
             lengthButtonNeg.setLayoutY(lengthButtonApp.getLayoutY()+heightSize-heightSize/1.2);
             lengthButtonNeg.setPadding(new Insets(10, 10, 10, 10));
-            lengthButtonNeg.getChildren().addAll(buttonPSneg);
+            lengthButtonNeg.getChildren().addAll(buttonNeg);
             ROOT.getChildren().addAll(lengthButtonNeg);
         };
         runnable2.run();
         Runnable runnable3 = () -> {
-            for (int i = 0; i < buttonPSques.length; i++) {
-                buttonPSques[i] = new Button();
-                buttonPSques[i].setText("Задание " + (i + 1));
-                buttonPSques[i].setPrefWidth(widthSize-widthSize/1.07);
-                buttonPSques[i].setPrefHeight(widthSize-widthSize/1.03);
+            for (int i = 0; i < buttonQues.length; i++) {
+                buttonQues[i] = new Button();
+                buttonQues[i].setText("Задание " + (i + 1));
+                buttonQues[i].setPrefWidth(widthSize-widthSize/1.07);
+                buttonQues[i].setPrefHeight(widthSize-widthSize/1.03);
                 int finalI = i;
-                buttonPSques[i].setOnAction(event -> {
+                buttonQues[i].setOnAction(event -> {
+                    Runnable r = this::soundClick;
+                    r.run();
                     radioBut();
                     enBut.setOnAction(e ->
                     {
@@ -135,44 +141,45 @@ public class Control implements Root
                     ques[finalI].getLeftEn();
                     ques[finalI].getRightEn();
                     removeBut();
-                    lengthButtonApp.getChildren().removeAll(buttonPSapp);
-                    lengthButtonNeg.getChildren().removeAll(buttonPSneg);
-                    lengthButtonQues.getChildren().removeAll(buttonPSques);
+                    lengthButtonApp.getChildren().removeAll(buttonApp);
+                    lengthButtonNeg.getChildren().removeAll(buttonNeg);
+                    lengthButtonQues.getChildren().removeAll(buttonQues);
                 });
             }
 //          lengthButtonQues.setStyle("-fx-border-color: RED");
             lengthButtonQues.setSpacing(widthSize-widthSize/1.03);
-            lengthButtonQues.setPrefWidth((buttonPSques[0].getPrefWidth()+lengthButtonQues.getSpacing())*buttonPSques.length);
+            lengthButtonQues.setPrefWidth((buttonQues[0].getPrefWidth()+lengthButtonQues.getSpacing())*buttonQues.length);
             lengthButtonQues.setLayoutX(widthSize/2-((lengthButtonQues.getPrefWidth())/2));
             lengthButtonQues.setLayoutY(lengthButtonNeg.getLayoutY()+heightSize-heightSize/1.2);
             lengthButtonQues.setPadding(new Insets(10, 10, 10, 10));
-            lengthButtonQues.getChildren().addAll(buttonPSques);
+            lengthButtonQues.getChildren().addAll(buttonQues);
             ROOT.getChildren().addAll(lengthButtonQues);
         };
         runnable3.run();
     }
-    public void examMethod(final FillingColumns[] exam, final Button[] buttonPSexam, String m){
+    public void examMethod(final FillingColumns[] exam, final Button[] buttonExam, String m){
         Runnable runExamLab = () -> {
-            psExam.setText("Контрольные работы");
-//                psQues.setStyle("-fx-border-color: RED");
-            psExam.setPrefWidth(widthSize-widthSize/1.25);
-            psExam.setAlignment(Pos.CENTER);
-            psExam.setFont(EffectFont.fontTitle);
-            psExam.setTextFill(EffectColor.colorTitle);
-            psExam.setLayoutX((widthSize/2)-(widthSize-widthSize/1.25)/2);
-            psExam.setLayoutY(heightSize-heightSize/1.15);
-            ROOT.getChildren().add(psExam);
+            this.examL.setText("Контрольные работы");
+//                quesL.setStyle("-fx-border-color: RED");
+            this.examL.setPrefWidth(widthSize-widthSize/1.25);
+            this.examL.setAlignment(Pos.CENTER);
+            this.examL.setFont(EffectFont.fontTitle);
+            this.examL.setTextFill(EffectColor.colorTitle);
+            this.examL.setLayoutX((widthSize/2)-(widthSize-widthSize/1.25)/2);
+            this.examL.setLayoutY(heightSize-heightSize/1.15);
+            ROOT.getChildren().add(this.examL);
         };
         runExamLab.run();
         Runnable runnable4 = () -> {
-            for (int i = 0; i < buttonPSexam.length; i++) {
-                buttonPSexam[i] = new Button();
-                buttonPSexam[i].setText("Часть №" + (i + 1));
-                buttonPSexam[i].setPrefWidth(widthSize-widthSize/1.06);
-                buttonPSexam[i].setPrefHeight(widthSize-widthSize/1.03);
+            for (int i = 0; i < buttonExam.length; i++) {
+                buttonExam[i] = new Button();
+                buttonExam[i].setText("Часть №" + (i + 1));
+                buttonExam[i].setPrefWidth(widthSize-widthSize/1.06);
+                buttonExam[i].setPrefHeight(widthSize-widthSize/1.03);
                 int finalI = i;
-                buttonPSexam[i].setOnAction(event -> {
-
+                buttonExam[i].setOnAction(event -> {
+                    Runnable r = this::soundClick;
+                    r.run();
                     groupRadBut.getChildren().addAll(exit);
                     groupRadBut.setSpacing(widthSize-widthSize/1.03);
 //                            groupRadBut.setStyle("-fx-border-color: RED");
@@ -183,17 +190,17 @@ public class Control implements Root
                     exit.setOnAction(e -> methodClearExam(m));
                     exam[finalI].getExamList();
                     ROOT.getChildren().remove(lengthButtonExam);
-                    ROOT.getChildren().removeAll(psExam);
-                    lengthButtonExam.getChildren().removeAll(buttonPSexam);
+                    ROOT.getChildren().removeAll(this.examL);
+                    lengthButtonExam.getChildren().removeAll(buttonExam);
                 });
             }
 //          lengthButtonQues.setStyle("-fx-border-color: RED");
             lengthButtonExam.setSpacing(widthSize-widthSize/1.03);
-            lengthButtonExam.setPrefWidth((buttonPSexam[0].getPrefWidth()+lengthButtonExam.getSpacing())*buttonPSexam.length);
+            lengthButtonExam.setPrefWidth((buttonExam[0].getPrefWidth()+lengthButtonExam.getSpacing())*buttonExam.length);
             lengthButtonExam.setLayoutX(widthSize/2-((lengthButtonExam.getPrefWidth())/2));
             lengthButtonExam.setLayoutY(lengthButtonQues.getLayoutY()+heightSize-heightSize/1.2);
             lengthButtonExam.setPadding(new Insets(10, 10, 10, 10));
-            lengthButtonExam.getChildren().addAll(buttonPSexam);
+            lengthButtonExam.getChildren().addAll(buttonExam);
             ROOT.getChildren().addAll(lengthButtonExam);
         };
         runnable4.run();
@@ -205,7 +212,7 @@ public class Control implements Root
         ruBut.setToggleGroup(group);
         groupRadBut.getChildren().addAll(enBut, ruBut, exit);
         groupRadBut.setSpacing(widthSize-widthSize/1.03);
-//                  groupRadBut.setStyle("-fx-border-color: RED");
+//      groupRadBut.setStyle("-fx-border-color: RED");
         groupRadBut.setPadding(new Insets(10, 10, 10, 10));
         groupRadBut.setLayoutX(widthSize-widthSize/1.5);
         groupRadBut.setLayoutY(heightSize-heightSize/1.04);
@@ -216,43 +223,43 @@ public class Control implements Root
         ROOT.getChildren().remove(lengthButtonNeg);
         ROOT.getChildren().remove(lengthButtonQues);
         ROOT.getChildren().remove(lengthButtonExam);
-        ROOT.getChildren().removeAll(psApp, psNeg, psQues, psExam);
+        ROOT.getChildren().removeAll(appL, negL, quesL, examL);
     }
     private void methodAppNegQues(){
         Runnable runAppLab = () -> {
-            psApp.setText("Утверждения");
-//                psApp.setStyle("-fx-border-color: RED");
-            psApp.setPrefWidth(widthSize-widthSize/1.25);
-            psApp.setAlignment(Pos.CENTER);
-            psApp.setFont(EffectFont.fontTitle);
-            psApp.setTextFill(EffectColor.colorTitle);
-            psApp.setLayoutX((widthSize/2)-(widthSize-widthSize/1.25)/2);
-            psApp.setLayoutY(heightSize-heightSize/1.15);
-            ROOT.getChildren().add(psApp);
+            appL.setText("Утверждения");
+//                appL.setStyle("-fx-border-color: RED");
+            appL.setPrefWidth(widthSize-widthSize/1.25);
+            appL.setAlignment(Pos.CENTER);
+            appL.setFont(EffectFont.fontTitle);
+            appL.setTextFill(EffectColor.colorTitle);
+            appL.setLayoutX((widthSize/2)-(widthSize-widthSize/1.25)/2);
+            appL.setLayoutY(heightSize-heightSize/1.15);
+            ROOT.getChildren().add(appL);
         };
         runAppLab.run();
         Runnable runNegLab = () -> {
-            psNeg.setText("Отрицания");
-//                psNeg.setStyle("-fx-border-color: RED");
-            psNeg.setPrefWidth(widthSize-widthSize/1.25);
-            psNeg.setAlignment(Pos.CENTER);
-            psNeg.setFont(EffectFont.fontTitle);
-            psNeg.setTextFill(EffectColor.colorTitle);
-            psNeg.setLayoutX((widthSize/2)-(widthSize-widthSize/1.25)/2);
-            psNeg.setLayoutY(psApp.getLayoutY()+heightSize-heightSize/1.2);
-            ROOT.getChildren().add(psNeg);
+            negL.setText("Отрицания");
+//                negL.setStyle("-fx-border-color: RED");
+            negL.setPrefWidth(widthSize-widthSize/1.25);
+            negL.setAlignment(Pos.CENTER);
+            negL.setFont(EffectFont.fontTitle);
+            negL.setTextFill(EffectColor.colorTitle);
+            negL.setLayoutX((widthSize/2)-(widthSize-widthSize/1.25)/2);
+            negL.setLayoutY(appL.getLayoutY()+heightSize-heightSize/1.2);
+            ROOT.getChildren().add(negL);
         };
         runNegLab.run();
         Runnable runQuesLab = () -> {
-            psQues.setText("Вопросительные предложения");
-//                psQues.setStyle("-fx-border-color: RED");
-            psQues.setPrefWidth(widthSize-widthSize/1.25);
-            psQues.setAlignment(Pos.CENTER);
-            psQues.setFont(EffectFont.fontTitle);
-            psQues.setTextFill(EffectColor.colorTitle);
-            psQues.setLayoutX((widthSize/2)-(widthSize-widthSize/1.25)/2);
-            psQues.setLayoutY(psNeg.getLayoutY()+heightSize-heightSize/1.2);
-            ROOT.getChildren().add(psQues);
+            quesL.setText("Вопросительные предложения");
+//                quesL.setStyle("-fx-border-color: RED");
+            quesL.setPrefWidth(widthSize-widthSize/1.25);
+            quesL.setAlignment(Pos.CENTER);
+            quesL.setFont(EffectFont.fontTitle);
+            quesL.setTextFill(EffectColor.colorTitle);
+            quesL.setLayoutX((widthSize/2)-(widthSize-widthSize/1.25)/2);
+            quesL.setLayoutY(negL.getLayoutY()+heightSize-heightSize/1.2);
+            ROOT.getChildren().add(quesL);
         };
         runQuesLab.run();
     }

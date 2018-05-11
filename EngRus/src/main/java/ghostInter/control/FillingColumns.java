@@ -7,6 +7,10 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
+import java.io.File;
 
 public class FillingColumns implements Root
 {
@@ -90,14 +94,15 @@ public class FillingColumns implements Root
                 arrayOfOffersLeft[i] = new Label();
                 arrayOfOffersLeft[i].setFont(EffectFont.fontText);
                 arrayOfOffersLeft[i].setTextFill(EffectColor.colorText);
-//                        arrayOfOffersLeft[i].setStyle("-fx-border-color: RED");
+//              arrayOfOffersLeft[i].setStyle("-fx-border-color: RED");
                 arrayOfOffersLeft[i].setPrefWidth(widthSize-widthSize/1.45);
                 arrayOfOffersLeft[i].setWrapText(true);
-
                 arrayOfOffersLeft[i].setText(methEn(i, START));
 
                 int finalI = i;
                 arrayOfOffersLeft[i].setOnMouseClicked(event -> {
+                    Runnable r = this::soundClick;
+                    r.run();
                     if (arrayOfOffersLeft[finalI].getText().equals(methEn(finalI, START))){
                         arrayOfOffersLeft[finalI].setText(methRu(finalI, START));
                         arrayOfOffersLeft[finalI].setTextFill(EffectColor.colorTextClick);
@@ -107,7 +112,7 @@ public class FillingColumns implements Root
                     }
                 });
             }
-//                leftColumn.setStyle("-fx-border-color: RED");
+//          leftColumn.setStyle("-fx-border-color: RED");
             leftColumn.setSpacing(heightSize-heightSize/1.009);
             leftColumn.setLayoutX(widthSize/6);
             leftColumn.setLayoutY(heightSize-heightSize/1.12);
@@ -125,7 +130,7 @@ public class FillingColumns implements Root
                 arrayOfOffersRight[i] = new Label();
                 arrayOfOffersRight[i].setFont(EffectFont.fontText);
                 arrayOfOffersRight[i].setTextFill(EffectColor.colorText);
-//                        arrayOfOffersRight[i].setStyle("-fx-border-color: RED");
+//              arrayOfOffersRight[i].setStyle("-fx-border-color: RED");
                 arrayOfOffersRight[i].setPrefWidth(widthSize-widthSize/1.45);
                 arrayOfOffersRight[i].setWrapText(true);
 
@@ -134,6 +139,8 @@ public class FillingColumns implements Root
                 int finalI = i;
 
                 arrayOfOffersRight[i].setOnMouseClicked(event -> {
+                    Runnable r = this::soundClick;
+                    r.run();
                     if (arrayOfOffersRight[finalI].getText().equals(methEn(finalI, CLOSE))){
                         arrayOfOffersRight[finalI].setText(methRu(finalI, CLOSE));
                         arrayOfOffersRight[finalI].setTextFill(EffectColor.colorTextClick);
@@ -144,7 +151,7 @@ public class FillingColumns implements Root
                 });
             }
 
-//                rightColumn.setStyle("-fx-border-color: RED");
+//          rightColumn.setStyle("-fx-border-color: RED");
             rightColumn.setLayoutX(widthSize/1.9);
             rightColumn.setLayoutY(heightSize-heightSize/1.12);
             rightColumn.setSpacing(heightSize-heightSize/1.009);
@@ -156,18 +163,19 @@ public class FillingColumns implements Root
         runnable2.run();
     }
     private void getLeftColumnLabRu() {
-
         Runnable runnable1 = () -> {
             for (int i = 0; i < arrayOfOffersLeft.length; i++) {
                 arrayOfOffersLeft[i] = new Label();
                 arrayOfOffersLeft[i].setFont(EffectFont.fontText);
                 arrayOfOffersLeft[i].setTextFill(EffectColor.colorText);
-//                        arrayOfOffersLeft[i].setStyle("-fx-border-color: RED");
+//              arrayOfOffersLeft[i].setStyle("-fx-border-color: RED");
                 arrayOfOffersLeft[i].setPrefWidth(widthSize-widthSize/1.45);
                 arrayOfOffersLeft[i].setWrapText(true);
                 arrayOfOffersLeft[i].setText(methRu(i, START));
                 int finalI = i;
                 arrayOfOffersLeft[i].setOnMouseClicked(event -> {
+                    Runnable r = this::soundClick;
+                    r.run();
                     if (arrayOfOffersLeft[finalI].getText().equals(methRu(finalI, START))){
                         arrayOfOffersLeft[finalI].setText(methEn(finalI, START));
                         arrayOfOffersLeft[finalI].setTextFill(EffectColor.colorTextClick);
@@ -178,7 +186,7 @@ public class FillingColumns implements Root
                 });
             }
 
-//                leftColumn.setStyle("-fx-border-color: RED");
+//          leftColumn.setStyle("-fx-border-color: RED");
             leftColumn.setSpacing(heightSize-heightSize/1.009);
             leftColumn.setLayoutX(widthSize/6);
             leftColumn.setLayoutY(heightSize-heightSize/1.12);
@@ -201,6 +209,8 @@ public class FillingColumns implements Root
                 arrayOfOffersRight[i].setText(methRu(i, CLOSE));
                 int finalI = i;
                 arrayOfOffersRight[i].setOnMouseClicked(event -> {
+                    Runnable r = this::soundClick;
+                    r.run();
                     if (arrayOfOffersRight[finalI].getText().equals(methRu(finalI, CLOSE))){
                         arrayOfOffersRight[finalI].setText(methEn(finalI, CLOSE));
                         arrayOfOffersRight[finalI].setTextFill(EffectColor.colorTextClick);
@@ -235,12 +245,14 @@ public class FillingColumns implements Root
 
                 correctly[i] = new Label();
                 correctly[i].setFont(EffectFont.fontTextExam);
-//                    correctly[i].setStyle("-fx-border-color: RED");
+//              correctly[i].setStyle("-fx-border-color: RED");
                 correctly[i].setPrefWidth(widthSize-widthSize/1.45);
                 correctly[i].setAlignment(Pos.BASELINE_RIGHT);
 
                 int finalI = i;
                 arrayOfOffersExam[i].setOnMouseClicked(event -> {
+                    Runnable r = this::soundClick;
+                    r.run();
                     if (improve.getText().equalsIgnoreCase(methEn(finalI, START))){
                         arrayOfOffersExam[finalI].setTextFill(EffectColor.colorTextClick);
                         correctly[finalI].setText("ВЕРНО!!!");
@@ -263,6 +275,8 @@ public class FillingColumns implements Root
                 number[i].setText("-"+(i+1+START)+"-");
                 int finalI = i;
                 number[i].setOnMouseClicked(ev -> {
+                    Runnable r = this::soundClick;
+                    r.run();
                     if (arrayOfOffersExam[finalI].getText().equals(methRu(finalI, START))){
                         arrayOfOffersExam[finalI].setText(methEn(finalI, START));
                         arrayOfOffersExam[finalI].setTextFill(EffectColor.colorTextImpr);
@@ -270,19 +284,19 @@ public class FillingColumns implements Root
                 });
             }
 
-//                numberColumn.setStyle("-fx-border-color: RED");
+//          numberColumn.setStyle("-fx-border-color: RED");
             numberColumn.setSpacing(heightSize-heightSize/1.009);
             numberColumn.setPadding(new Insets(0, 0, 0, 0));
             numberColumn.setPrefSize(widthSize/25, heightSize/1.25);
             numberColumn.getChildren().addAll(number);
 
-//                iprColumn.setStyle("-fx-border-color: RED");
+//          iprColumn.setStyle("-fx-border-color: RED");
             iprColumn.setSpacing(heightSize-heightSize/1.009);
             iprColumn.setPadding(new Insets(0, 0, 0, 0));
             iprColumn.setPrefSize(widthSize/11, heightSize/1.25);
             iprColumn.getChildren().addAll(correctly);
 
-//                leftColumn.setStyle("-fx-border-color: RED");
+//          leftColumn.setStyle("-fx-border-color: RED");
             leftColumn.setSpacing(heightSize-heightSize/1.009);
             leftColumn.setPadding(new Insets(0, 0, 0, 0));
             leftColumn.setPrefSize(widthSize/2.5, heightSize/1.25);
@@ -292,7 +306,7 @@ public class FillingColumns implements Root
             groupExam.getChildren().addAll(numberColumn, leftColumn, iprColumn);
 
             examPane.setContent(groupExam);
-//                examPane.setStyle("-fx-border-color: RED");
+//          examPane.setStyle("-fx-border-color: RED");
             examPane.setLayoutX(widthSize - widthSize / 1.25);
             examPane.setLayoutY(heightSize - heightSize / 1.16);
             examPane.setPrefSize(widthSize / 1.8, heightSize / 1.5);

@@ -1,12 +1,17 @@
 package ghostInter.interfaceRoot;
 
 import ghostInter.control.AddExercise;
+import javafx.concurrent.Task;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Screen;
+
+import java.io.File;
 
 public interface Root
 {
@@ -86,5 +91,14 @@ public interface Root
             addExercise.AddMenuButtonExamToBe();
         }
     }
+    default void soundClick(){
+        Runnable runnable = () -> {
+            String file = "click.mp3";
+            Media sound = new Media(new File(file).toURI().toString());
+            MediaPlayer mediaPlayer = new MediaPlayer(sound);
+            mediaPlayer.play();
 
+        };
+        runnable.run();
+    }
 }
