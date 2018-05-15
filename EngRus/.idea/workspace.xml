@@ -17,60 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FillingColumns.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/control/FillingColumns.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="234" column="36" selection-start-line="234" selection-start-column="36" selection-end-line="234" selection-end-column="36" />
-              <folding>
-                <element signature="method#methRu#0;class#FillingColumns#0" />
-                <element signature="method#methEn#0;class#FillingColumns#0" />
-                <element signature="method#FillingColumns#0;class#FillingColumns#0" />
-                <element signature="method#FillingColumns#1;class#FillingColumns#0" />
-                <element signature="method#getLeftColumnLabEn#0;class#FillingColumns#0" />
-                <element signature="method#getRightColumnLabEn#0;class#FillingColumns#0" />
-                <element signature="method#getLeftColumnLabRu#0;class#FillingColumns#0" />
-                <element signature="method#getRightColumnLabRu#0;class#FillingColumns#0" />
-                <element signature="method#getExamColumnLab#0;class#FillingColumns#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Root.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/interfaceRoot/Root.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="78" column="43" selection-start-line="78" selection-start-column="43" selection-end-line="78" selection-end-column="43" />
-              <folding>
-                <element signature="method#clearColumn#0;class#Root#0" />
-                <element signature="method#clearMethod#0;class#Root#0" />
-                <element signature="method#methodClearExercise#0;class#Root#0" />
-                <element signature="method#methodClearExam#0;class#Root#0" />
-                <element signature="method#soundClick#0;class#Root#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Control.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/control/Control.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
-              <folding>
-                <element signature="method#exercise#0;class#Control#0" />
-                <element signature="method#examMethod#0;class#Control#0" />
-                <element signature="method#radioBut#0;class#Control#0" />
-                <element signature="method#removeBut#0;class#Control#0" />
-                <element signature="method#methodAppNegQues#0;class#Control#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -92,8 +39,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/ghostInter/dataBase/presenSimpl/approvals/AppPSlessonEnA.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ghostInter/dataBase/presenSimpl/exam/ExamPS.java" />
         <option value="$PROJECT_DIR$/src/main/java/ghostInter/dataBase/presenSimpl/approvals/AppPSlessonEnRu.java" />
         <option value="$PROJECT_DIR$/src/main/java/ghostInter/interfaceRoot/buttonPS/JobControl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ghostInter/interfaceRoot/buttonPS/AddButAndLabel.java" />
@@ -119,7 +64,6 @@
         <option value="$PROJECT_DIR$/src/main/java/ghostInter/controlToBe/FillingColumnsToBe.java" />
         <option value="$PROJECT_DIR$/src/main/java/ghostInter/texts/AddExercisePS.java" />
         <option value="$PROJECT_DIR$/src/main/java/ghostInter/interfaceRoot/EffectFont.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ghostInter/texts/TextLevelOne.java" />
         <option value="$PROJECT_DIR$/src/main/java/ghostInter/controlPS/ExercisePS.java" />
         <option value="$PROJECT_DIR$/src/main/java/ghostInter/controlPS/Exercise.java" />
         <option value="$PROJECT_DIR$/src/main/java/ghostInter/Exercise.java" />
@@ -137,12 +81,15 @@
         <option value="$PROJECT_DIR$/src/main/java/ghostInter/FillingColumns.java" />
         <option value="$PROJECT_DIR$/src/main/java/ghostInter/AddExercise.java" />
         <option value="$PROJECT_DIR$/src/main/java/ghostInter/controlPS/Control.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ghostInter/control/AddExercise.java" />
         <option value="$PROJECT_DIR$/src/main/java/ghostInter/interfaceRoot/MenuBarEngRus.java" />
         <option value="$PROJECT_DIR$/src/main/java/ghostInter/interfaceRoot/EffectColor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ghostInter/control/FillingColumns.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ghostInter/interfaceRoot/Root.java" />
         <option value="$PROJECT_DIR$/src/main/java/ghostInter/control/Control.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/interfaceRoot/Root.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/control/AddExercise.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/control/Exam.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/texts/TextLevelOne.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/control/T.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/control/FillingColumns.java" />
       </list>
     </option>
   </component>
@@ -180,9 +127,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -250,7 +197,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/click.mp3" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -355,7 +302,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1394" height="916" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -370,8 +316,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32936507" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24362819" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32671958" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20464768" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -383,6 +328,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32671958" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -399,20 +345,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/interfaceRoot/MenuBarEngRus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1836">
-          <caret line="108" column="36" selection-start-line="108" selection-start-column="36" selection-end-line="108" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/control/FillingColumns.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4420">
-          <caret line="260" lean-forward="true" selection-start-line="260" selection-end-line="260" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/dataBase/presenSimpl/approvals/appPSlessonEnD.data" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/dataBase/presenSimpl/approvals/appPSlessonRuA.data" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/dataBase/presenSimpl/approvals/appPSlessonRuB.data" />
@@ -441,13 +373,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/dataBase/presenSimpl/negative/negPSlessonRuD.data" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/com/sun/javafx/event/CompositeEventHandler.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/interfaceRoot/IMenuBar.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/texts/AddExercisePS.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/texts/ControlPS.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/texts/ExamPS.java" />
@@ -486,21 +411,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/texts/TextLevelOne.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/interfaceRoot/Root.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-289">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="320">
+          <caret line="44" column="48" lean-forward="true" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
+          <folding>
+            <element signature="method#clearColumn#0;class#Root#0" />
+            <element signature="method#clearMethod#0;class#Root#0" />
+            <element signature="method#methodClearExercise#0;class#Root#0" />
+            <element signature="method#methodClearExam#0;class#Root#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/control/AddExercise.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/texts/TextLevelOne.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="578">
+          <caret line="39" column="21" lean-forward="true" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1039#1040#0" expanded="true" />
-            <element signature="e#1066#1067#0" expanded="true" />
+            <element signature="e#450#4289#0" expanded="true" />
+            <element signature="e#4288#4289#0" expanded="true" />
+            <element signature="e#4332#6690#0" expanded="true" />
+            <element signature="e#6689#6690#0" expanded="true" />
+            <element signature="e#6734#10146#0" expanded="true" />
+            <element signature="e#10145#10146#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/control/Control.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+          <folding>
+            <element signature="method#exercise#0;class#Control#0" />
+            <element signature="method#examMethod#0;class#Control#0" />
+            <element signature="method#radioBut#0;class#Control#0" />
+            <element signature="method#removeBut#0;class#Control#0" />
+            <element signature="method#methodAppNegQues#0;class#Control#0" />
           </folding>
         </state>
       </provider>
@@ -508,14 +456,62 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/control/Exercise.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding>
+            <element signature="method#getAppPSfileEn#0;class#Exercise#0" />
+            <element signature="method#getAppPSfileRu#0;class#Exercise#0" />
+            <element signature="method#getAppToBefileEn#0;class#Exercise#0" />
+            <element signature="method#getAppToBefileRu#0;class#Exercise#0" />
+            <element signature="method#getStrEnPS#0;class#Exercise#0" />
+            <element signature="method#getStrRuPS#0;class#Exercise#0" />
+            <element signature="method#getStrEnToBe#0;class#Exercise#0" />
+            <element signature="method#getStrRuToBe#0;class#Exercise#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/control/T.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/control/Exam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getExamEnPS#0;class#Exam#0" />
+            <element signature="method#getExamRuPS#0;class#Exam#0" />
+            <element signature="method#getExamEnToBe#0;class#Exam#0" />
+            <element signature="method#getExamRuToBe#0;class#Exam#0" />
+            <element signature="method#getStrEnPS#0;class#Exam#0" />
+            <element signature="method#getStrRuPS#0;class#Exam#0" />
+            <element signature="method#getStrEnToBe#0;class#Exam#0" />
+            <element signature="method#getStrRuToBe#0;class#Exam#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/control/AddExercise.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="67" column="88" selection-start-line="67" selection-start-column="88" selection-end-line="67" selection-end-column="88" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getUprPS#0;class#AddExercise#0" />
+            <element signature="method#getUprToBe#0;class#AddExercise#0" />
+            <element signature="method#getExamToBe#0;class#AddExercise#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/control/FillingColumns.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
-          <caret line="234" column="36" selection-start-line="234" selection-start-column="36" selection-end-line="234" selection-end-column="36" />
+          <caret line="238" column="36" selection-start-line="238" selection-start-column="36" selection-end-line="238" selection-end-column="36" />
           <folding>
             <element signature="method#methRu#0;class#FillingColumns#0" />
             <element signature="method#methEn#0;class#FillingColumns#0" />
@@ -530,31 +526,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/interfaceRoot/Root.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="78" column="43" selection-start-line="78" selection-start-column="43" selection-end-line="78" selection-end-column="43" />
-          <folding>
-            <element signature="method#clearColumn#0;class#Root#0" />
-            <element signature="method#clearMethod#0;class#Root#0" />
-            <element signature="method#methodClearExercise#0;class#Root#0" />
-            <element signature="method#methodClearExam#0;class#Root#0" />
-            <element signature="method#soundClick#0;class#Root#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/control/Control.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
-          <folding>
-            <element signature="method#exercise#0;class#Control#0" />
-            <element signature="method#examMethod#0;class#Control#0" />
-            <element signature="method#radioBut#0;class#Control#0" />
-            <element signature="method#removeBut#0;class#Control#0" />
-            <element signature="method#methodAppNegQues#0;class#Control#0" />
-          </folding>
+        <state relative-caret-position="374">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
@@ -569,7 +544,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

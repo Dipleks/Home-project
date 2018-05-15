@@ -92,13 +92,13 @@ public interface Root
         }
     }
     default void soundClick(){
-        Runnable runnable = () -> {
-            String file = "click.mp3";
-            Media sound = new Media(new File(file).toURI().toString());
-            MediaPlayer mediaPlayer = new MediaPlayer(sound);
-            mediaPlayer.play();
-
-        };
-        runnable.run();
+//        Runnable runnable = () -> {
+//            String file = "click.mp3";
+//            Media sound = new Media(new File(file).toURI().toString());
+//            MediaPlayer mediaPlayer = new MediaPlayer(sound);
+//            mediaPlayer.play();
+//
+//        };
+//        runnable.run();
     }
 }

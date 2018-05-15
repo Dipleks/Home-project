@@ -5,6 +5,7 @@ import ghostInter.interfaceRoot.EffectFont;
 import ghostInter.interfaceRoot.Root;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Cursor;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
@@ -24,7 +25,7 @@ public class FillingColumns implements Root
     private String m;
 
     private Exercise text = new Exercise();
-    private AddExercise.Exam exam = new AddExercise.Exam();
+    private Exam exam = new Exam();
 
     private String methRu(int a, int b){
         switch (m) {
@@ -100,6 +101,7 @@ public class FillingColumns implements Root
                 arrayOfOffersLeft[i].setText(methEn(i, START));
 
                 int finalI = i;
+                arrayOfOffersLeft[i].setCursor(Cursor.HAND);
                 arrayOfOffersLeft[i].setOnMouseClicked(event -> {
                     Runnable r = this::soundClick;
                     r.run();
@@ -137,7 +139,7 @@ public class FillingColumns implements Root
                 arrayOfOffersRight[i].setText(methEn(i, CLOSE));
 
                 int finalI = i;
-
+                arrayOfOffersRight[i].setCursor(Cursor.HAND);
                 arrayOfOffersRight[i].setOnMouseClicked(event -> {
                     Runnable r = this::soundClick;
                     r.run();
@@ -173,6 +175,7 @@ public class FillingColumns implements Root
                 arrayOfOffersLeft[i].setWrapText(true);
                 arrayOfOffersLeft[i].setText(methRu(i, START));
                 int finalI = i;
+                arrayOfOffersLeft[i].setCursor(Cursor.HAND);
                 arrayOfOffersLeft[i].setOnMouseClicked(event -> {
                     Runnable r = this::soundClick;
                     r.run();
@@ -208,6 +211,7 @@ public class FillingColumns implements Root
                 arrayOfOffersRight[i].setWrapText(true);
                 arrayOfOffersRight[i].setText(methRu(i, CLOSE));
                 int finalI = i;
+                arrayOfOffersRight[i].setCursor(Cursor.HAND);
                 arrayOfOffersRight[i].setOnMouseClicked(event -> {
                     Runnable r = this::soundClick;
                     r.run();
@@ -242,6 +246,7 @@ public class FillingColumns implements Root
                 arrayOfOffersExam[i].setPrefWidth(widthSize-widthSize/2.45);
                 arrayOfOffersExam[i].setWrapText(true);
                 arrayOfOffersExam[i].setText(methRu(i, START));
+                arrayOfOffersExam[i].setCursor(Cursor.HAND);
 
                 correctly[i] = new Label();
                 correctly[i].setFont(EffectFont.fontTextExam);
@@ -272,6 +277,7 @@ public class FillingColumns implements Root
 //                    number[i].setStyle("-fx-border-color: RED");
                 number[i].setPrefWidth(widthSize-widthSize/1.45);
                 number[i].setAlignment(Pos.CENTER);
+                number[i].setCursor(Cursor.HAND);
                 number[i].setText("-"+(i+1+START)+"-");
                 int finalI = i;
                 number[i].setOnMouseClicked(ev -> {
