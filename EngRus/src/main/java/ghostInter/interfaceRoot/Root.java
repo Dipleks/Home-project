@@ -1,5 +1,6 @@
 package ghostInter.interfaceRoot;
 
+import ghostInter.StartEnRu;
 import ghostInter.control.AddExercise;
 import javafx.concurrent.Task;
 import javafx.scene.Group;
@@ -10,11 +11,18 @@ import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Screen;
+import javafx.stage.Stage;
 
+import javax.sound.sampled.*;
 import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
+
+import static javax.sound.sampled.AudioSystem.getAudioInputStream;
 
 public interface Root
 {
+    Stage WINDOW = new Stage();
     Screen SCREEN = Screen.getPrimary();
     double widthSize = SCREEN.getBounds().getWidth();
     double heightSize = SCREEN.getBounds().getHeight();
@@ -91,13 +99,14 @@ public interface Root
             addExercise.AddMenuButtonExamToBe();
         }
     }
-    default void soundClick(){
+    default void soundClick() {
+
+        // TODO делаем код для клика;
 //        Runnable runnable = () -> {
-//            String file = "click.mp3";
+//            String file = "resources/click.mp3";
 //            Media sound = new Media(new File(file).toURI().toString());
 //            MediaPlayer mediaPlayer = new MediaPlayer(sound);
 //            mediaPlayer.play();
-//
 //        };
 //        runnable.run();
     }

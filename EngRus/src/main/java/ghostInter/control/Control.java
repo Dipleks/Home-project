@@ -6,6 +6,7 @@ import ghostInter.interfaceRoot.Root;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
+import javafx.scene.layout.Border;
 import javafx.scene.layout.HBox;
 
 public class Control implements Root
