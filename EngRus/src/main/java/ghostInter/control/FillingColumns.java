@@ -1,5 +1,6 @@
 package ghostInter.control;
 
+import db.TableDB;
 import ghostInter.interfaceRoot.EffectColor;
 import ghostInter.interfaceRoot.EffectFont;
 import ghostInter.interfaceRoot.Root;
@@ -8,12 +9,10 @@ import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 
-import java.io.File;
+import java.sql.*;
 
-public class FillingColumns implements Root
+public class FillingColumns implements Root, TableDB
 {
     private Label[] arrayOfOffersLeft;
     private Label[] arrayOfOffersRight;
@@ -23,6 +22,9 @@ public class FillingColumns implements Root
     private int START;
     private int CLOSE;
     private String m;
+
+    private Label[] labels1 = new Label[500];
+    private Label[] labels2 = new Label[500];
 
     private Exercise text = new Exercise();
     private Exam exam = new Exam();
@@ -52,6 +54,9 @@ public class FillingColumns implements Root
                 return exam.getExamEnToBe().get(a + b);
         }
         return "No files";
+    }
+
+    public FillingColumns() {
     }
 
     public FillingColumns(Label[] arrayOfOffersLeft, Label[] arrayOfOffersRight, int START, int CLOSE, String m)
@@ -329,5 +334,108 @@ public class FillingColumns implements Root
             ROOT.getChildren().addAll(examPane, vBox);
         };
         runnable1.run();
+    }
+
+    // Добавление Базы данных, меню "Мои слова":
+    public void getMyWordsList(){
+        getMyWordsColumnLab();
+    }
+    private void getMyWordsColumnLab() {
+            Runnable runnable = () -> {
+                restartTable();
+
+        // TODO определить переход по меню и обратно!
+
+                rightC.getChildren().addAll();
+                rightC.setPrefWidth(widthSize - widthSize / 1.3);
+                rightC.setStyle("-fx-border-color: RED");
+                leftC.getChildren().addAll();
+                leftC.setPrefWidth(widthSize - widthSize / 1.3);
+                leftC.setStyle("-fx-border-color: RED");
+                groupMy.setSpacing(20);
+                groupMy.getChildren().addAll(rightC, leftC);
+
+                addElement.setStyle("-fx-border-color: RED");
+                addElement.setLayoutX(widthSize - widthSize / 1.25);
+                addElement.setLayoutY(heightSize - heightSize / 1.16);
+                addElement.setPrefSize(widthSize / 1.8, heightSize / 1.5);
+                addElement.setSpacing(10);
+
+                textMy.setPrefSize(widthSize / 1.8, heightSize / 1.6);
+                textMy.setContent(groupMy);
+
+                textEn.setPrefWidth(widthSize - widthSize / 1.3);
+                textRu.setPrefWidth(widthSize - widthSize / 1.3);
+                addTextAndButton.setSpacing(20);
+                addTextAndButton.getChildren().addAll(textEn, textRu, addWords);
+
+                addElement.getChildren().addAll(addTextAndButton, textMy);
+
+                ROOT.getChildren().addAll(addElement);
+            };
+            runnable.run();
+    }
+    private void addWordsButton(){
+        addWords.setOnAction(e -> {
+            try {
+                Connection connection1 =  DriverManager.getConnection(DB_URL +db, USER, PASS);
+                Statement statement1 = connection1.createStatement();
+                statement1.executeUpdate("INSERT INTO my_words (word_en, word_ru) VALUES ('" + textEn.getText()
+                        +"', '"+ textRu.getText() +"')");
+                ResultSet r = statement1.executeQuery("SELECT word_ru FROM my_words");
+                for (int i = 0; r.next(); i++) {
+                    leftC.getChildren().remove(labels1[i]);
+                    rightC.getChildren().remove(labels2[i]);
+                }
+                restartTable();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        });
+    }
+    private void restartTable(){
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection(DB_URL + db, USER, PASS);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            Statement stmt = connection.createStatement();
+            Statement stmt2 = connection.createStatement();
+            Statement stmt3 = connection.createStatement();
+            stmt3.executeUpdate(my_words);
+            ResultSet rs = stmt.executeQuery("SELECT word_ru FROM my_words ORDER BY id;"); //sql запрос
+            ResultSet rs2 = stmt2.executeQuery("SELECT word_en FROM my_words ORDER BY id;"); //sql запрос
+
+            addWordsButton();
+
+            for (int i = 0; rs.next(); i++) {
+                rs2.next();
+                labels1[i] = new Label();
+                labels2[i] = new Label();
+                labels1[i].setText(rs.getString("word_ru"));
+                labels2[i].setText(rs2.getString("word_en"));
+                leftC.getChildren().addAll(labels1[i]);
+                rightC.getChildren().addAll(labels2[i]);
+            }
+            rs.close();
+            rs2.close();
+            stmt.close();
+            stmt2.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

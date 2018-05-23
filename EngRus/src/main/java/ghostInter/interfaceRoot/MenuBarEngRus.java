@@ -1,6 +1,7 @@
 package ghostInter.interfaceRoot;
 
 import ghostInter.control.AddExercise;
+import ghostInter.control.FillingColumns;
 import ghostInter.texts.TextLevelOne;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -20,6 +21,7 @@ public class MenuBarEngRus implements Root
     private final Menu menuExams = new Menu("Контрольные");
     private final Menu menuTexts = new Menu("Тексты");
     private final MenuItem menuPS = new MenuItem("Present Simple");
+    private final MenuItem menu_my_words = new MenuItem("Мои слова");
     private final MenuItem examPS = new MenuItem("Контрольная PS");
     private final MenuItem menuToBe = new MenuItem("Форма \"to be\"");
     private final MenuItem examToBe = new MenuItem("Контрольная \"to be\"");
@@ -40,6 +42,7 @@ public class MenuBarEngRus implements Root
     private MenuBar getMenuBar(){
 
         getMenuPS();
+        getMenu_my_words();
         getExamPS();
         getAbout();
         getMenuToBe();
@@ -52,11 +55,23 @@ public class MenuBarEngRus implements Root
         menuTexts.getItems().addAll(textsLevelOne);
         menuSetting.getItems().addAll(menuWHITE, menuBLACK);
         menuServes.getItems().addAll(menuSetting, about);
-        menuExercise.getItems().addAll(menuPS, menuToBe);
+        menuExercise.getItems().addAll(menuPS, menuToBe, menu_my_words);
         menuExams.getItems().addAll(examPS, examToBe);
         menuBar.getMenus().addAll(menuExercise, menuExams, menuTexts, menuHelp, menuServes);
 
         return menuBar;
+    }
+    private void getMenu_my_words(){
+
+        // TODO сделать меню не доступным если была нажата клавиша "использовать без БД"!
+
+        menu_my_words.setOnAction(event -> {
+            clearMethod();
+            MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
+            menuBarEngRus.getMenu();
+            FillingColumns fillingColumns = new FillingColumns();
+            fillingColumns.getMyWordsList();
+        });
     }
     private void getMenuPS(){
         menuPS.setOnAction(event -> {

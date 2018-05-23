@@ -6,6 +6,7 @@ import javafx.concurrent.Task;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
@@ -27,6 +28,16 @@ public interface Root
     double widthSize = SCREEN.getBounds().getWidth();
     double heightSize = SCREEN.getBounds().getHeight();
 
+    Label showTextOne = new Label();
+    Label showTextTwo = new Label();
+    VBox showDB = new VBox();
+    HBox showNoDB = new HBox();
+    BorderPane rootShowDB = new BorderPane();
+    Stage showStageDB = new Stage();
+    Scene showSceneDB = new Scene(rootShowDB, 450, 200);
+    Button yesDB = new Button("Да, создать!");
+    Button noDB = new Button("Использовать без БД!");
+
     Group ROOT = new Group();
     Scene SCENE_ROOT = new Scene(ROOT, widthSize*0.95, heightSize*0.95, EffectColor.colorScene);
 
@@ -38,6 +49,17 @@ public interface Root
     HBox groupRadBut = new HBox();
     HBox groupExam = new HBox();
     VBox groupText = new VBox();
+
+    // Menu_my_words
+    VBox leftC = new VBox();
+    VBox rightC = new VBox();
+    HBox groupMy = new HBox();
+    VBox addElement = new VBox();
+    HBox addTextAndButton = new HBox();
+    ScrollPane textMy = new ScrollPane();
+    TextField textEn = new TextField();
+    TextField textRu = new TextField();
+    Button addWords = new Button("Добавить");
 
     // About - MenuBarEngRus
     TextField improve = new TextField();

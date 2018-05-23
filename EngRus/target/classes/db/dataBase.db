@@ -1,0 +1,6 @@
+--создаем БД:
+CREATE DATABASE text_proposal;
+
+--создаем таблицу своих слов:
+CREATE TABLE IF NOT EXISTS my_words
+(id SERIAL PRIMARY KEY, word_en TEXT, word_ru TEXT);
