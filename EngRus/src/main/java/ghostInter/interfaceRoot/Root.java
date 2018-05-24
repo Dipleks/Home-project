@@ -59,7 +59,9 @@ public interface Root
     ScrollPane textMy = new ScrollPane();
     TextField textEn = new TextField();
     TextField textRu = new TextField();
+    TextField textSearch = new TextField();
     Button addWords = new Button("Добавить");
+    Button searchWords = new Button("Поиск");
 
     // About - MenuBarEngRus
     TextField improve = new TextField();
@@ -83,6 +85,11 @@ public interface Root
         ROOT.getChildren().addAll(groupRadBut);
     }
     default void clearMethod(){
+        leftC.getChildren().clear();
+        rightC.getChildren().clear();
+        groupMy.getChildren().clear();
+        addElement.getChildren().clear();
+        addTextAndButton.getChildren().clear();
         leftColumn.getChildren().clear();
         rightColumn.getChildren().clear();
         groupRadBut.getChildren().clear();
