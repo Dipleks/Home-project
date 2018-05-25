@@ -3,11 +3,14 @@ package ghostInter.control;
 import db.TableDB;
 import ghostInter.interfaceRoot.EffectColor;
 import ghostInter.interfaceRoot.EffectFont;
+import ghostInter.interfaceRoot.MenuBarEngRus;
 import ghostInter.interfaceRoot.Root;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
+import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.Tooltip;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
@@ -96,245 +99,225 @@ public class FillingColumns implements Root, TableDB
     }
 
     private void getLeftColumnLabEn() {
-        Runnable runnable1 = () -> {
-            for (int i = 0; i < arrayOfOffersLeft.length; i++) {
-                arrayOfOffersLeft[i] = new Label();
-                arrayOfOffersLeft[i].setFont(EffectFont.fontText);
-                arrayOfOffersLeft[i].setTextFill(EffectColor.colorText);
-//              arrayOfOffersLeft[i].setStyle("-fx-border-color: RED");
-                arrayOfOffersLeft[i].setPrefWidth(widthSize-widthSize/1.45);
-                arrayOfOffersLeft[i].setWrapText(true);
-                arrayOfOffersLeft[i].setText(methEn(i, START));
+        for (int i = 0; i < arrayOfOffersLeft.length; i++) {
+            arrayOfOffersLeft[i] = new Label();
+            arrayOfOffersLeft[i].setFont(EffectFont.fontText);
+            arrayOfOffersLeft[i].setTextFill(EffectColor.colorText);
+//                arrayOfOffersLeft[i].setStyle("-fx-border-color: RED");
+            arrayOfOffersLeft[i].setPrefWidth(widthSize-widthSize/1.45);
+            arrayOfOffersLeft[i].setWrapText(true);
+            arrayOfOffersLeft[i].setText(methEn(i, START));
 
-                int finalI = i;
-                arrayOfOffersLeft[i].setCursor(Cursor.HAND);
-                arrayOfOffersLeft[i].setOnMouseClicked(event -> {
-                    Runnable r = this::soundClick;
-                    r.run();
-                    if (arrayOfOffersLeft[finalI].getText().equals(methEn(finalI, START))){
-                        arrayOfOffersLeft[finalI].setText(methRu(finalI, START));
-                        arrayOfOffersLeft[finalI].setTextFill(EffectColor.colorTextClick);
-                    } else {
-                        arrayOfOffersLeft[finalI].setText(methEn(finalI, START));
-                        arrayOfOffersLeft[finalI].setTextFill(EffectColor.colorText);
-                    }
-                });
-            }
-//          leftColumn.setStyle("-fx-border-color: RED");
-            leftColumn.setSpacing(heightSize-heightSize/1.009);
-            leftColumn.setLayoutX(widthSize/6);
-            leftColumn.setLayoutY(heightSize-heightSize/1.12);
-            leftColumn.setPadding(new Insets(0, 0, 0, 0));
-            leftColumn.setPrefSize(widthSize/3.2, heightSize/1.25);
-            leftColumn.getChildren().addAll(arrayOfOffersLeft);
+            int finalI = i;
+            arrayOfOffersLeft[i].setCursor(Cursor.HAND);
+            arrayOfOffersLeft[i].setOnMouseClicked(event -> {
+                soundClick();
+                if (arrayOfOffersLeft[finalI].getText().equals(methEn(finalI, START))){
+                    arrayOfOffersLeft[finalI].setText(methRu(finalI, START));
+                    arrayOfOffersLeft[finalI].setTextFill(EffectColor.colorTextClick);
+                } else {
+                    arrayOfOffersLeft[finalI].setText(methEn(finalI, START));
+                    arrayOfOffersLeft[finalI].setTextFill(EffectColor.colorText);
+                }
+            });
+        }
+//            leftColumn.setStyle("-fx-border-color: RED");
+        leftColumn.setSpacing(heightSize-heightSize/1.009);
+        leftColumn.setLayoutX(widthSize/6);
+        leftColumn.setLayoutY(heightSize-heightSize/1.12);
+        leftColumn.setPadding(new Insets(0, 0, 0, 0));
+        leftColumn.setPrefSize(widthSize/3.2, heightSize/1.25);
+        leftColumn.getChildren().addAll(arrayOfOffersLeft);
 
-            ROOT.getChildren().addAll(leftColumn);
-        };
-        runnable1.run();
+        ROOT.getChildren().addAll(leftColumn);
     }
     private void getRightColumnLabEn() {
-        Runnable runnable2 = () -> {
-            for (int i = 0; i < arrayOfOffersRight.length; i++) {
-                arrayOfOffersRight[i] = new Label();
-                arrayOfOffersRight[i].setFont(EffectFont.fontText);
-                arrayOfOffersRight[i].setTextFill(EffectColor.colorText);
-//              arrayOfOffersRight[i].setStyle("-fx-border-color: RED");
-                arrayOfOffersRight[i].setPrefWidth(widthSize-widthSize/1.45);
-                arrayOfOffersRight[i].setWrapText(true);
+        for (int i = 0; i < arrayOfOffersRight.length; i++) {
+            arrayOfOffersRight[i] = new Label();
+            arrayOfOffersRight[i].setFont(EffectFont.fontText);
+            arrayOfOffersRight[i].setTextFill(EffectColor.colorText);
+//                arrayOfOffersRight[i].setStyle("-fx-border-color: RED");
+            arrayOfOffersRight[i].setPrefWidth(widthSize-widthSize/1.45);
+            arrayOfOffersRight[i].setWrapText(true);
 
-                arrayOfOffersRight[i].setText(methEn(i, CLOSE));
+            arrayOfOffersRight[i].setText(methEn(i, CLOSE));
 
-                int finalI = i;
-                arrayOfOffersRight[i].setCursor(Cursor.HAND);
-                arrayOfOffersRight[i].setOnMouseClicked(event -> {
-                    Runnable r = this::soundClick;
-                    r.run();
-                    if (arrayOfOffersRight[finalI].getText().equals(methEn(finalI, CLOSE))){
-                        arrayOfOffersRight[finalI].setText(methRu(finalI, CLOSE));
-                        arrayOfOffersRight[finalI].setTextFill(EffectColor.colorTextClick);
-                    } else {
-                        arrayOfOffersRight[finalI].setText(methEn(finalI, CLOSE));
-                        arrayOfOffersRight[finalI].setTextFill(EffectColor.colorText);
-                    }
-                });
-            }
+            int finalI = i;
+            arrayOfOffersRight[i].setCursor(Cursor.HAND);
+            arrayOfOffersRight[i].setOnMouseClicked(event -> {
+                Runnable r = this::soundClick;
+                r.run();
+                if (arrayOfOffersRight[finalI].getText().equals(methEn(finalI, CLOSE))){
+                    arrayOfOffersRight[finalI].setText(methRu(finalI, CLOSE));
+                    arrayOfOffersRight[finalI].setTextFill(EffectColor.colorTextClick);
+                } else {
+                    arrayOfOffersRight[finalI].setText(methEn(finalI, CLOSE));
+                    arrayOfOffersRight[finalI].setTextFill(EffectColor.colorText);
+                }
+            });
+        }
 
-//          rightColumn.setStyle("-fx-border-color: RED");
-            rightColumn.setLayoutX(widthSize/1.9);
-            rightColumn.setLayoutY(heightSize-heightSize/1.12);
-            rightColumn.setSpacing(heightSize-heightSize/1.009);
-            rightColumn.setPadding(new Insets(0, 0, 0, 0));
-            rightColumn.setPrefSize(widthSize/3.2, heightSize/1.25);
-            rightColumn.getChildren().addAll(arrayOfOffersRight);
-            ROOT.getChildren().addAll(rightColumn);
-        };
-        runnable2.run();
+//            rightColumn.setStyle("-fx-border-color: RED");
+        rightColumn.setLayoutX(widthSize/1.9);
+        rightColumn.setLayoutY(heightSize-heightSize/1.12);
+        rightColumn.setSpacing(heightSize-heightSize/1.009);
+        rightColumn.setPadding(new Insets(0, 0, 0, 0));
+        rightColumn.setPrefSize(widthSize/3.2, heightSize/1.25);
+        rightColumn.getChildren().addAll(arrayOfOffersRight);
+        ROOT.getChildren().addAll(rightColumn);
     }
     private void getLeftColumnLabRu() {
-        Runnable runnable1 = () -> {
-            for (int i = 0; i < arrayOfOffersLeft.length; i++) {
-                arrayOfOffersLeft[i] = new Label();
-                arrayOfOffersLeft[i].setFont(EffectFont.fontText);
-                arrayOfOffersLeft[i].setTextFill(EffectColor.colorText);
-//              arrayOfOffersLeft[i].setStyle("-fx-border-color: RED");
-                arrayOfOffersLeft[i].setPrefWidth(widthSize-widthSize/1.45);
-                arrayOfOffersLeft[i].setWrapText(true);
-                arrayOfOffersLeft[i].setText(methRu(i, START));
-                int finalI = i;
-                arrayOfOffersLeft[i].setCursor(Cursor.HAND);
-                arrayOfOffersLeft[i].setOnMouseClicked(event -> {
-                    Runnable r = this::soundClick;
-                    r.run();
-                    if (arrayOfOffersLeft[finalI].getText().equals(methRu(finalI, START))){
-                        arrayOfOffersLeft[finalI].setText(methEn(finalI, START));
-                        arrayOfOffersLeft[finalI].setTextFill(EffectColor.colorTextClick);
-                    } else {
-                        arrayOfOffersLeft[finalI].setText(methRu(finalI, START));
-                        arrayOfOffersLeft[finalI].setTextFill(EffectColor.colorText);
-                    }
-                });
-            }
+        for (int i = 0; i < arrayOfOffersLeft.length; i++) {
+            arrayOfOffersLeft[i] = new Label();
+            arrayOfOffersLeft[i].setFont(EffectFont.fontText);
+            arrayOfOffersLeft[i].setTextFill(EffectColor.colorText);
+//            arrayOfOffersLeft[i].setStyle("-fx-border-color: RED");
+            arrayOfOffersLeft[i].setPrefWidth(widthSize-widthSize/1.45);
+            arrayOfOffersLeft[i].setWrapText(true);
+            arrayOfOffersLeft[i].setText(methRu(i, START));
+            int finalI = i;
+            arrayOfOffersLeft[i].setCursor(Cursor.HAND);
+            arrayOfOffersLeft[i].setOnMouseClicked(event -> {
+                soundClick();
+                if (arrayOfOffersLeft[finalI].getText().equals(methRu(finalI, START))){
+                    arrayOfOffersLeft[finalI].setText(methEn(finalI, START));
+                    arrayOfOffersLeft[finalI].setTextFill(EffectColor.colorTextClick);
+                } else {
+                    arrayOfOffersLeft[finalI].setText(methRu(finalI, START));
+                    arrayOfOffersLeft[finalI].setTextFill(EffectColor.colorText);
+                }
+            });
+        }
 
-//          leftColumn.setStyle("-fx-border-color: RED");
-            leftColumn.setSpacing(heightSize-heightSize/1.009);
-            leftColumn.setLayoutX(widthSize/6);
-            leftColumn.setLayoutY(heightSize-heightSize/1.12);
-            leftColumn.setPadding(new Insets(0, 0, 0, 0));
-            leftColumn.setPrefSize(widthSize/3.2, heightSize/1.25);
-            leftColumn.getChildren().addAll(arrayOfOffersLeft);
-            ROOT.getChildren().addAll(leftColumn);
-        };
-        runnable1.run();
+//        leftColumn.setStyle("-fx-border-color: RED");
+        leftColumn.setSpacing(heightSize-heightSize/1.009);
+        leftColumn.setLayoutX(widthSize/6);
+        leftColumn.setLayoutY(heightSize-heightSize/1.12);
+        leftColumn.setPadding(new Insets(0, 0, 0, 0));
+        leftColumn.setPrefSize(widthSize/3.2, heightSize/1.25);
+        leftColumn.getChildren().addAll(arrayOfOffersLeft);
+        ROOT.getChildren().addAll(leftColumn);
     }
     private void getRightColumnLabRu() {
-        Runnable runnable2 = () -> {
-            for (int i = 0; i < arrayOfOffersRight.length; i++) {
-                arrayOfOffersRight[i] = new Label();
-                arrayOfOffersRight[i].setFont(EffectFont.fontText);
-                arrayOfOffersRight[i].setTextFill(EffectColor.colorText);
-//                        arrayOfOffersRight[i].setStyle("-fx-border-color: RED");
-                arrayOfOffersRight[i].setPrefWidth(widthSize-widthSize/1.45);
-                arrayOfOffersRight[i].setWrapText(true);
-                arrayOfOffersRight[i].setText(methRu(i, CLOSE));
-                int finalI = i;
-                arrayOfOffersRight[i].setCursor(Cursor.HAND);
-                arrayOfOffersRight[i].setOnMouseClicked(event -> {
-                    Runnable r = this::soundClick;
-                    r.run();
-                    if (arrayOfOffersRight[finalI].getText().equals(methRu(finalI, CLOSE))){
-                        arrayOfOffersRight[finalI].setText(methEn(finalI, CLOSE));
-                        arrayOfOffersRight[finalI].setTextFill(EffectColor.colorTextClick);
-                    } else {
-                        arrayOfOffersRight[finalI].setText(methRu(finalI, CLOSE));
-                        arrayOfOffersRight[finalI].setTextFill(EffectColor.colorText);
-                    }
-                });
-            }
+        for (int i = 0; i < arrayOfOffersRight.length; i++) {
+            arrayOfOffersRight[i] = new Label();
+            arrayOfOffersRight[i].setFont(EffectFont.fontText);
+            arrayOfOffersRight[i].setTextFill(EffectColor.colorText);
+//            arrayOfOffersRight[i].setStyle("-fx-border-color: RED");
+            arrayOfOffersRight[i].setPrefWidth(widthSize-widthSize/1.45);
+            arrayOfOffersRight[i].setWrapText(true);
+            arrayOfOffersRight[i].setText(methRu(i, CLOSE));
+            int finalI = i;
+            arrayOfOffersRight[i].setCursor(Cursor.HAND);
+            arrayOfOffersRight[i].setOnMouseClicked(event -> {
+                soundClick();
+                if (arrayOfOffersRight[finalI].getText().equals(methRu(finalI, CLOSE))){
+                    arrayOfOffersRight[finalI].setText(methEn(finalI, CLOSE));
+                    arrayOfOffersRight[finalI].setTextFill(EffectColor.colorTextClick);
+                } else {
+                    arrayOfOffersRight[finalI].setText(methRu(finalI, CLOSE));
+                    arrayOfOffersRight[finalI].setTextFill(EffectColor.colorText);
+                }
+            });
+        }
 
-//                rightColumn.setStyle("-fx-border-color: RED");
-            rightColumn.setLayoutX(widthSize/1.9);
-            rightColumn.setLayoutY(heightSize-heightSize/1.12);
-            rightColumn.setSpacing(heightSize-heightSize/1.009);
-            rightColumn.setPadding(new Insets(0, 0, 0, 0));
-            rightColumn.setPrefSize(widthSize/3.2, heightSize/1.25);
-            rightColumn.getChildren().addAll(arrayOfOffersRight);
-            ROOT.getChildren().addAll(rightColumn);
-        };
-        runnable2.run();
+//        rightColumn.setStyle("-fx-border-color: RED");
+        rightColumn.setLayoutX(widthSize/1.9);
+        rightColumn.setLayoutY(heightSize-heightSize/1.12);
+        rightColumn.setSpacing(heightSize-heightSize/1.009);
+        rightColumn.setPadding(new Insets(0, 0, 0, 0));
+        rightColumn.setPrefSize(widthSize/3.2, heightSize/1.25);
+        rightColumn.getChildren().addAll(arrayOfOffersRight);
+        ROOT.getChildren().addAll(rightColumn);
     }
     private void getExamColumnLab() {
-        Runnable runnable1 = () -> {
-            for (int i = 0; i < arrayOfOffersExam.length; i++) {
-                arrayOfOffersExam[i] = new Label();
-                arrayOfOffersExam[i].setFont(EffectFont.fontTextExam);
-                arrayOfOffersExam[i].setTextFill(EffectColor.colorText);
+        for (int i = 0; i < arrayOfOffersExam.length; i++) {
+            arrayOfOffersExam[i] = new Label();
+            arrayOfOffersExam[i].setFont(EffectFont.fontTextExam);
+            arrayOfOffersExam[i].setTextFill(EffectColor.colorText);
 //                        arrayOfOffersExam[i].setStyle("-fx-border-color: RED");
-                arrayOfOffersExam[i].setPrefWidth(widthSize-widthSize/2.45);
-                arrayOfOffersExam[i].setWrapText(true);
-                arrayOfOffersExam[i].setText(methRu(i, START));
-                arrayOfOffersExam[i].setCursor(Cursor.HAND);
+            arrayOfOffersExam[i].setPrefWidth(widthSize-widthSize/2.45);
+            arrayOfOffersExam[i].setWrapText(true);
+            arrayOfOffersExam[i].setText(methRu(i, START));
+            arrayOfOffersExam[i].setCursor(Cursor.HAND);
 
-                correctly[i] = new Label();
-                correctly[i].setFont(EffectFont.fontTextExam);
+            correctly[i] = new Label();
+            correctly[i].setFont(EffectFont.fontTextExam);
 //              correctly[i].setStyle("-fx-border-color: RED");
-                correctly[i].setPrefWidth(widthSize-widthSize/1.45);
-                correctly[i].setAlignment(Pos.BASELINE_RIGHT);
+            correctly[i].setPrefWidth(widthSize-widthSize/1.45);
+            correctly[i].setAlignment(Pos.BASELINE_RIGHT);
 
-                int finalI = i;
-                arrayOfOffersExam[i].setOnMouseClicked(event -> {
-                    Runnable r = this::soundClick;
-                    r.run();
-                    if (improve.getText().equalsIgnoreCase(methEn(finalI, START))){
-                        arrayOfOffersExam[finalI].setTextFill(EffectColor.colorTextClick);
-                        correctly[finalI].setText("ВЕРНО!!!");
-                        correctly[finalI].setTextFill(EffectColor.colorTextClick);
-                    } else {
-                        arrayOfOffersExam[finalI].setTextFill(EffectColor.colorTextClickRED);
-                        correctly[finalI].setText("НЕ ВЕРНО!!!");
-                        correctly[finalI].setTextFill(EffectColor.colorTextClickRED);
-                    }
-                });
+            int finalI = i;
+            arrayOfOffersExam[i].setOnMouseClicked(event -> {
+                soundClick();
+                if (improve.getText().equalsIgnoreCase(methEn(finalI, START))){
+                    arrayOfOffersExam[finalI].setTextFill(EffectColor.colorTextClick);
+                    correctly[finalI].setText("ВЕРНО!!!");
+                    correctly[finalI].setTextFill(EffectColor.colorTextClick);
+                } else {
+                    arrayOfOffersExam[finalI].setTextFill(EffectColor.colorTextClickRED);
+                    correctly[finalI].setText("НЕ ВЕРНО!!!");
+                    correctly[finalI].setTextFill(EffectColor.colorTextClickRED);
+                }
+            });
 
-            }
-            for (int i = 0; i < number.length; i++) {
-                number[i] = new Label();
-                number[i].setFont(EffectFont.fontTextExam);
-                number[i].setTextFill(EffectColor.colorTitle);
+        }
+        for (int i = 0; i < number.length; i++) {
+            number[i] = new Label();
+            number[i].setFont(EffectFont.fontTextExam);
+            number[i].setTextFill(EffectColor.colorTitle);
 //                    number[i].setStyle("-fx-border-color: RED");
-                number[i].setPrefWidth(widthSize-widthSize/1.45);
-                number[i].setAlignment(Pos.CENTER);
-                number[i].setCursor(Cursor.HAND);
-                number[i].setText("-"+(i+1+START)+"-");
-                int finalI = i;
-                number[i].setOnMouseClicked(ev -> {
-                    Runnable r = this::soundClick;
-                    r.run();
-                    if (arrayOfOffersExam[finalI].getText().equals(methRu(finalI, START))){
-                        arrayOfOffersExam[finalI].setText(methEn(finalI, START));
-                        arrayOfOffersExam[finalI].setTextFill(EffectColor.colorTextImpr);
-                    }
-                });
-            }
+            number[i].setPrefWidth(widthSize-widthSize/1.45);
+            number[i].setAlignment(Pos.CENTER);
+            number[i].setCursor(Cursor.HAND);
+            number[i].setText("-"+(i+1+START)+"-");
+            int finalI = i;
+            number[i].setOnMouseClicked(ev -> {
+                soundClick();
+                if (arrayOfOffersExam[finalI].getText().equals(methRu(finalI, START))){
+                    arrayOfOffersExam[finalI].setText(methEn(finalI, START));
+                    arrayOfOffersExam[finalI].setTextFill(EffectColor.colorTextImpr);
+                }
+            });
+        }
 
 //          numberColumn.setStyle("-fx-border-color: RED");
-            numberColumn.setSpacing(heightSize-heightSize/1.009);
-            numberColumn.setPadding(new Insets(0, 0, 0, 0));
-            numberColumn.setPrefSize(widthSize/25, heightSize/1.25);
-            numberColumn.getChildren().addAll(number);
+        numberColumn.setSpacing(heightSize-heightSize/1.009);
+        numberColumn.setPadding(new Insets(0, 0, 0, 0));
+        numberColumn.setPrefSize(widthSize/25, heightSize/1.25);
+        numberColumn.getChildren().addAll(number);
 
 //          iprColumn.setStyle("-fx-border-color: RED");
-            iprColumn.setSpacing(heightSize-heightSize/1.009);
-            iprColumn.setPadding(new Insets(0, 0, 0, 0));
-            iprColumn.setPrefSize(widthSize/11, heightSize/1.25);
-            iprColumn.getChildren().addAll(correctly);
+        iprColumn.setSpacing(heightSize-heightSize/1.009);
+        iprColumn.setPadding(new Insets(0, 0, 0, 0));
+        iprColumn.setPrefSize(widthSize/11, heightSize/1.25);
+        iprColumn.getChildren().addAll(correctly);
 
 //          leftColumn.setStyle("-fx-border-color: RED");
-            leftColumn.setSpacing(heightSize-heightSize/1.009);
-            leftColumn.setPadding(new Insets(0, 0, 0, 0));
-            leftColumn.setPrefSize(widthSize/2.5, heightSize/1.25);
-            leftColumn.getChildren().addAll(arrayOfOffersExam);
+        leftColumn.setSpacing(heightSize-heightSize/1.009);
+        leftColumn.setPadding(new Insets(0, 0, 0, 0));
+        leftColumn.setPrefSize(widthSize/2.5, heightSize/1.25);
+        leftColumn.getChildren().addAll(arrayOfOffersExam);
 
-            groupExam.setSpacing(heightSize-heightSize/1.009);
-            groupExam.getChildren().addAll(numberColumn, leftColumn, iprColumn);
+        groupExam.setSpacing(heightSize-heightSize/1.009);
+        groupExam.getChildren().addAll(numberColumn, leftColumn, iprColumn);
 
-            examPane.setContent(groupExam);
+        examPane.setContent(groupExam);
 //          examPane.setStyle("-fx-border-color: RED");
-            examPane.setLayoutX(widthSize - widthSize / 1.25);
-            examPane.setLayoutY(heightSize - heightSize / 1.16);
-            examPane.setPrefSize(widthSize / 1.8, heightSize / 1.5);
+        examPane.setLayoutX(widthSize - widthSize / 1.25);
+        examPane.setLayoutY(heightSize - heightSize / 1.16);
+        examPane.setPrefSize(widthSize / 1.8, heightSize / 1.5);
 
-            VBox vBox = new VBox();
-            improve.setPrefWidth(widthSize/3);
-            improveClick1.setAlignment(Pos.CENTER);
-            improveClick1.setTextFill(EffectColor.colorTextClickPERU);
-            vBox.getChildren().addAll(improveClick1, improve);
-            vBox.setSpacing(heightSize-heightSize/1.009);
-            vBox.setLayoutX(widthSize-widthSize/1.4);
-            vBox.setLayoutY(heightSize-heightSize/1.05);
+        VBox vBox = new VBox();
+        improve.setPrefWidth(widthSize/3);
+        improveClick1.setAlignment(Pos.CENTER);
+        improveClick1.setTextFill(EffectColor.colorTextClickPERU);
+        vBox.getChildren().addAll(improveClick1, improve);
+        vBox.setSpacing(heightSize-heightSize/1.009);
+        vBox.setLayoutX(widthSize-widthSize/1.4);
+        vBox.setLayoutY(heightSize-heightSize/1.05);
 
-            ROOT.getChildren().addAll(examPane, vBox);
-        };
-        runnable1.run();
+        ROOT.getChildren().addAll(examPane, vBox);
     }
 
     // Добавление Базы данных, меню "Мои слова":
@@ -342,95 +325,99 @@ public class FillingColumns implements Root, TableDB
         getMyWordsColumnLab();
     }
     private void getMyWordsColumnLab() {
-            Runnable runnable = () -> {
-                restartMyWordsTable();
+        restartMyWordsTable();
+//        deleteMyWords();
 
-                rightC.getChildren().addAll();
-                rightC.setSpacing(7);
-                rightC.setPrefWidth(widthSize - widthSize / 1.3);
+        rightC.getChildren().addAll();
+        rightC.setSpacing(7);
+        rightC.setPrefWidth(widthSize - widthSize / 1.3);
 //                rightC.setStyle("-fx-border-color: RED");
-                leftC.getChildren().addAll();
-                leftC.setSpacing(7);
-                leftC.setPadding(new Insets(0, 30, 0, 0));
-                leftC.setPrefWidth(widthSize - widthSize / 1.3);
+        leftC.getChildren().addAll();
+        leftC.setSpacing(7);
+        leftC.setPadding(new Insets(0, 30, 0, 0));
+        leftC.setPrefWidth(widthSize - widthSize / 1.3);
 //                leftC.setStyle("-fx-border-color: RED");
-                groupMy.setSpacing(20);
-                groupMy.getChildren().addAll(leftC, rightC);
+        groupMy.setSpacing(20);
+        groupMy.getChildren().addAll(leftC, rightC);
 
 //                addElement.setStyle("-fx-border-color: RED");
-                addElement.setLayoutX(widthSize - widthSize / 1.25);
-                addElement.setLayoutY(heightSize - heightSize / 1.16);
-                addElement.setPrefSize(widthSize / 1.8, heightSize / 1.5);
-                addElement.setSpacing(10);
+        addElement.setLayoutX(widthSize - widthSize / 1.25);
+        addElement.setLayoutY(heightSize - heightSize / 1.16);
+        addElement.setPrefSize(widthSize / 1.8, heightSize / 1.5);
+        addElement.setSpacing(10);
 
-                textMy.setPrefSize(widthSize / 1.8, heightSize / 1.6);
-                textMy.setContent(groupMy);
+        textMy.setPrefSize(widthSize / 1.8, heightSize / 1.6);
+        textMy.setContent(groupMy);
 
-                textEn.setPrefWidth(widthSize - widthSize / 1.3);
-                textEn.setPromptText("English");
-                textRu.setPrefWidth(widthSize - widthSize / 1.3);
-                textRu.setPromptText("Русский");
-                addTextAndButton.setSpacing(20);
-                addTextAndButton.getChildren().addAll(textEn, textRu, addWords);
+        textEn.setPrefWidth(widthSize - widthSize / 1.3);
+        textEn.setPromptText("English");
+        textRu.setPrefWidth(widthSize - widthSize / 1.3);
+        textRu.setPromptText("Русский");
+        addTextAndButton.setSpacing(20);
+        addTextAndButton.getChildren().addAll(textEn, textRu, addWords);
 
-                addElement.getChildren().addAll(addTextAndButton, textMy);
+        addElement.getChildren().addAll(addTextAndButton, textMy);
 
-                HBox hBox = new HBox();
-                textSearch.setPrefWidth(widthSize/3);
-                searchWords.setOnAction(e -> {
-                    try {
-                        Connection connection =  DriverManager.getConnection(DB_URL + db, USER, PASS);
-                        Statement statement1 = connection.createStatement();
-                        Statement statement2 = connection.createStatement();
-                        Statement statement3 = connection.createStatement();
-                        ResultSet r1 = statement1.executeQuery("SELECT word_en FROM my_words");
-                        for (int i = 0; r1.next(); i++) {
-                            leftC.getChildren().remove(my_word_en[i]);
-                            rightC.getChildren().remove(my_word_ru[i]);
-                        }
-                        ResultSet r2 = statement2.executeQuery("SELECT * FROM my_words WHERE word_en LIKE '%"+
-                                textSearch.getText()+"%'");
-                        ResultSet r3 = statement3.executeQuery("SELECT * FROM my_words WHERE word_ru LIKE '%"+
-                                textSearch.getText()+"%'");
-                        for (int i = 0; r2.next(); i++) {
-                            my_word_en[i] = new Label();
-                            my_word_en[i].setFont(EffectFont.fontTextExam);
-                            my_word_en[i].setTextFill(EffectColor.colorText);
-                            my_word_en[i].setPrefWidth(widthSize-widthSize/2.45);
+        HBox hBox = new HBox();
+        textSearch.setPrefWidth(widthSize/3);
+        searchWords.setOnAction(e -> {
+            if (textSearch.getText().equals("")){
+                textSearch.setPromptText("Введите букву или слово для поиска...");
+            } else {
+                try {
+                    Connection connection =  DriverManager.getConnection(DB_URL + db, USER, PASS);
+                    Statement statement1 = connection.createStatement();
+                    Statement statement2 = connection.createStatement();
+                    Statement statement3 = connection.createStatement();
+                    ResultSet r1 = statement1.executeQuery("SELECT word_en FROM my_words");
+                    for (int i = 0; r1.next(); i++) {
+                        leftC.getChildren().remove(my_word_en[i]);
+                        rightC.getChildren().remove(my_word_ru[i]);
+                    }
+                    ResultSet r2 = statement2.executeQuery("SELECT * FROM my_words WHERE word_en LIKE '%"+
+                            textSearch.getText()+"%'");
+                    ResultSet r3 = statement3.executeQuery("SELECT * FROM my_words WHERE word_ru LIKE '%"+
+                            textSearch.getText()+"%'");
+                    for (int i = 0; r2.next(); i++) {
+                        my_word_en[i] = new Label();
+                        my_word_en[i].setFont(EffectFont.fontTextExam);
+                        my_word_en[i].setTextFill(EffectColor.colorText);
+                        my_word_en[i].setPrefWidth(widthSize-widthSize/2.45);
 //                            my_word_en[i].setWrapText(true);
 //                            my_word_en[i].setCursor(Cursor.HAND);
-                            my_word_en[i].setText(r2.getString("word_en"));
+                        my_word_en[i].setText(r2.getString("word_en"));
+                        my_word_en[i].setAlignment(Pos.BASELINE_RIGHT);
 
-                            leftC.getChildren().addAll(my_word_en[i]);
-                            rightC.getChildren().addAll(my_word_ru[i]);
-                        }
-                        r2.close();
-                        for (int i = 0; r3.next(); i++) {
-                            my_word_ru[i] = new Label();
-                            my_word_ru[i].setFont(EffectFont.fontTextExam);
-                            my_word_ru[i].setTextFill(EffectColor.colorText);
-                            my_word_ru[i].setPrefWidth(widthSize-widthSize/2.45);
-//                            my_word_ru[i].setWrapText(true);
-//                            my_word_ru[i].setCursor(Cursor.HAND);
-                            my_word_ru[i].setText(r3.getString("word_ru"));
-
-                            leftC.getChildren().addAll(my_word_en[i]);
-                            rightC.getChildren().addAll(my_word_ru[i]);
-                        }
-                        r3.close();
-                    } catch (SQLException e1) {
-                        e1.printStackTrace();
+                        leftC.getChildren().addAll(my_word_en[i]);
+                        rightC.getChildren().addAll(my_word_ru[i]);
                     }
-                });
+                    r2.close();
+                    for (int i = 0; r3.next(); i++) {
+                        my_word_ru[i] = new Label();
+                        my_word_ru[i].setFont(EffectFont.fontTextExam);
+                        my_word_ru[i].setTextFill(EffectColor.colorText);
+                        my_word_ru[i].setPrefWidth(widthSize-widthSize/2.45);
+//                    my_word_ru[i].setWrapText(true);
+//                    my_word_ru[i].setCursor(Cursor.HAND);
+                        my_word_ru[i].setText(r3.getString("word_ru"));
 
-                hBox.getChildren().addAll(textSearch, searchWords);
-                hBox.setSpacing(heightSize-heightSize/1.009);
-                hBox.setLayoutX(widthSize-widthSize/1.4);
-                hBox.setLayoutY(heightSize-heightSize/1.05);
+                        leftC.getChildren().addAll(my_word_en[i]);
+                        rightC.getChildren().addAll(my_word_ru[i]);
+                    }
+                    r3.close();
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
+                }
+            }
 
-                ROOT.getChildren().addAll(addElement, hBox);
-            };
-            runnable.run();
+        });
+
+        hBox.getChildren().addAll(textSearch, searchWords);
+        hBox.setSpacing(heightSize-heightSize/1.009);
+        hBox.setLayoutX(widthSize-widthSize/1.4);
+        hBox.setLayoutY(heightSize-heightSize/1.05);
+
+        ROOT.getChildren().addAll(addElement, hBox);
     }
     private void addNewWords(){
         addWords.setOnAction(e -> {
@@ -476,6 +463,32 @@ public class FillingColumns implements Root, TableDB
 
             for (int i = 0; rs.next(); i++) {
                 rs2.next();
+
+                // Создаем контекстное меню:
+                ContextMenu contextMenuMyWords = new ContextMenu();
+                MenuItem menuDeleteWord = new MenuItem("Удалить");
+                int finalI = i;
+                menuDeleteWord.setOnAction(e -> {
+                    try {
+                        Connection connection5 =  DriverManager.getConnection(DB_URL + db, USER, PASS);
+                        Statement statement5 = connection5.createStatement();
+                        statement5.executeUpdate("DELETE FROM my_words WHERE word_en = '"+ my_word_en[finalI].getText() + "';");
+                        ResultSet r = statement5.executeQuery("SELECT word_en FROM my_words");
+                        for (int j = 0; r.next(); j++) {
+                            leftC.getChildren().remove(my_word_en[j]);
+                            rightC.getChildren().remove(my_word_ru[j]);
+                        }
+                        r.close();
+                        clearMethod();
+                        MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
+                        menuBarEngRus.getMenu();
+                        getMyWordsColumnLab();
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                    }
+                });
+                contextMenuMyWords.getItems().addAll(menuDeleteWord);
+
                 my_word_en[i] = new Label();
 //                my_word_en[i].setStyle("-fx-border-color: RED");
                 my_word_en[i].setFont(EffectFont.fontTextExam);
@@ -485,6 +498,7 @@ public class FillingColumns implements Root, TableDB
 //                my_word_en[i].setWrapText(true);
 //                my_word_en[i].setCursor(Cursor.HAND);
                 my_word_en[i].setText(rs.getString("word_en"));
+                my_word_en[i].setOnContextMenuRequested(e -> contextMenuMyWords.show(my_word_en[finalI], e.getScreenX(), e.getScreenY()));
 
                 my_word_ru[i] = new Label();
 //                my_word_ru[i].setStyle("-fx-border-color: RED");
@@ -494,6 +508,7 @@ public class FillingColumns implements Root, TableDB
 //                my_word_ru[i].setWrapText(true);
 //                my_word_ru[i].setCursor(Cursor.HAND);
                 my_word_ru[i].setText(rs2.getString("word_ru"));
+                my_word_ru[i].setOnContextMenuRequested(e -> contextMenuMyWords.show(my_word_ru[finalI], e.getScreenX(), e.getScreenY()));
                 if (my_word_ru[i].getText().length()>33) {
                     Tooltip tooltip = new Tooltip();
                     tooltip.setWrapText(true);
@@ -501,8 +516,6 @@ public class FillingColumns implements Root, TableDB
                     tooltip.setPrefWidth(widthSize/5);
                     my_word_ru[i].setTooltip(tooltip);
                 }
-                //TODO создать действие по нажантию на правую кнопку мыши
-
                 leftC.getChildren().addAll(my_word_en[i]);
                 rightC.getChildren().addAll(my_word_ru[i]);
             }
