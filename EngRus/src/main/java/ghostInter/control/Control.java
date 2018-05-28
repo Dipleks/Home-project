@@ -10,6 +10,8 @@ import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 
+import java.sql.SQLException;
+
 public class Control implements Root
 {
     private HBox lengthButtonApp = new HBox();
@@ -42,17 +44,35 @@ public class Control implements Root
                 radioBut();
                 enBut.setOnAction(e ->
                 {
-                    clearColumn();
+                    try {
+                        clearColumn();
+                    } catch (SQLException e1) {
+                        e1.printStackTrace();
+                    } catch (ClassNotFoundException e1) {
+                        e1.printStackTrace();
+                    }
                     app[finalI].getLeftEn();
                     app[finalI].getRightEn();
                 });
                 ruBut.setOnAction(e ->
                 {
-                    clearColumn();
+                    try {
+                        clearColumn();
+                    } catch (SQLException e1) {
+                        e1.printStackTrace();
+                    } catch (ClassNotFoundException e1) {
+                        e1.printStackTrace();
+                    }
                     app[finalI].getLeftRu();
                     app[finalI].getRightRu();
                 });
-                exit.setOnAction(e -> methodClearExercise(m));
+                exit.setOnAction(e -> {
+                    try {
+                        methodClearExercise(m);
+                    } catch (SQLException | ClassNotFoundException e1) {
+                        e1.printStackTrace();
+                    }
+                });
                 app[finalI].getLeftEn();
                 app[finalI].getRightEn();
                 removeBut();
@@ -82,17 +102,31 @@ public class Control implements Root
                 radioBut();
                 enBut.setOnAction(e ->
                 {
-                    clearColumn();
+                    try {
+                        clearColumn();
+                    } catch (SQLException | ClassNotFoundException e1) {
+                        e1.printStackTrace();
+                    }
                     neg[finalI].getLeftEn();
                     neg[finalI].getRightEn();
                 });
                 ruBut.setOnAction(e ->
                 {
-                    clearColumn();
+                    try {
+                        clearColumn();
+                    } catch (SQLException | ClassNotFoundException e1) {
+                        e1.printStackTrace();
+                    }
                     neg[finalI].getLeftRu();
                     neg[finalI].getRightRu();
                 });
-                exit.setOnAction(e -> methodClearExercise(m));
+                exit.setOnAction(e -> {
+                    try {
+                        methodClearExercise(m);
+                    } catch (SQLException | ClassNotFoundException e1) {
+                        e1.printStackTrace();
+                    }
+                });
                 neg[finalI].getLeftEn();
                 neg[finalI].getRightEn();
                 removeBut();
@@ -123,17 +157,31 @@ public class Control implements Root
                 radioBut();
                 enBut.setOnAction(e ->
                 {
-                    clearColumn();
+                    try {
+                        clearColumn();
+                    } catch (SQLException | ClassNotFoundException e1) {
+                        e1.printStackTrace();
+                    }
                     ques[finalI].getLeftEn();
                     ques[finalI].getRightEn();
                 });
                 ruBut.setOnAction(e ->
                 {
-                    clearColumn();
+                    try {
+                        clearColumn();
+                    } catch (SQLException | ClassNotFoundException e1) {
+                        e1.printStackTrace();
+                    }
                     ques[finalI].getLeftRu();
                     ques[finalI].getRightRu();
                 });
-                exit.setOnAction(e -> methodClearExercise(m));
+                exit.setOnAction(e -> {
+                    try {
+                        methodClearExercise(m);
+                    } catch (SQLException | ClassNotFoundException e1) {
+                        e1.printStackTrace();
+                    }
+                });
                 ques[finalI].getLeftEn();
                 ques[finalI].getRightEn();
                 removeBut();
@@ -179,7 +227,13 @@ public class Control implements Root
                 groupRadBut.setLayoutX(widthSize-widthSize/2.8);
                 groupRadBut.setLayoutY(heightSize-heightSize/1.09);
                 ROOT.getChildren().addAll(groupRadBut);
-                exit.setOnAction(e -> methodClearExam(m));
+                exit.setOnAction(e -> {
+                    try {
+                        methodClearExam(m);
+                    } catch (SQLException | ClassNotFoundException e1) {
+                        e1.printStackTrace();
+                    }
+                });
                 exam[finalI].getExamList();
                 ROOT.getChildren().remove(lengthButtonExam);
                 ROOT.getChildren().removeAll(this.examL);

@@ -65,7 +65,7 @@ public class AddExercise implements Root
 
         examPS[0] = new FillingColumns(new Label[100], new Label[100], new Label[100],  0, "ExamPS");
         examPS[1] = new FillingColumns(new Label[100], new Label[100], new Label[100],  100, "ExamPS");
-        examPS[2] = new FillingColumns(new Label[50], new Label[50], new Label[50],  200, "ExamPS");
+        examPS[2] = new FillingColumns(new Label[100], new Label[100], new Label[100],  200, "ExamPS");
 
         controlExamPS.examMethod(examPS,new Button[3], "AddMenuButtonExamPS");
     }

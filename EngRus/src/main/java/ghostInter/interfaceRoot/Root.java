@@ -1,25 +1,15 @@
 package ghostInter.interfaceRoot;
 
-import ghostInter.StartEnRu;
 import ghostInter.control.AddExercise;
-import javafx.concurrent.Task;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-
-import javax.sound.sampled.*;
-import java.io.File;
-import java.io.IOException;
-import java.net.URISyntaxException;
-
-import static javax.sound.sampled.AudioSystem.getAudioInputStream;
+import java.sql.SQLException;
 
 public interface Root
 {
@@ -60,8 +50,6 @@ public interface Root
     TextField textEn = new TextField();
     TextField textRu = new TextField();
     TextField textSearch = new TextField();
-    Button addWords = new Button("Добавить");
-    Button searchWords = new Button("Поиск");
 
     // About - MenuBarEngRus
     TextField improve = new TextField();
@@ -76,7 +64,7 @@ public interface Root
     ScrollPane leftTextPane1 = new ScrollPane();
     ScrollPane leftTextPane2 = new ScrollPane();
 
-    default void clearColumn(){
+    default void clearColumn() throws SQLException, ClassNotFoundException {
         leftColumn.getChildren().clear();
         rightColumn.getChildren().clear();
         ROOT.getChildren().clear();
@@ -98,7 +86,7 @@ public interface Root
         numberColumn.getChildren().clear();
         ROOT.getChildren().clear();
     }
-    default void methodClearExercise(String m) {
+    default void methodClearExercise(String m) throws SQLException, ClassNotFoundException {
         if (m.equals("AddMenuButtonPS")){
             clearMethod();
             MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
@@ -113,7 +101,7 @@ public interface Root
             addExercise.AddMenuButtonToBe();
         }
     }
-    default void methodClearExam(String m) {
+    default void methodClearExam(String m) throws SQLException, ClassNotFoundException {
         if (m.equals("AddMenuButtonExamPS")){
             clearMethod();
             MenuBarEngRus menuBarEngRus = new MenuBarEngRus();

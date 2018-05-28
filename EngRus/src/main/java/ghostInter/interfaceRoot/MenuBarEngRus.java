@@ -1,5 +1,6 @@
 package ghostInter.interfaceRoot;
 
+import db.CreateDB;
 import ghostInter.control.AddExercise;
 import ghostInter.control.FillingColumns;
 import ghostInter.texts.TextLevelOne;
@@ -13,6 +14,8 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.sql.SQLException;
+
 public class MenuBarEngRus implements Root
 {
     private final MenuBar menuBar = new MenuBar();
@@ -21,7 +24,7 @@ public class MenuBarEngRus implements Root
     private final Menu menuExams = new Menu("Контрольные");
     private final Menu menuTexts = new Menu("Тексты");
     private final MenuItem menuPS = new MenuItem("Present Simple");
-    private final MenuItem menu_my_words = new MenuItem("Мои слова");
+    private final MenuItem menu_my_words = new MenuItem("Мой словарь");
     private final MenuItem examPS = new MenuItem("Контрольная PS");
     private final MenuItem menuToBe = new MenuItem("Форма \"to be\"");
     private final MenuItem examToBe = new MenuItem("Контрольная \"to be\"");
@@ -35,11 +38,11 @@ public class MenuBarEngRus implements Root
     private final MenuItem menuBLACK = new MenuItem("Ночь");
     private final MenuItem about = new MenuItem("О программе");
 
-    public void getMenu() {
+    public void getMenu() throws SQLException, ClassNotFoundException {
         ROOT.getChildren().addAll(getMenuBar());
     }
 
-    private MenuBar getMenuBar(){
+    private MenuBar getMenuBar() throws SQLException, ClassNotFoundException {
 
         getMenuPS();
         getMenu_my_words();
@@ -61,23 +64,33 @@ public class MenuBarEngRus implements Root
 
         return menuBar;
     }
-    private void getMenu_my_words(){
+    private void getMenu_my_words() throws SQLException, ClassNotFoundException {
 
-        // TODO сделать меню не доступным если была нажата клавиша "использовать без БД"!
-
-        menu_my_words.setOnAction(event -> {
-            clearMethod();
-            MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
-            menuBarEngRus.getMenu();
-            FillingColumns fillingColumns = new FillingColumns();
-            fillingColumns.getMyWordsList();
-        });
+        if (CreateDB.connectDB()) {
+            menu_my_words.setOnAction(event -> {
+                clearMethod();
+                MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
+                try {
+                    menuBarEngRus.getMenu();
+                } catch (SQLException | ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+                FillingColumns fillingColumns = new FillingColumns();
+                fillingColumns.getMyWordsList();
+            });
+        } else {
+            menu_my_words.setVisible(false);
+        }
     }
     private void getMenuPS(){
         menuPS.setOnAction(event -> {
             clearMethod();
             MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
-            menuBarEngRus.getMenu();
+            try {
+                menuBarEngRus.getMenu();
+            } catch (SQLException | ClassNotFoundException e) {
+                e.printStackTrace();
+            }
             AddExercise addExercise = new AddExercise();
             addExercise.AddMenuButtonPS();
         });
@@ -86,7 +99,11 @@ public class MenuBarEngRus implements Root
         examPS.setOnAction(event -> {
             clearMethod();
             MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
-            menuBarEngRus.getMenu();
+            try {
+                menuBarEngRus.getMenu();
+            } catch (SQLException | ClassNotFoundException e) {
+                e.printStackTrace();
+            }
             AddExercise addExercise = new AddExercise();
             addExercise.AddMenuButtonExamPS();
         });
@@ -118,7 +135,11 @@ public class MenuBarEngRus implements Root
         menuToBe.setOnAction(event -> {
             clearMethod();
             MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
-            menuBarEngRus.getMenu();
+            try {
+                menuBarEngRus.getMenu();
+            } catch (SQLException | ClassNotFoundException e) {
+                e.printStackTrace();
+            }
             AddExercise addExercise = new AddExercise();
             addExercise.AddMenuButtonToBe();
         });
@@ -127,7 +148,11 @@ public class MenuBarEngRus implements Root
         examToBe.setOnAction(event -> {
             clearMethod();
             MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
-            menuBarEngRus.getMenu();
+            try {
+                menuBarEngRus.getMenu();
+            } catch (SQLException | ClassNotFoundException e) {
+                e.printStackTrace();
+            }
             AddExercise addExercise = new AddExercise();
             addExercise.AddMenuButtonExamToBe();
         });
@@ -153,7 +178,11 @@ public class MenuBarEngRus implements Root
         textsLevelOne.setOnAction(event -> {
             clearMethod();
             MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
-            menuBarEngRus.getMenu();
+            try {
+                menuBarEngRus.getMenu();
+            } catch (SQLException | ClassNotFoundException e) {
+                e.printStackTrace();
+            }
             TextLevelOne textLevelOne = new TextLevelOne();
             textLevelOne.text1();
         });

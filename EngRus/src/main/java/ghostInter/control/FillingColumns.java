@@ -19,7 +19,7 @@ import javafx.scene.layout.VBox;
 
 import java.sql.*;
 
-public class FillingColumns implements Root, TableDB
+public class FillingColumns implements Root, TableDB, Base
 {
     private Label[] arrayOfOffersLeft;
     private Label[] arrayOfOffersRight;
@@ -29,9 +29,6 @@ public class FillingColumns implements Root, TableDB
     private int START;
     private int CLOSE;
     private String m;
-
-    private Label[] my_word_en = new Label[500];
-    private Label[] my_word_ru = new Label[500];
 
     private Exercise text = new Exercise();
     private Exam exam = new Exam();
@@ -326,21 +323,20 @@ public class FillingColumns implements Root, TableDB
     }
     private void getMyWordsColumnLab() {
         restartMyWordsTable();
-//        deleteMyWords();
 
         rightC.getChildren().addAll();
         rightC.setSpacing(7);
         rightC.setPrefWidth(widthSize - widthSize / 1.3);
-//                rightC.setStyle("-fx-border-color: RED");
+//        rightC.setStyle("-fx-border-color: RED");
         leftC.getChildren().addAll();
         leftC.setSpacing(7);
         leftC.setPadding(new Insets(0, 30, 0, 0));
         leftC.setPrefWidth(widthSize - widthSize / 1.3);
-//                leftC.setStyle("-fx-border-color: RED");
+//        leftC.setStyle("-fx-border-color: RED");
         groupMy.setSpacing(20);
         groupMy.getChildren().addAll(leftC, rightC);
 
-//                addElement.setStyle("-fx-border-color: RED");
+//        addElement.setStyle("-fx-border-color: RED");
         addElement.setLayoutX(widthSize - widthSize / 1.25);
         addElement.setLayoutY(heightSize - heightSize / 1.16);
         addElement.setPrefSize(widthSize / 1.8, heightSize / 1.5);
@@ -360,57 +356,9 @@ public class FillingColumns implements Root, TableDB
 
         HBox hBox = new HBox();
         textSearch.setPrefWidth(widthSize/3);
-        searchWords.setOnAction(e -> {
-            if (textSearch.getText().equals("")){
-                textSearch.setPromptText("Введите букву или слово для поиска...");
-            } else {
-                try {
-                    Connection connection =  DriverManager.getConnection(DB_URL + db, USER, PASS);
-                    Statement statement1 = connection.createStatement();
-                    Statement statement2 = connection.createStatement();
-                    Statement statement3 = connection.createStatement();
-                    ResultSet r1 = statement1.executeQuery("SELECT word_en FROM my_words");
-                    for (int i = 0; r1.next(); i++) {
-                        leftC.getChildren().remove(my_word_en[i]);
-                        rightC.getChildren().remove(my_word_ru[i]);
-                    }
-                    ResultSet r2 = statement2.executeQuery("SELECT * FROM my_words WHERE word_en LIKE '%"+
-                            textSearch.getText()+"%'");
-                    ResultSet r3 = statement3.executeQuery("SELECT * FROM my_words WHERE word_ru LIKE '%"+
-                            textSearch.getText()+"%'");
-                    for (int i = 0; r2.next(); i++) {
-                        my_word_en[i] = new Label();
-                        my_word_en[i].setFont(EffectFont.fontTextExam);
-                        my_word_en[i].setTextFill(EffectColor.colorText);
-                        my_word_en[i].setPrefWidth(widthSize-widthSize/2.45);
-//                            my_word_en[i].setWrapText(true);
-//                            my_word_en[i].setCursor(Cursor.HAND);
-                        my_word_en[i].setText(r2.getString("word_en"));
-                        my_word_en[i].setAlignment(Pos.BASELINE_RIGHT);
 
-                        leftC.getChildren().addAll(my_word_en[i]);
-                        rightC.getChildren().addAll(my_word_ru[i]);
-                    }
-                    r2.close();
-                    for (int i = 0; r3.next(); i++) {
-                        my_word_ru[i] = new Label();
-                        my_word_ru[i].setFont(EffectFont.fontTextExam);
-                        my_word_ru[i].setTextFill(EffectColor.colorText);
-                        my_word_ru[i].setPrefWidth(widthSize-widthSize/2.45);
-//                    my_word_ru[i].setWrapText(true);
-//                    my_word_ru[i].setCursor(Cursor.HAND);
-                        my_word_ru[i].setText(r3.getString("word_ru"));
-
-                        leftC.getChildren().addAll(my_word_en[i]);
-                        rightC.getChildren().addAll(my_word_ru[i]);
-                    }
-                    r3.close();
-                } catch (SQLException e1) {
-                    e1.printStackTrace();
-                }
-            }
-
-        });
+        // Поиск в "Мои слова":
+        getSearch();
 
         hBox.getChildren().addAll(textSearch, searchWords);
         hBox.setSpacing(heightSize-heightSize/1.009);
@@ -418,119 +366,5 @@ public class FillingColumns implements Root, TableDB
         hBox.setLayoutY(heightSize-heightSize/1.05);
 
         ROOT.getChildren().addAll(addElement, hBox);
-    }
-    private void addNewWords(){
-        addWords.setOnAction(e -> {
-            try {
-                Connection connection1 =  DriverManager.getConnection(DB_URL + db, USER, PASS);
-                Statement statement1 = connection1.createStatement();
-                statement1.executeUpdate("INSERT INTO my_words (word_en, word_ru) VALUES ('" + textEn.getText()
-                        +"', '"+ textRu.getText() +"')");
-                ResultSet r = statement1.executeQuery("SELECT word_en FROM my_words");
-                for (int i = 0; r.next(); i++) {
-                    leftC.getChildren().remove(my_word_en[i]);
-                    rightC.getChildren().remove(my_word_ru[i]);
-                }
-                restartMyWordsTable();
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-            }
-            textEn.clear();
-            textRu.clear();
-        });
-    }
-    private void restartMyWordsTable(){
-        try {
-            Class.forName("org.postgresql.Driver");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        Connection connection = null;
-        try {
-            connection = DriverManager.getConnection(DB_URL + db, USER, PASS);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        try {
-            Statement stmt = connection.createStatement();
-            Statement stmt2 = connection.createStatement();
-            Statement stmt3 = connection.createStatement();
-            stmt3.executeUpdate(my_words);
-            ResultSet rs = stmt.executeQuery("SELECT word_en FROM my_words ORDER BY id;"); //sql запрос
-            ResultSet rs2 = stmt2.executeQuery("SELECT word_ru FROM my_words ORDER BY id;"); //sql запрос
-
-            addNewWords();
-
-            for (int i = 0; rs.next(); i++) {
-                rs2.next();
-
-                // Создаем контекстное меню:
-                ContextMenu contextMenuMyWords = new ContextMenu();
-                MenuItem menuDeleteWord = new MenuItem("Удалить");
-                int finalI = i;
-                menuDeleteWord.setOnAction(e -> {
-                    try {
-                        Connection connection5 =  DriverManager.getConnection(DB_URL + db, USER, PASS);
-                        Statement statement5 = connection5.createStatement();
-                        statement5.executeUpdate("DELETE FROM my_words WHERE word_en = '"+ my_word_en[finalI].getText() + "';");
-                        ResultSet r = statement5.executeQuery("SELECT word_en FROM my_words");
-                        for (int j = 0; r.next(); j++) {
-                            leftC.getChildren().remove(my_word_en[j]);
-                            rightC.getChildren().remove(my_word_ru[j]);
-                        }
-                        r.close();
-                        clearMethod();
-                        MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
-                        menuBarEngRus.getMenu();
-                        getMyWordsColumnLab();
-                    } catch (SQLException ex) {
-                        ex.printStackTrace();
-                    }
-                });
-                contextMenuMyWords.getItems().addAll(menuDeleteWord);
-
-                my_word_en[i] = new Label();
-//                my_word_en[i].setStyle("-fx-border-color: RED");
-                my_word_en[i].setFont(EffectFont.fontTextExam);
-                my_word_en[i].setTextFill(EffectColor.colorText);
-                my_word_en[i].setPrefWidth(widthSize-widthSize/2.45);
-                my_word_en[i].setAlignment(Pos.BASELINE_RIGHT);
-//                my_word_en[i].setWrapText(true);
-//                my_word_en[i].setCursor(Cursor.HAND);
-                my_word_en[i].setText(rs.getString("word_en"));
-                my_word_en[i].setOnContextMenuRequested(e -> contextMenuMyWords.show(my_word_en[finalI], e.getScreenX(), e.getScreenY()));
-
-                my_word_ru[i] = new Label();
-//                my_word_ru[i].setStyle("-fx-border-color: RED");
-                my_word_ru[i].setFont(EffectFont.fontTextExam);
-                my_word_ru[i].setTextFill(EffectColor.colorText);
-                my_word_ru[i].setPrefWidth(widthSize-widthSize/2.45);
-//                my_word_ru[i].setWrapText(true);
-//                my_word_ru[i].setCursor(Cursor.HAND);
-                my_word_ru[i].setText(rs2.getString("word_ru"));
-                my_word_ru[i].setOnContextMenuRequested(e -> contextMenuMyWords.show(my_word_ru[finalI], e.getScreenX(), e.getScreenY()));
-                if (my_word_ru[i].getText().length()>33) {
-                    Tooltip tooltip = new Tooltip();
-                    tooltip.setWrapText(true);
-                    tooltip.setText(my_word_ru[i].getText());
-                    tooltip.setPrefWidth(widthSize/5);
-                    my_word_ru[i].setTooltip(tooltip);
-                }
-                leftC.getChildren().addAll(my_word_en[i]);
-                rightC.getChildren().addAll(my_word_ru[i]);
-            }
-            rs.close();
-            rs2.close();
-            stmt.close();
-            stmt2.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
     }
 }

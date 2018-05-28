@@ -14,17 +14,6 @@ public class StartEnRu extends Application implements Root
 {
     private MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
 
-    private void runMethod(){
-        menuBarEngRus.getMenu();
-
-        ROOT.getChildren().addAll();
-
-        WINDOW.setTitle("EngRus");
-        WINDOW.setMaximized(true); //устанавливаем размер окна на весь экран
-        WINDOW.setScene(SCENE_ROOT);
-        WINDOW.show();
-    }
-
     @Override
     public void start(Stage primaryStage) throws Exception {
 
@@ -51,11 +40,19 @@ public class StartEnRu extends Application implements Root
             } catch (SQLException | ClassNotFoundException e1) {
                 e1.printStackTrace();
             }
-            runMethod();
+            try {
+                runMethod();
+            } catch (SQLException | ClassNotFoundException e1) {
+                e1.printStackTrace();
+            }
             showStageDB.close();
         });
         noDB.setOnAction(e -> {
-            runMethod();
+            try {
+                runMethod();
+            } catch (SQLException | ClassNotFoundException e1) {
+                e1.printStackTrace();
+            }
             showStageDB.close();
         });
         showNoDB.setSpacing(10);
@@ -71,5 +68,15 @@ public class StartEnRu extends Application implements Root
         showStageDB.setScene(showSceneDB);
         showStageDB.setTitle("Вход...");
         showStageDB.show();
+    }
+    private void runMethod() throws SQLException, ClassNotFoundException {
+        menuBarEngRus.getMenu();
+
+        ROOT.getChildren().addAll();
+
+        WINDOW.setTitle("EngRus");
+        WINDOW.setMaximized(true); //устанавливаем размер окна на весь экран
+        WINDOW.setScene(SCENE_ROOT);
+        WINDOW.show();
     }
 }
