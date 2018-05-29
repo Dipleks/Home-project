@@ -5,13 +5,13 @@ import ghostInter.interfaceRoot.EffectColor;
 import ghostInter.interfaceRoot.EffectFont;
 import ghostInter.interfaceRoot.MenuBarEngRus;
 import ghostInter.interfaceRoot.Root;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
-import javafx.scene.control.ContextMenu;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.Tooltip;
+import javafx.scene.Node;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
@@ -342,6 +342,7 @@ public class FillingColumns implements Root, TableDB, Base
         addElement.setPrefSize(widthSize / 1.8, heightSize / 1.5);
         addElement.setSpacing(10);
 
+        textMy.setStyle("-fx-background-color: transparent; -fx-background: #FFFFFF;");
         textMy.setPrefSize(widthSize / 1.8, heightSize / 1.6);
         textMy.setContent(groupMy);
 
