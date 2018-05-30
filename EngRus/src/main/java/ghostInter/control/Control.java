@@ -2,9 +2,7 @@ package ghostInter.control;
 
 import ghostInter.interfaceRoot.EffectColor;
 import ghostInter.interfaceRoot.EffectFont;
-import ghostInter.interfaceRoot.Root;
-import javafx.concurrent.Service;
-import javafx.concurrent.Task;
+import ghostInter.interfaceRoot.RootMethod;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
@@ -12,7 +10,7 @@ import javafx.scene.layout.HBox;
 
 import java.sql.SQLException;
 
-public class Control implements Root
+public class Control implements RootMethod
 {
     private HBox lengthButtonApp = new HBox();
     private HBox lengthButtonNeg = new HBox();
@@ -46,9 +44,8 @@ public class Control implements Root
                 {
                     try {
                         clearColumn();
-                    } catch (SQLException e1) {
-                        e1.printStackTrace();
-                    } catch (ClassNotFoundException e1) {
+                        clock();
+                    } catch (SQLException | ClassNotFoundException e1) {
                         e1.printStackTrace();
                     }
                     app[finalI].getLeftEn();
@@ -58,9 +55,8 @@ public class Control implements Root
                 {
                     try {
                         clearColumn();
-                    } catch (SQLException e1) {
-                        e1.printStackTrace();
-                    } catch (ClassNotFoundException e1) {
+                        clock();
+                    } catch (SQLException | ClassNotFoundException e1) {
                         e1.printStackTrace();
                     }
                     app[finalI].getLeftRu();
@@ -104,6 +100,7 @@ public class Control implements Root
                 {
                     try {
                         clearColumn();
+                        clock();
                     } catch (SQLException | ClassNotFoundException e1) {
                         e1.printStackTrace();
                     }
@@ -114,6 +111,7 @@ public class Control implements Root
                 {
                     try {
                         clearColumn();
+                        clock();
                     } catch (SQLException | ClassNotFoundException e1) {
                         e1.printStackTrace();
                     }
@@ -159,6 +157,7 @@ public class Control implements Root
                 {
                     try {
                         clearColumn();
+                        clock();
                     } catch (SQLException | ClassNotFoundException e1) {
                         e1.printStackTrace();
                     }
@@ -169,6 +168,7 @@ public class Control implements Root
                 {
                     try {
                         clearColumn();
+                        clock();
                     } catch (SQLException | ClassNotFoundException e1) {
                         e1.printStackTrace();
                     }

@@ -1,10 +1,10 @@
 package ghostInter.control;
 
-import ghostInter.interfaceRoot.Root;
+import ghostInter.interfaceRoot.RootMethod;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
-public class AddExercise implements Root
+public class AddExercise implements RootMethod
 {
     private FillingColumns[] appPS = new FillingColumns[7];
     private FillingColumns[] negPS = new FillingColumns[4];

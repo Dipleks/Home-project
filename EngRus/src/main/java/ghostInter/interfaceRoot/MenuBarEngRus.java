@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 
 import java.sql.SQLException;
 
-public class MenuBarEngRus implements Root
+public class MenuBarEngRus implements RootMethod
 {
     private final MenuBar menuBar = new MenuBar();
 
@@ -118,7 +118,7 @@ public class MenuBarEngRus implements Root
             label.setPrefSize(widthSize/4, heightSize/4);
             label.setText("Автор программы Ghost \n" + "\n" + "Программа предназначена " +
                     "\nдля изучения Английского языка." +
-                    "\n\n                                    Версия программы: 1.6");
+                    "\n\n                                    Версия программы: 2.0");
             label.setFont(Font.font("Time New Roman", FontWeight.BOLD,
                     FontPosture.ITALIC, heightSize*0.015));
             label.setAlignment(Pos.CENTER);

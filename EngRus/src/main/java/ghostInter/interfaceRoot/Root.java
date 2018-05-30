@@ -1,16 +1,22 @@
 package ghostInter.interfaceRoot;
 
-import ghostInter.control.AddExercise;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import java.sql.SQLException;
+import javafx.util.Duration;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public interface Root
 {
@@ -51,6 +57,10 @@ public interface Root
     TextField textEn = new TextField();
     TextField textRu = new TextField();
     TextField textSearch = new TextField();
+    Label[] my_word_en = new Label[500];
+    Label[] my_word_ru = new Label[500];
+    Button searchWords = new Button("Поиск");
+    Button addWords = new Button("Добавить");
 
     // About - MenuBarEngRus
     TextField improve = new TextField();
@@ -65,67 +75,13 @@ public interface Root
     ScrollPane leftTextPane1 = new ScrollPane();
     ScrollPane leftTextPane2 = new ScrollPane();
 
-    default void clearColumn() throws SQLException, ClassNotFoundException {
-        leftColumn.getChildren().clear();
-        rightColumn.getChildren().clear();
-        ROOT.getChildren().clear();
-        MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
-        menuBarEngRus.getMenu();
-        ROOT.getChildren().addAll(groupRadBut);
-    }
-    default void clearMethod(){
-        leftC.getChildren().clear();
-        rightC.getChildren().clear();
-        groupMy.getChildren().clear();
-        addElement.getChildren().clear();
-        addTextAndButton.getChildren().clear();
-        leftColumn.getChildren().clear();
-        rightColumn.getChildren().clear();
-        groupRadBut.getChildren().clear();
-        groupExam.getChildren().clear();
-        iprColumn.getChildren().clear();
-        numberColumn.getChildren().clear();
-        ROOT.getChildren().clear();
-    }
-    default void methodClearExercise(String m) throws SQLException, ClassNotFoundException {
-        if (m.equals("AddMenuButtonPS")){
-            clearMethod();
-            MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
-            menuBarEngRus.getMenu();
-            AddExercise addExercise = new AddExercise();
-            addExercise.AddMenuButtonPS();
-        } else if (m.equals("AddMenuButtonToBe")){
-            clearMethod();
-            MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
-            menuBarEngRus.getMenu();
-            AddExercise addExercise = new AddExercise();
-            addExercise.AddMenuButtonToBe();
-        }
-    }
-    default void methodClearExam(String m) throws SQLException, ClassNotFoundException {
-        if (m.equals("AddMenuButtonExamPS")){
-            clearMethod();
-            MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
-            menuBarEngRus.getMenu();
-            AddExercise addExercise = new AddExercise();
-            addExercise.AddMenuButtonExamPS();
-        } else if (m.equals("AddMenuButtonExamToBe")){
-            clearMethod();
-            MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
-            menuBarEngRus.getMenu();
-            AddExercise addExercise = new AddExercise();
-            addExercise.AddMenuButtonExamToBe();
-        }
-    }
-    default void soundClick() {
-
-        // TODO делаем код для клика;
-//        Runnable runnable = () -> {
-//            String file = "resources/click.mp3";
-//            Media sound = new Media(new File(file).toURI().toString());
-//            MediaPlayer mediaPlayer = new MediaPlayer(sound);
-//            mediaPlayer.play();
-//        };
-//        runnable.run();
-    }
+    // Часы:
+    DateTimeFormatter format = DateTimeFormatter.ofPattern("dd MMMM yyyy");
+    DateTimeFormatter format2 = DateTimeFormatter.ofPattern("HH:mm:ss");
+    Label uiTimer = new Label();
+    String s1 = "Дата: ";
+    String s2 = "\nВремя: ";
+    KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), event -> uiTimer.setText(s1 + LocalDateTime.now().format(format) +
+            s2 + LocalDateTime.now().format(format2)));
+    Timeline timeline = new Timeline(keyFrame);
 }

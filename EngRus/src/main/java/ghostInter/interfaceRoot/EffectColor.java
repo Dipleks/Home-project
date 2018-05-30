@@ -11,5 +11,6 @@ public class EffectColor
     public static Color colorTextClickPERU = Color.PERU;
     public static Color colorTitle = Color.DARKGRAY;
     public static Color colorScene = Color.WHITE;
+    public static Color colorClock = Color.DARKGREEN;
 
 }

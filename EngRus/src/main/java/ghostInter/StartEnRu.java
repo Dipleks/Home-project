@@ -10,9 +10,10 @@ import javafx.stage.Stage;
 
 import java.sql.SQLException;
 
-public class StartEnRu extends Application implements Root
+public class StartEnRu extends Application implements RootMethod
 {
     private MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
+
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -22,6 +23,7 @@ public class StartEnRu extends Application implements Root
         } else {
             showWindow();
         }
+
     }
 
     public static void main(String[] args) {
@@ -71,6 +73,7 @@ public class StartEnRu extends Application implements Root
     }
     private void runMethod() throws SQLException, ClassNotFoundException {
         menuBarEngRus.getMenu();
+        clock();
 
         ROOT.getChildren().addAll();
 

@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="EngRus:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c871c670-bf76-4dd9-9bb3-73a221e20040" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>&quot;</find>
+      <find />
+      <find>examRu</find>
+      <find>examEn</find>
+      <find />
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/controlToBe/AppToBeLessonEnRu.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/controlToBe/SceletVBoxToBe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/controlToBe/ExerciseToBe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/controlPS/JobControlPS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/controlToBe/JobControlToBe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/controlToBe/FillingColumnsToBe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/texts/AddExercisePS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/interfaceRoot/EffectFont.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/controlPS/ExercisePS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/controlPS/Exercise.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/Exercise.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/controlPS/FillingColumnsPS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/controlPS/FillingColumns.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/controlPS/ExamPS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/controlToBe/ExamToBe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/controlPS/Exam.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/Exam.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/controlPS/AddExercisePS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/controlToBe/AddExerciseToBe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/controlPS/AddExercise.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/controlPS/ControlPS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/controlToBe/ControlToBe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/FillingColumns.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/AddExercise.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/controlPS/Control.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/texts/TextLevelOne.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/control/T.java" />
+        <option value="$PROJECT_DIR$/src/main/java/testDB/addTextInTable/TextAdd.java" />
+        <option value="$PROJECT_DIR$/src/main/java/testDB/newDB/StrTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/testDB/newDB/AddTable.java" />
+        <option value="$PROJECT_DIR$/src/main/java/testDB/testDB/JDBCPostgreSQLExample.java" />
+        <option value="$PROJECT_DIR$/src/main/java/testDB/testDB/TestA.java" />
+        <option value="$PROJECT_DIR$/src/main/java/testDB/addTextInTable/TextAdd2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/testDB/newDB/NewDBinJava.java" />
+        <option value="$PROJECT_DIR$/src/main/java/db/CreatDB.java" />
+        <option value="$PROJECT_DIR$/src/main/java/db/FirstEntry.java" />
+        <option value="$PROJECT_DIR$/src/main/java/db/Window.java" />
+        <option value="$PROJECT_DIR$/src/main/java/db/WindowLoadin.java" />
+        <option value="$PROJECT_DIR$/src/main/java/db/CreateDB.java" />
+        <option value="$PROJECT_DIR$/src/main/java/db/dataBase.db" />
+        <option value="$PROJECT_DIR$/src/main/java/db/TableDB.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/interfaceRoot/EffectColor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/control/Base.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/control/Control.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/control/AddExercise.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/control/Exam.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/StartEnRu.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/interfaceRoot/MenuBarEngRus.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/interfaceRoot/Root.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ghostInter/control/FillingColumns.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="EngRus" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="EngRus" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="54" />
+    <option name="width" value="509" />
+    <option name="height" value="605" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <autoscrollFromSource ProjectPane="true" />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="EngRus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EngRus" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EngRus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EngRus" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EngRus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EngRus" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EngRus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EngRus" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EngRus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EngRus" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EngRus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EngRus" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EngRus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EngRus" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ghostInter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EngRus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EngRus" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ghostInter" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EngRus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EngRus" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ghostInter" type="462c0819:PsiDirectoryNode" />
+              <item name="interfaceRoot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EngRus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EngRus" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ghostInter" type="462c0819:PsiDirectoryNode" />
+              <item name="texts" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="engrus" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
+    <property name="last_opened_file_path" value="C:/Program Files/Java/jdk1.8.0_162/lib/postgresql-42.2.2.jar!/" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus\resources" />
+      <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus" />
+      <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus\src\main" />
+      <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus\src" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus\src\main\java" />
+      <recent name="C:\Users\Ghost\IdeaProjects\EngRus\src\main\java\ghostInter\texts" />
+      <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus\src\main\java\ghostInter\controlToBe" />
+      <recent name="C:\Users\Ghost\IdeaProjects\EngRus\src\main\java\ghostInter\dataBase\presenSimpl\approvals" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.StartEnRu">
+    <configuration name="CreateDB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="db.CreateDB" />
+      <module name="EngRus" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="db.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="FirstEntry" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="db.FirstEntry" />
+      <module name="EngRus" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="db.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="NewDBinJava" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="testDB.newDB.NewDBinJava" />
+      <module name="EngRus" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testDB.newDB.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="StartEnRu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ghostInter.StartEnRu" />
+      <module name="EngRus" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ghostInter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="TextAdd2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="testDB.addTextInTable.TextAdd2" />
+      <module name="EngRus" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testDB.addTextInTable.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <list>
+      <item itemvalue="Application.TextAdd2" />
+      <item itemvalue="Application.NewDBinJava" />
+      <item itemvalue="Application.StartEnRu" />
+      <item itemvalue="Application.FirstEntry" />
+      <item itemvalue="Application.CreateDB" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.StartEnRu" />
+        <item itemvalue="Application.TextAdd2" />
+        <item itemvalue="Application.CreateDB" />
+        <item itemvalue="Application.FirstEntry" />
+        <item itemvalue="Application.NewDBinJava" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c871c670-bf76-4dd9-9bb3-73a221e20040" name="Default" comment="" />
+      <created>1523985740048</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1523985740048</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="54" y="-8" width="1394" height="916" extended-state="6" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32804233" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="6" weight="0.13268366" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.17063493" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32936507" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Designer" order="3" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22413793" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3994709" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32671958" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="13" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/dataBase/presenSimpl/negative/negPSlessonEnD.data" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/dataBase/presenSimpl/questions/quesPSlessonEnA.data" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/dataBase/presenSimpl/questions/quesPSlessonEnB.data" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/dataBase/presenSimpl/questions/quesPSlessonEnC.data" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/dataBase/presenSimpl/questions/quesPSlessonEnD.data" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/dataBase/presenSimpl/questions/quesPSlessonEnE.data" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/dataBase/presenSimpl/questions/quesPSlessonEnF.data" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/dataBase/presenSimpl/questions/quesPSlessonEnG.data" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/dataBase/presenSimpl/negative/negPSlessonRuA.data" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/dataBase/presenSimpl/negative/negPSlessonRuB.data" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/dataBase/presenSimpl/negative/negPSlessonRuC.data" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/dataBase/presenSimpl/negative/negPSlessonRuD.data" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/com/sun/javafx/event/CompositeEventHandler.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/interfaceRoot/IMenuBar.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/texts/AddExercisePS.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/texts/ControlPS.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/texts/ExamPS.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/texts/FillingColumnsPS.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/controlToBe/FillingColumns.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/controlToBe/ExerciseToBe.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/controlToBe/ExamToBe.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/controlToBe/AddExerciseToBe.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/controlToBe/ControlToBe.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/Exam.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/interfaceRoot/EffectFont.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/control/T.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/control/Exercise.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/testDB/testDB/JDBCPostgreSQLExample.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/testDB/testDB/TestA.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/CreateDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/testDB/newDB/NewDBinJava.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/FirstEntry.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/WindowLoadin.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/testDB/addTextInTable/TextAdd.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/testDB/newDB/StrTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/testDB/newDB/AddTable.java" />
+    <entry file="file://$PROJECT_DIR$/resources/dataBase.db">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="52" lean-forward="true" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/testDB/addTextInTable/TextAdd2.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/interfaceRoot/EffectColor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="48" lean-forward="true" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/TableDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="81" selection-start-line="11" selection-start-column="81" selection-end-line="11" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/CreateDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/control/Control.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="201" column="92" selection-start-line="201" selection-start-column="92" selection-end-line="201" selection-end-column="92" />
+          <folding>
+            <element signature="method#exercise#0;class#Control#0" />
+            <element signature="method#examMethod#0;class#Control#0" />
+            <element signature="method#radioBut#0;class#Control#0" />
+            <element signature="method#removeBut#0;class#Control#0" />
+            <element signature="method#methodAppNegQues#0;class#Control#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/texts/TextLevelOne.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/control/Base.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="109" column="38" selection-start-line="109" selection-start-column="38" selection-end-line="109" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getSearch#0;class#Base#0" />
+            <element signature="method#addNewWords#0;class#Base#0" />
+            <element signature="method#restartMyWordsTable#0;class#Base#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/control/AddExercise.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="67" column="84" selection-start-line="67" selection-start-column="84" selection-end-line="67" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="61" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/interfaceRoot/MenuBarEngRus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
+          <folding>
+            <element signature="method#getMenu#0;class#MenuBarEngRus#0" />
+            <element signature="method#getMenu_my_words#0;class#MenuBarEngRus#0" />
+            <element signature="method#getMenuPS#0;class#MenuBarEngRus#0" />
+            <element signature="method#getExamPS#0;class#MenuBarEngRus#0" />
+            <element signature="method#getAbout#0;class#MenuBarEngRus#0" />
+            <element signature="method#getMenuToBe#0;class#MenuBarEngRus#0" />
+            <element signature="method#getExamToBe#0;class#MenuBarEngRus#0" />
+            <element signature="method#getMenuBLACK#0;class#MenuBarEngRus#0" />
+            <element signature="method#getMenuWHITE#0;class#MenuBarEngRus#0" />
+            <element signature="method#getTextsLevelOne#0;class#MenuBarEngRus#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/StartEnRu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+          <folding>
+            <element signature="method#showWindow#0;class#StartEnRu#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/control/Exam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getExamEnPS#0;class#Exam#0" />
+            <element signature="method#getExamRuPS#0;class#Exam#0" />
+            <element signature="method#getExamEnToBe#0;class#Exam#0" />
+            <element signature="method#getExamRuToBe#0;class#Exam#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/control/FillingColumns.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="344" column="66" lean-forward="true" selection-start-line="344" selection-start-column="66" selection-end-line="344" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#methRu#0;class#FillingColumns#0" />
+            <element signature="method#methEn#0;class#FillingColumns#0" />
+            <element signature="method#FillingColumns#0;class#FillingColumns#0" />
+            <element signature="method#FillingColumns#1;class#FillingColumns#0" />
+            <element signature="method#FillingColumns#2;class#FillingColumns#0" />
+            <element signature="method#getLeftColumnLabEn#0;class#FillingColumns#0" />
+            <element signature="method#getRightColumnLabEn#0;class#FillingColumns#0" />
+            <element signature="method#getLeftColumnLabRu#0;class#FillingColumns#0" />
+            <element signature="method#getRightColumnLabRu#0;class#FillingColumns#0" />
+            <element signature="method#getExamColumnLab#0;class#FillingColumns#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/interfaceRoot/Root.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="49" column="39" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>EngRus:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>EngRus</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>commons-io-2.6-javadoc</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

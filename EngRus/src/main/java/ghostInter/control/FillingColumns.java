@@ -2,24 +2,19 @@ package ghostInter.control;
 
 import db.TableDB;
 import ghostInter.interfaceRoot.EffectColor;
-import ghostInter.interfaceRoot.EffectFont;
-import ghostInter.interfaceRoot.MenuBarEngRus;
-import ghostInter.interfaceRoot.Root;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import ghostInter.interfaceRoot.EffectFont;;
+import ghostInter.interfaceRoot.RootMethod;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
-import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
-import java.sql.*;
-
-public class FillingColumns implements Root, TableDB, Base
+public class FillingColumns implements RootMethod, TableDB
 {
     private Label[] arrayOfOffersLeft;
     private Label[] arrayOfOffersRight;
@@ -62,16 +57,18 @@ public class FillingColumns implements Root, TableDB, Base
 
     public FillingColumns() {
     }
+    //Для заданий
     public FillingColumns(Label[] arrayOfOffersLeft, Label[] arrayOfOffersRight, int START, int CLOSE, String m) {
-        //Для заданий
+
         this.arrayOfOffersLeft = arrayOfOffersLeft;
         this.arrayOfOffersRight = arrayOfOffersRight;
         this.START = START;
         this.CLOSE = CLOSE;
         this.m = m;
     }
+    //Для контрольных
     public FillingColumns(Label[] arrayOfOffersExam, Label[] number, Label[] correctly, int START, String m) {
-        //Для контрольных
+
         this.arrayOfOffersExam = arrayOfOffersExam;
         this.number = number;
         this.correctly = correctly;
@@ -251,10 +248,25 @@ public class FillingColumns implements Root, TableDB, Base
                     arrayOfOffersExam[finalI].setTextFill(EffectColor.colorTextClick);
                     correctly[finalI].setText("ВЕРНО!!!");
                     correctly[finalI].setTextFill(EffectColor.colorTextClick);
-                } else {
+                    improve.clear();
+                } else if (!improve.getText().equalsIgnoreCase("")){
                     arrayOfOffersExam[finalI].setTextFill(EffectColor.colorTextClickRED);
                     correctly[finalI].setText("НЕ ВЕРНО!!!");
                     correctly[finalI].setTextFill(EffectColor.colorTextClickRED);
+
+                } else if (improve.getText().equalsIgnoreCase("")) {
+                    Stage win = new Stage();
+                    Label label = new Label("Напишите перевод для проверки...");
+                    Button button = new Button("Закрыть");
+                    button.setOnAction(e -> win.close());
+                    VBox group = new VBox();
+                    group.setSpacing(20);
+                    group.setAlignment(Pos.CENTER);
+                    group.getChildren().addAll(label, button);
+                    Scene scene = new Scene(group, 250, 150);
+                    win.initModality(Modality.APPLICATION_MODAL);
+                    win.setScene(scene);
+                    win.show();
                 }
             });
 
@@ -300,7 +312,7 @@ public class FillingColumns implements Root, TableDB, Base
         groupExam.getChildren().addAll(numberColumn, leftColumn, iprColumn);
 
         examPane.setContent(groupExam);
-//          examPane.setStyle("-fx-border-color: RED");
+//        examPane.setStyle("-fx-background-color: transparent; -fx-background: #FFFFFF;");
         examPane.setLayoutX(widthSize - widthSize / 1.25);
         examPane.setLayoutY(heightSize - heightSize / 1.16);
         examPane.setPrefSize(widthSize / 1.8, heightSize / 1.5);
