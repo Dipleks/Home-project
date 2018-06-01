@@ -49,6 +49,8 @@ public interface RootMethod extends Root
         groupExam.getChildren().clear();
         iprColumn.getChildren().clear();
         numberColumn.getChildren().clear();
+        improveV.getChildren().clear();
+        counter.getChildren().clear();
         ROOT.getChildren().clear();
         clock();
     }
@@ -290,5 +292,19 @@ public interface RootMethod extends Root
                 e.printStackTrace();
             }
         }
+    }
+    default void panes(String str) {
+        Stage win = new Stage();
+        Label label = new Label(str);
+        Button button = new Button("Закрыть");
+        button.setOnAction(e -> win.close());
+        VBox group = new VBox();
+        group.setSpacing(20);
+        group.setAlignment(Pos.CENTER);
+        group.getChildren().addAll(label, button);
+        Scene scene = new Scene(group, 250, 150);
+        win.initModality(Modality.APPLICATION_MODAL);
+        win.setScene(scene);
+        win.show();
     }
 }

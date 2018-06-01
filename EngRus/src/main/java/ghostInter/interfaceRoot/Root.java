@@ -4,10 +4,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -62,11 +59,8 @@ public interface Root
     Button searchWords = new Button("Поиск");
     Button addWords = new Button("Добавить");
 
-    // About - MenuBarEngRus
-    TextField improve = new TextField();
-    Label improveClick1 = new Label("Введите текст и нажмите на предложение из списка! " +
-            "Красный - не верно! Зеленый - верно!\n " +
-            "     Если вы уверены в своем переводе нажмите на номер предложения!");
+    // Control:
+    Button exitInMenu = new Button("В меню");
 
     // Exam
     ScrollPane examPane = new ScrollPane();
@@ -74,6 +68,17 @@ public interface Root
     ScrollPane leftTextPane = new ScrollPane();
     ScrollPane leftTextPane1 = new ScrollPane();
     ScrollPane leftTextPane2 = new ScrollPane();
+    VBox improveV = new VBox();
+    String str = "Введите текст и нажмите на предложение из списка! " +
+            "Красный - не верно! Зеленый - верно!\n " +
+            "Если вы уверены в своем переводе нажмите на номер предложения!";
+    TextField improve = new TextField();
+    Label improveClick1 = new Label(str);
+    VBox counter = new VBox();
+    Label counterYES = new Label();
+    Label counterNO = new Label();
+    Label YES = new Label("Верно:");
+    Label NO = new Label("Не верно:");
 
     // Часы:
     DateTimeFormatter format = DateTimeFormatter.ofPattern("dd MMMM yyyy");

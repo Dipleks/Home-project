@@ -8,6 +8,7 @@ import javafx.geometry.Pos;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+import java.net.ConnectException;
 import java.sql.SQLException;
 
 public class StartEnRu extends Application implements RootMethod
@@ -16,12 +17,19 @@ public class StartEnRu extends Application implements RootMethod
 
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
 
-        if (CreateDB.connectDB()){
-            runMethod();
-        } else {
-            showWindow();
+        try {
+            if (CreateDB.connectDB()) {
+                runMethod();
+            } else {
+                showWindow();
+            }
+        } catch (Exception e) {
+
+            // TODO действие если БД нет вообще на ПК
+
+            System.out.println("test");
         }
 
     }

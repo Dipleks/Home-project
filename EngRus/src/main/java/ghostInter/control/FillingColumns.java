@@ -14,6 +14,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.sql.SQLException;
+
 public class FillingColumns implements RootMethod, TableDB
 {
     private Label[] arrayOfOffersLeft;
@@ -248,29 +250,48 @@ public class FillingColumns implements RootMethod, TableDB
                     arrayOfOffersExam[finalI].setTextFill(EffectColor.colorTextClick);
                     correctly[finalI].setText("ВЕРНО!!!");
                     correctly[finalI].setTextFill(EffectColor.colorTextClick);
+                    improveClick1.setFont(EffectFont.fontTextExam);
+                    improveClick1.setTextFill(EffectColor.colorText);
+                    improveClick1.setText(improve.getText());
+                    // TODO сделать счетчик через БД
+//                    counterYES.setText("Счетчик в\nразработке");
                     improve.clear();
                 } else if (!improve.getText().equalsIgnoreCase("")){
                     arrayOfOffersExam[finalI].setTextFill(EffectColor.colorTextClickRED);
                     correctly[finalI].setText("НЕ ВЕРНО!!!");
                     correctly[finalI].setTextFill(EffectColor.colorTextClickRED);
-
+                    improveClick1.setFont(EffectFont.fontTextExam);
+                    improveClick1.setTextFill(EffectColor.colorText);
+                    improveClick1.setText(improve.getText());
+                    // TODO сделать счетчик через БД
+//                    counterNO.setText("Счетчик в\nразработке");
+                    improve.clear();
                 } else if (improve.getText().equalsIgnoreCase("")) {
-                    Stage win = new Stage();
-                    Label label = new Label("Напишите перевод для проверки...");
-                    Button button = new Button("Закрыть");
-                    button.setOnAction(e -> win.close());
-                    VBox group = new VBox();
-                    group.setSpacing(20);
-                    group.setAlignment(Pos.CENTER);
-                    group.getChildren().addAll(label, button);
-                    Scene scene = new Scene(group, 250, 150);
-                    win.initModality(Modality.APPLICATION_MODAL);
-                    win.setScene(scene);
-                    win.show();
+                    improveClick1.setFont(EffectFont.fontTextExam);
+                    improveClick1.setTextFill(EffectColor.colorTextClickRED);
+                    improveClick1.setText("Введите текст для проверки!");
+                    panes("Напишите перевод для проверки...");
                 }
             });
-
         }
+        ///////////////////
+        ROOT.getChildren().remove(counter);
+        YES.setFont(EffectFont.fontTextExam);
+        YES.setTextFill(EffectColor.colorTextClickPERU);
+        NO.setFont(EffectFont.fontTextExam);
+        NO.setTextFill(EffectColor.colorTextClickPERU);
+        counterYES.setText("Счетчик в\nразработке"); //удалить после реализации метода
+        counterNO.setText("Счетчик в\nразработке"); //удалить после реализации метода
+
+        counter.setSpacing(10);
+        counter.setAlignment(Pos.CENTER);
+        counter.setLayoutX(widthSize/10);
+        counter.setLayoutY(heightSize/5);
+//        counter.setStyle("-fx-border-color: RED");
+        counter.getChildren().addAll(YES, counterYES, NO, counterNO);
+        ROOT.getChildren().add(counter);
+        /////////////////
+
         for (int i = 0; i < number.length; i++) {
             number[i] = new Label();
             number[i].setFont(EffectFont.fontTextExam);
@@ -289,7 +310,6 @@ public class FillingColumns implements RootMethod, TableDB
                 }
             });
         }
-
 //          numberColumn.setStyle("-fx-border-color: RED");
         numberColumn.setSpacing(heightSize-heightSize/1.009);
         numberColumn.setPadding(new Insets(0, 0, 0, 0));
@@ -317,16 +337,22 @@ public class FillingColumns implements RootMethod, TableDB
         examPane.setLayoutY(heightSize - heightSize / 1.16);
         examPane.setPrefSize(widthSize / 1.8, heightSize / 1.5);
 
-        VBox vBox = new VBox();
+        HBox hBox = new HBox();
+        Button button = new Button("?");
+        button.setOnAction(e -> {
+            panes(str);
+        });
         improve.setPrefWidth(widthSize/3);
+        hBox.setSpacing(10);
+        hBox.getChildren().addAll(button, improve, exitInMenu);
         improveClick1.setAlignment(Pos.CENTER);
         improveClick1.setTextFill(EffectColor.colorTextClickPERU);
-        vBox.getChildren().addAll(improveClick1, improve);
-        vBox.setSpacing(heightSize-heightSize/1.009);
-        vBox.setLayoutX(widthSize-widthSize/1.4);
-        vBox.setLayoutY(heightSize-heightSize/1.05);
+        improveV.getChildren().addAll(improveClick1, hBox);
+        improveV.setSpacing(heightSize-heightSize/1.009);
+        improveV.setLayoutX(widthSize-widthSize/1.4);
+        improveV.setLayoutY(heightSize-heightSize/1.05);
 
-        ROOT.getChildren().addAll(examPane, vBox);
+        ROOT.getChildren().addAll(examPane, improveV);
     }
 
     // Добавление Базы данных, меню "Мои слова":

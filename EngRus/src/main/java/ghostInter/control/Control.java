@@ -220,14 +220,13 @@ public class Control implements RootMethod
             buttonExam[i].setOnAction(event -> {
 
                 soundClick();
-                groupRadBut.getChildren().addAll(exit);
                 groupRadBut.setSpacing(widthSize-widthSize/1.03);
 //                groupRadBut.setStyle("-fx-border-color: RED");
                 groupRadBut.setPadding(new Insets(10, 10, 10, 10));
                 groupRadBut.setLayoutX(widthSize-widthSize/2.8);
                 groupRadBut.setLayoutY(heightSize-heightSize/1.09);
                 ROOT.getChildren().addAll(groupRadBut);
-                exit.setOnAction(e -> {
+                exitInMenu.setOnAction(e -> {
                     try {
                         methodClearExam(m);
                     } catch (SQLException | ClassNotFoundException e1) {
