@@ -7,14 +7,10 @@ import ghostInter.interfaceRoot.RootMethod;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
-import java.sql.SQLException;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class FillingColumns implements RootMethod, TableDB
 {
@@ -253,8 +249,6 @@ public class FillingColumns implements RootMethod, TableDB
                     improveClick1.setFont(EffectFont.fontTextExam);
                     improveClick1.setTextFill(EffectColor.colorText);
                     improveClick1.setText(improve.getText());
-                    // TODO сделать счетчик через БД
-//                    counterYES.setText("Счетчик в\nразработке");
                     improve.clear();
                 } else if (!improve.getText().equalsIgnoreCase("")){
                     arrayOfOffersExam[finalI].setTextFill(EffectColor.colorTextClickRED);
@@ -263,8 +257,6 @@ public class FillingColumns implements RootMethod, TableDB
                     improveClick1.setFont(EffectFont.fontTextExam);
                     improveClick1.setTextFill(EffectColor.colorText);
                     improveClick1.setText(improve.getText());
-                    // TODO сделать счетчик через БД
-//                    counterNO.setText("Счетчик в\nразработке");
                     improve.clear();
                 } else if (improve.getText().equalsIgnoreCase("")) {
                     improveClick1.setFont(EffectFont.fontTextExam);
@@ -272,25 +264,21 @@ public class FillingColumns implements RootMethod, TableDB
                     improveClick1.setText("Введите текст для проверки!");
                     panes("Напишите перевод для проверки...");
                 }
+                // Счетчик:
+                int a = 0;
+                int b = 0;
+                for (int j = 0; j < 100; j++) {
+                    if (correctly[j].getText().equals("ВЕРНО!!!")){
+                        ++a;
+                    } else if (correctly[j].getText().equals("НЕ ВЕРНО!!!")) {
+                        ++b;
+                    }
+                }
+                counterYES.setText(String.valueOf(a));
+                counterNO.setText(String.valueOf(b));
             });
         }
-        ///////////////////
-        ROOT.getChildren().remove(counter);
-        YES.setFont(EffectFont.fontTextExam);
-        YES.setTextFill(EffectColor.colorTextClickPERU);
-        NO.setFont(EffectFont.fontTextExam);
-        NO.setTextFill(EffectColor.colorTextClickPERU);
-        counterYES.setText("Счетчик в\nразработке"); //удалить после реализации метода
-        counterNO.setText("Счетчик в\nразработке"); //удалить после реализации метода
-
-        counter.setSpacing(10);
-        counter.setAlignment(Pos.CENTER);
-        counter.setLayoutX(widthSize/10);
-        counter.setLayoutY(heightSize/5);
-//        counter.setStyle("-fx-border-color: RED");
-        counter.getChildren().addAll(YES, counterYES, NO, counterNO);
-        ROOT.getChildren().add(counter);
-        /////////////////
+        counter();
 
         for (int i = 0; i < number.length; i++) {
             number[i] = new Label();

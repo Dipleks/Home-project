@@ -1,30 +1,21 @@
 package ghostInter.interfaceRoot;
 
 import db.TableDB;
+import db.AddStatisticTable;
 import ghostInter.control.AddExercise;
 import ghostInter.control.FillingColumns;
-import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.application.Platform;
+import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.paint.Color;
 import javafx.stage.Modality;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
-import java.io.File;
 import java.sql.*;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public interface RootMethod extends Root
 {
@@ -306,5 +297,112 @@ public interface RootMethod extends Root
         win.initModality(Modality.APPLICATION_MODAL);
         win.setScene(scene);
         win.show();
+    }
+    // Счетчик:
+    default void counter() {
+        ROOT.getChildren().remove(counter);
+        YES.setFont(EffectFont.fontTextExam);
+        YES.setTextFill(EffectColor.colorTextClickPERU);
+        NO.setFont(EffectFont.fontTextExam);
+        NO.setTextFill(EffectColor.colorTextClickPERU);
+        counterYES.setFont(EffectFont.fontTextExam);
+        counterNO.setFont(EffectFont.fontTextExam);
+        counterYES.setText("0");
+        counterNO.setText("0");
+        resultExam.setStyle("-fx-background-color: #c1b8b8;");
+        resultExam.setOnAction(event -> statisticsWindow());
+
+        counter.setSpacing(10);
+        counter.setAlignment(Pos.CENTER);
+        counter.setLayoutX(widthSize/10);
+        counter.setLayoutY(heightSize/5);
+//        counter.setStyle("-fx-border-color: RED");
+        counter.getChildren().addAll(YES, counterYES, NO, counterNO, resultExam);
+        ROOT.getChildren().add(counter);
+    }
+    default void counterAddDB() {
+        // TODO метод занисения статистики в БД
+    }
+    default void statisticsWindow(){
+        // TODO метод получения статистики из БД (будет открыто окно с датой, временем, часть контрольной,
+        // TODO кол-вом верных и не верных ответов и возможностью сохранить новую статистику)
+        Stage win = new Stage();
+        Group group = new Group();
+        Scene scene = new Scene(group, widthSize/3, heightSize/2);
+
+        dateTime.setPrefWidth(scene.getWidth()/4);
+        dateTime.setCellValueFactory(new PropertyValueFactory<>("dateTime"));
+        returnYES.setPrefWidth(scene.getWidth()/3);
+        returnYES.setCellValueFactory(new PropertyValueFactory<>("returnY"));
+        returnNO.setPrefWidth(scene.getWidth()/3);
+        returnNO.setCellValueFactory(new PropertyValueFactory<>("returnN"));
+
+        ObservableList list = getUserList();
+        tableStatisticExam.setItems(list);
+
+        tableStatisticExam.getColumns().addAll(dateTime, returnYES, returnNO);
+        Button addCounter = new Button("Добавить статистику");
+        addCounter.setOnAction(event -> counterAddDB());
+        addCounter.setLayoutX(scene.getWidth()/1.5);
+        addCounter.setLayoutY(scene.getHeight()/1.08);
+        group.getChildren().addAll(tableStatisticExam, addCounter);
+
+        win.initModality(Modality.APPLICATION_MODAL);
+        win.setTitle("Статистика");
+        win.setScene(scene);
+        win.show();
+//        System.out.println(counterYES.getText());
+//        System.out.println(counterNO.getText());
+    }
+    default ObservableList<AddStatisticTable> getUserList() {
+        // TODO метод добавления данных из БД
+        ////////////
+//        try {
+//            Connection connection =  DriverManager.getConnection(TableDB.DB_URL + TableDB.db, TableDB.USER, TableDB.PASS);
+//            Statement statement1 = connection.createStatement();
+//            Statement statement2 = connection.createStatement();
+//            Statement statement3 = connection.createStatement();
+//            ResultSet r1 = statement1.executeQuery("SELECT date_time FROM counter");
+//            for (int i = 0; r1.next(); i++) {
+//                leftC.getChildren().remove(my_word_en[i]);
+//                rightC.getChildren().remove(my_word_ru[i]);
+//            }
+//            ResultSet r2 = statement2.executeQuery("SELECT * FROM my_words WHERE word_en LIKE '%"+
+//                    textSearch.getText()+"%'");
+//            ResultSet r3 = statement3.executeQuery("SELECT * FROM my_words WHERE word_ru LIKE '%"+
+//                    textSearch.getText()+"%'");
+//            for (int i = 0; r2.next(); i++) {
+//                r3.next();
+//                my_word_en[i] = new Label();
+//                my_word_en[i].setFont(EffectFont.fontTextExam);
+//                my_word_en[i].setTextFill(EffectColor.colorText);
+//                my_word_en[i].setPrefWidth(widthSize-widthSize/2.45);
+//                my_word_en[i].setText(r2.getString("word_en"));
+//                my_word_ru[i].setText(r2.getString("word_ru"));
+//                my_word_en[i].setAlignment(Pos.BASELINE_RIGHT);
+//
+//                leftC.getChildren().addAll(my_word_en[i]);
+//                rightC.getChildren().addAll(my_word_ru[i]);
+//            }
+//            for (int i = 0; r3.next(); i++) {
+//                r2.next();
+//                my_word_ru[i] = new Label();
+//                my_word_ru[i].setFont(EffectFont.fontTextExam);
+//                my_word_ru[i].setTextFill(EffectColor.colorText);
+//                my_word_ru[i].setPrefWidth(widthSize-widthSize/2.45);
+//                my_word_ru[i].setText(r3.getString("word_ru"));
+//                my_word_en[i].setText(r3.getString("word_en"));
+//
+//                leftC.getChildren().addAll(my_word_en[i]);
+//                rightC.getChildren().addAll(my_word_ru[i]);
+//            }
+//            r2.close();
+//            r3.close();
+//        } catch (SQLException e1) {
+//            e1.printStackTrace();
+//        }
+        /////////////
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        return list;
     }
 }

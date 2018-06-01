@@ -1,7 +1,10 @@
 package ghostInter.interfaceRoot;
 
+import db.AddStatisticTable;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -79,6 +82,12 @@ public interface Root
     Label counterNO = new Label();
     Label YES = new Label("Верно:");
     Label NO = new Label("Не верно:");
+    Button resultExam = new Button("Статистика");
+    TableView<AddStatisticTable> tableStatisticExam = new TableView<AddStatisticTable>();
+    TableColumn<AddStatisticTable, String> dateTime = new TableColumn<>("Дата");
+    TableColumn<AddStatisticTable, String> returnYES = new TableColumn<>("Правельные ответы");
+    TableColumn<AddStatisticTable, String> returnNO = new TableColumn<>("Не правельные ответы");
+    ObservableList<AddStatisticTable> list = FXCollections.observableArrayList();
 
     // Часы:
     DateTimeFormatter format = DateTimeFormatter.ofPattern("dd MMMM yyyy");
