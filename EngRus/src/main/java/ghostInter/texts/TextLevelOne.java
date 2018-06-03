@@ -2,12 +2,12 @@ package ghostInter.texts;
 
 import ghostInter.interfaceRoot.EffectColor;
 import ghostInter.interfaceRoot.EffectFont;
-import ghostInter.interfaceRoot.Root;
+import ghostInter.interfaceRoot.RootMethod;
 import javafx.concurrent.Task;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 
-public class TextLevelOne implements Root
+public class TextLevelOne implements RootMethod
 {
     private Label s1 = new Label();
     private Label s2 = new Label();

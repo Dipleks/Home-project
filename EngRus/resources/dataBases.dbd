@@ -1,0 +1,12 @@
+--создаем БД:
+CREATE DATABASE text_proposal;
+
+--создаем таблицу своих слов:
+CREATE TABLE IF NOT EXISTS my_words
+(id SERIAL PRIMARY KEY, word_en TEXT, word_ru TEXT);
+
+--создаем базу для статистики ответов контрольных:
+CREATE TABLE IF NOT EXISTS counter
+(date_time timestamp, correct_answer integer, wrong_answer integer);
+
+--пример ввода даты INSERT INTO counter VALUES ('01.06.2018 14:45', 5, 0);
