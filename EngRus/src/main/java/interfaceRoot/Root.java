@@ -67,6 +67,9 @@ public interface Root
     Button exitInMenu = new Button("В меню");
 
     // Exam
+    Stage winn = new Stage();
+    Group groupp = new Group();
+    Scene scenee = new Scene(groupp, widthSize/3, heightSize/2);
     ScrollPane examPane = new ScrollPane();
     ScrollPane textPane = new ScrollPane();
     ScrollPane leftTextPane = new ScrollPane();
@@ -83,12 +86,11 @@ public interface Root
     Label counterNO = new Label();
     Label YES = new Label("Верно:");
     Label NO = new Label("Не верно:");
-    Button resultExam = new Button("Статистика");
+
     TableView<AddStatisticTable> tableStatisticExam = new TableView<AddStatisticTable>();
     TableColumn<AddStatisticTable, String> dateTime = new TableColumn<>("Дата");
     TableColumn<AddStatisticTable, String> returnYES = new TableColumn<>("Правельные ответы");
     TableColumn<AddStatisticTable, String> returnNO = new TableColumn<>("Не правельные ответы");
-    ObservableList<AddStatisticTable> list = FXCollections.observableArrayList();
 
     // Часы:
     DateTimeFormatter format = DateTimeFormatter.ofPattern("dd MMMM yyyy");

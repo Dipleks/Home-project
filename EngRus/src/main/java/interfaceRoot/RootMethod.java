@@ -5,6 +5,7 @@ import db.AddStatisticTable;
 import control.AddExerciseExam;
 import control.MenuBarEngRus;
 import javafx.animation.Timeline;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
@@ -318,8 +319,12 @@ public interface RootMethod extends Root
         counterNO.setFont(EffectFont.fontTextExam);
         counterYES.setText("0");
         counterNO.setText("0");
+        // Кнопка "Счетчик":
+        Button resultExam = new Button("Статистика");
         resultExam.setStyle("-fx-background-color: #c1b8b8;");
-        resultExam.setOnAction(event -> statisticsWindow());
+        resultExam.setOnAction(event -> {
+            statisticsWindow();
+           });
 
         counter.setSpacing(10);
         counter.setAlignment(Pos.CENTER);
@@ -337,38 +342,38 @@ public interface RootMethod extends Root
     default void statisticsWindow(){
         // TODO метод получения статистики из БД (будет открыто окно с датой, временем, часть контрольной,
         // TODO кол-вом верных и не верных ответов и возможностью сохранить новую статистику)
-        Stage win = new Stage();
-        Group group = new Group();
-        Scene scene = new Scene(group, widthSize/3, heightSize/2);
-
-        dateTime.setPrefWidth(scene.getWidth()/4);
-        dateTime.setCellValueFactory(new PropertyValueFactory<>("dateTime"));
-        returnYES.setPrefWidth(scene.getWidth()/3);
-        returnYES.setCellValueFactory(new PropertyValueFactory<>("returnY"));
-        returnNO.setPrefWidth(scene.getWidth()/3);
-        returnNO.setCellValueFactory(new PropertyValueFactory<>("returnN"));
-
-        ObservableList list = getUserList();
+        ObservableList<AddStatisticTable> list = getUserList();
         tableStatisticExam.setItems(list);
-
-        tableStatisticExam.getColumns().addAll(dateTime, returnYES, returnNO);
         Button addCounter = new Button("Добавить статистику");
+        Button addRestart = new Button("Обновить статистику");
+        addRestart.setOnAction(event -> {
+            ROOT.getChildren().remove(tableStatisticExam);
+            winn.close();
+        });
+        addRestart.setLayoutX(scenee.getWidth()/2.7);
+        addRestart.setLayoutY(scenee.getHeight()/1.08);
         addCounter.setOnAction(event -> counterAddDB());
-        addCounter.setLayoutX(scene.getWidth()/1.5);
-        addCounter.setLayoutY(scene.getHeight()/1.08);
-        group.getChildren().addAll(tableStatisticExam, addCounter);
+        addCounter.setLayoutX(scenee.getWidth()/1.5);
+        addCounter.setLayoutY(scenee.getHeight()/1.08);
 
-        win.initModality(Modality.APPLICATION_MODAL);
-        win.setTitle("Статистика");
-        win.setScene(scene);
+        groupp.getChildren().addAll(tableStatisticExam, addCounter, addRestart);
+        winn.setTitle("Статистика");
+        winn.initModality(Modality.APPLICATION_MODAL);
+        winn.setScene(scenee);
+        winn.show();
         //TODO разделить на два метода заупуск и исполнение модального окна
-        win.show();
-//        System.out.println(counterYES.getText());
-//        System.out.println(counterNO.getText());
     }
     // Лист статистики контрольных из БД:
     default ObservableList<AddStatisticTable> getUserList() {
         // TODO метод добавления данных из БД
+        ObservableList<AddStatisticTable> list = FXCollections.observableArrayList();
+        dateTime.setPrefWidth(scenee.getWidth()/3.1);
+        dateTime.setCellValueFactory(new PropertyValueFactory<>("dateTime"));
+        returnYES.setPrefWidth(scenee.getWidth()/3);
+        returnYES.setCellValueFactory(new PropertyValueFactory<>("returnY"));
+        returnNO.setPrefWidth(scenee.getWidth()/3);
+        returnNO.setCellValueFactory(new PropertyValueFactory<>("returnN"));
+        tableStatisticExam.getColumns().addAll(dateTime, returnYES, returnNO);
         ////////////
 //        try {
 //            Connection connection =  DriverManager.getConnection(TableDB.DB_URL + TableDB.db, TableDB.USER, TableDB.PASS);
@@ -415,6 +420,40 @@ public interface RootMethod extends Root
 //            e1.printStackTrace();
 //        }
         /////////////
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
+        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
         list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
         return list;
     }
