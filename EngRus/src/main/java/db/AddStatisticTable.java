@@ -3,9 +3,9 @@ package db;
 public class AddStatisticTable
 {
 
-    String dateTime;
-    String returnY;
-    String returnN;
+    private String dateTime;
+    private String returnY;
+    private String returnN;
 
     public AddStatisticTable(String dateTime, String returnY, String returnN) {
         this.dateTime = dateTime;
