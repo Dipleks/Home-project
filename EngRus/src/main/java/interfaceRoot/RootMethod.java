@@ -1,22 +1,16 @@
 package interfaceRoot;
 
-import db.AddStatisticTable;
 import db.TableDB;
 import control.AddExerciseExam;
 import control.MenuBarEngRus;
 import javafx.animation.Timeline;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import myWords.FillingColumnsMyWords;
-
 import java.sql.*;
 
 public interface RootMethod extends Root
@@ -213,6 +207,7 @@ public interface RootMethod extends Root
             Statement stmt1 = connection.createStatement();
             Statement stmt2 = connection.createStatement();
             Statement stmt3 = connection.createStatement();
+            // Добавление таблиц:
             stmt3.executeUpdate(TableDB.my_words);
             ResultSet rs1 = stmt1.executeQuery("SELECT word_en FROM my_words ORDER BY id;"); //sql запрос
             ResultSet rs2 = stmt2.executeQuery("SELECT word_ru FROM my_words ORDER BY id;"); //sql запрос
@@ -313,83 +308,5 @@ public interface RootMethod extends Root
         win.setScene(scene);
         win.show();
     }
-    // Счетчик:
-    default void counter() {
-        ROOT.getChildren().remove(counterVB);
-        YES.setFont(EffectFont.fontTextExam);
-        YES.setTextFill(EffectColor.colorTextClickPERU);
-        NO.setFont(EffectFont.fontTextExam);
-        NO.setTextFill(EffectColor.colorTextClickPERU);
-        counterYES.setFont(EffectFont.fontTextExam);
-        counterNO.setFont(EffectFont.fontTextExam);
-        counterYES.setText("0");
-        counterNO.setText("0");
-        // Кнопка "Счетчик":
-        Button resultExam = new Button("Статистика");
-        resultExam.setStyle("-fx-background-color: #c1b8b8;");
-        resultExam.setOnAction(event -> {
 
-//            try {
-                statisticsWindow();
-//            } catch (IllegalStateException e){
-//                System.out.println("ese");
-//            }
-
-        });
-
-        counterVB.setSpacing(10);
-        counterVB.setAlignment(Pos.CENTER);
-        counterVB.setLayoutX(widthSize/10);
-        counterVB.setLayoutY(heightSize/5);
-//        counterVB.setStyle("-fx-border-color: RED");
-        counterVB.getChildren().addAll(YES, counterYES, NO, counterNO, resultExam);
-        ROOT.getChildren().add(counterVB);
-    }
-    // Добавление статистики контрольных в БД:
-    default void counterAddDB() {
-        // TODO метод занисения статистики в БД
-    }
-    // Получение статистики контрольных из БД:
-    default void statisticsWindow(){
-        Stage winn = new Stage();
-        Group groupp = new Group();
-        Scene scenee = new Scene(groupp, widthSize/3, heightSize/2);
-        // TODO метод получения статистики из БД (будет открыто окно с датой, временем, часть контрольной,
-        // TODO кол-вом верных и не верных ответов и возможностью сохранить новую статистику)
-        Button addCounter = new Button("Добавить статистику");
-        Button addRestart = new Button("Обновить статистику");
-        addRestart.setOnAction(event -> {
-        });
-        addRestart.setLayoutX(scenee.getWidth()/2.7);
-        addRestart.setLayoutY(scenee.getHeight()/1.08);
-        addCounter.setOnAction(event -> counterAddDB());
-        addCounter.setLayoutX(scenee.getWidth()/1.5);
-        addCounter.setLayoutY(scenee.getHeight()/1.08);
-
-        TableView<AddStatisticTable> tableStatisticExam = new TableView<AddStatisticTable>();
-        TableColumn<AddStatisticTable, String> dateTime = new TableColumn<>("Дата");
-        TableColumn<AddStatisticTable, String> returnYES = new TableColumn<>("Правельные ответы");
-        TableColumn<AddStatisticTable, String> returnNO = new TableColumn<>("Не правельные ответы");
-        dateTime.setCellValueFactory(new PropertyValueFactory<>("dateTime"));
-        dateTime.setPrefWidth(scenee.getWidth()/3);
-        returnYES.setCellValueFactory(new PropertyValueFactory<>("returnY"));
-        returnYES.setPrefWidth(scenee.getWidth()/3.05);
-        returnNO.setCellValueFactory(new PropertyValueFactory<>("returnN"));
-        returnNO.setPrefWidth(scenee.getWidth()/3.05);
-        tableStatisticExam.setStyle("-fx-background-color: gray;");
-
-        ObservableList<AddStatisticTable> list = FXCollections.observableArrayList();
-        for (int i = 0; i < 100; i++) {
-            list.add(new AddStatisticTable("test "+i, "test " +i, "test " +i));
-        }
-
-        tableStatisticExam.setItems(list);
-        tableStatisticExam.getColumns().addAll(dateTime, returnYES, returnNO);
-
-        groupp.getChildren().addAll(tableStatisticExam, addCounter, addRestart);
-        winn.setTitle("Статистика");
-        winn.initModality(Modality.APPLICATION_MODAL);
-        winn.setScene(scenee);
-        winn.show();
-    }
 }

@@ -1,5 +1,6 @@
 package exam;
 
+import db.CounterExam;
 import interfaceRoot.EffectColor;
 import interfaceRoot.EffectFont;
 import interfaceRoot.RootMethod;
@@ -10,7 +11,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 
-public class FillingColumnsExam implements RootMethod
+import java.sql.SQLException;
+
+public class FillingColumnsExam implements RootMethod, CounterExam
 {
     private Label[] arrayOfOffersExam;
     private Label[] number;
@@ -97,7 +100,13 @@ public class FillingColumnsExam implements RootMethod
             });
         }
         // Счетчик:
-        counter();
+        try {
+            counter();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         // Нумерация контольных:
         numberingOfExam();
         // Добавляем все на панели:

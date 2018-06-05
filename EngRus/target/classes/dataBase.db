@@ -7,6 +7,9 @@ CREATE TABLE IF NOT EXISTS my_words
 
 --создаем базу для статистики ответов контрольных:
 CREATE TABLE IF NOT EXISTS counter
-(date_time timestamp, correct_answer integer, wrong_answer integer);
+(id SERIAL PRIMARY KEY, date_time timestamp, correct_answer integer, wrong_answer integer);
+
+--удаление таблицы "Счетчик контрольных":
+DELETE FROM counter;
 
 --пример ввода даты INSERT INTO counter VALUES ('01.06.2018 14:45', 5, 0);

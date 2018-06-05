@@ -45,6 +45,7 @@ public class StartEnRu extends Application implements RootMethod
         yesDB.setOnAction(e -> {
             try {
                 CreateDB.newDB();
+                CreateDB.newCounterFirstRun();
             } catch (SQLException | ClassNotFoundException e1) {
                 e1.printStackTrace();
             }
