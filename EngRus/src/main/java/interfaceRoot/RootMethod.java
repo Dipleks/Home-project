@@ -1,7 +1,7 @@
 package interfaceRoot;
 
-import db.TableDB;
 import db.AddStatisticTable;
+import db.TableDB;
 import control.AddExerciseExam;
 import control.MenuBarEngRus;
 import javafx.animation.Timeline;
@@ -44,7 +44,7 @@ public interface RootMethod extends Root
         iprColumn.getChildren().clear();
         numberColumn.getChildren().clear();
         improveV.getChildren().clear();
-        counter.getChildren().clear();
+        counterVB.getChildren().clear();
         ROOT.getChildren().clear();
         clock();
     }
@@ -172,22 +172,27 @@ public interface RootMethod extends Root
     // Добавление новых слов меню my_words:
     default void addNewWords(){
         addWords.setOnAction(e -> {
-            try {
-                Connection connection =  DriverManager.getConnection(TableDB.DB_URL + TableDB.db, TableDB.USER, TableDB.PASS);
-                Statement statement = connection.createStatement();
-                statement.executeUpdate("INSERT INTO my_words (word_en, word_ru) VALUES ('" + textEn.getText()
-                        +"', '"+ textRu.getText() +"')");
-                ResultSet r = statement.executeQuery("SELECT word_en FROM my_words");
-                for (int i = 0; r.next(); i++) {
-                    leftC.getChildren().remove(my_word_en[i]);
-                    rightC.getChildren().remove(my_word_ru[i]);
+            if (!textEn.getText().equals("") & !textRu.getText().equals("")) {
+                try {
+                    Connection connection = DriverManager.getConnection(TableDB.DB_URL + TableDB.db, TableDB.USER, TableDB.PASS);
+                    Statement statement = connection.createStatement();
+                    statement.executeUpdate("INSERT INTO my_words (word_en, word_ru) VALUES ('" + textEn.getText()
+                            + "', '" + textRu.getText() + "')");
+                    ResultSet r = statement.executeQuery("SELECT word_en FROM my_words");
+                    for (int i = 0; r.next(); i++) {
+                        leftC.getChildren().remove(my_word_en[i]);
+                        rightC.getChildren().remove(my_word_ru[i]);
+                    }
+                    restartMyWordsTable();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
                 }
-                restartMyWordsTable();
-            } catch (SQLException ex) {
-                ex.printStackTrace();
+                textEn.clear();
+                textRu.clear();
+            } else {
+                // TODO добавиить модальное окно, при попытки ввести пустые данные
+                System.out.println("попытка добавить пустое поле!");
             }
-            textEn.clear();
-            textRu.clear();
         });
     }
     // Обновление таблицы my_words:
@@ -310,7 +315,7 @@ public interface RootMethod extends Root
     }
     // Счетчик:
     default void counter() {
-        ROOT.getChildren().remove(counter);
+        ROOT.getChildren().remove(counterVB);
         YES.setFont(EffectFont.fontTextExam);
         YES.setTextFill(EffectColor.colorTextClickPERU);
         NO.setFont(EffectFont.fontTextExam);
@@ -323,16 +328,22 @@ public interface RootMethod extends Root
         Button resultExam = new Button("Статистика");
         resultExam.setStyle("-fx-background-color: #c1b8b8;");
         resultExam.setOnAction(event -> {
-            statisticsWindow();
-           });
 
-        counter.setSpacing(10);
-        counter.setAlignment(Pos.CENTER);
-        counter.setLayoutX(widthSize/10);
-        counter.setLayoutY(heightSize/5);
-//        counter.setStyle("-fx-border-color: RED");
-        counter.getChildren().addAll(YES, counterYES, NO, counterNO, resultExam);
-        ROOT.getChildren().add(counter);
+//            try {
+                statisticsWindow();
+//            } catch (IllegalStateException e){
+//                System.out.println("ese");
+//            }
+
+        });
+
+        counterVB.setSpacing(10);
+        counterVB.setAlignment(Pos.CENTER);
+        counterVB.setLayoutX(widthSize/10);
+        counterVB.setLayoutY(heightSize/5);
+//        counterVB.setStyle("-fx-border-color: RED");
+        counterVB.getChildren().addAll(YES, counterYES, NO, counterNO, resultExam);
+        ROOT.getChildren().add(counterVB);
     }
     // Добавление статистики контрольных в БД:
     default void counterAddDB() {
@@ -340,15 +351,14 @@ public interface RootMethod extends Root
     }
     // Получение статистики контрольных из БД:
     default void statisticsWindow(){
+        Stage winn = new Stage();
+        Group groupp = new Group();
+        Scene scenee = new Scene(groupp, widthSize/3, heightSize/2);
         // TODO метод получения статистики из БД (будет открыто окно с датой, временем, часть контрольной,
         // TODO кол-вом верных и не верных ответов и возможностью сохранить новую статистику)
-        ObservableList<AddStatisticTable> list = getUserList();
-        tableStatisticExam.setItems(list);
         Button addCounter = new Button("Добавить статистику");
         Button addRestart = new Button("Обновить статистику");
         addRestart.setOnAction(event -> {
-            ROOT.getChildren().remove(tableStatisticExam);
-            winn.close();
         });
         addRestart.setLayoutX(scenee.getWidth()/2.7);
         addRestart.setLayoutY(scenee.getHeight()/1.08);
@@ -356,105 +366,30 @@ public interface RootMethod extends Root
         addCounter.setLayoutX(scenee.getWidth()/1.5);
         addCounter.setLayoutY(scenee.getHeight()/1.08);
 
+        TableView<AddStatisticTable> tableStatisticExam = new TableView<AddStatisticTable>();
+        TableColumn<AddStatisticTable, String> dateTime = new TableColumn<>("Дата");
+        TableColumn<AddStatisticTable, String> returnYES = new TableColumn<>("Правельные ответы");
+        TableColumn<AddStatisticTable, String> returnNO = new TableColumn<>("Не правельные ответы");
+        dateTime.setCellValueFactory(new PropertyValueFactory<>("dateTime"));
+        dateTime.setPrefWidth(scenee.getWidth()/3);
+        returnYES.setCellValueFactory(new PropertyValueFactory<>("returnY"));
+        returnYES.setPrefWidth(scenee.getWidth()/3.05);
+        returnNO.setCellValueFactory(new PropertyValueFactory<>("returnN"));
+        returnNO.setPrefWidth(scenee.getWidth()/3.05);
+        tableStatisticExam.setStyle("-fx-background-color: gray;");
+
+        ObservableList<AddStatisticTable> list = FXCollections.observableArrayList();
+        for (int i = 0; i < 100; i++) {
+            list.add(new AddStatisticTable("test "+i, "test " +i, "test " +i));
+        }
+
+        tableStatisticExam.setItems(list);
+        tableStatisticExam.getColumns().addAll(dateTime, returnYES, returnNO);
+
         groupp.getChildren().addAll(tableStatisticExam, addCounter, addRestart);
         winn.setTitle("Статистика");
         winn.initModality(Modality.APPLICATION_MODAL);
         winn.setScene(scenee);
         winn.show();
-        //TODO разделить на два метода заупуск и исполнение модального окна
-    }
-    // Лист статистики контрольных из БД:
-    default ObservableList<AddStatisticTable> getUserList() {
-        // TODO метод добавления данных из БД
-        ObservableList<AddStatisticTable> list = FXCollections.observableArrayList();
-        dateTime.setPrefWidth(scenee.getWidth()/3.1);
-        dateTime.setCellValueFactory(new PropertyValueFactory<>("dateTime"));
-        returnYES.setPrefWidth(scenee.getWidth()/3);
-        returnYES.setCellValueFactory(new PropertyValueFactory<>("returnY"));
-        returnNO.setPrefWidth(scenee.getWidth()/3);
-        returnNO.setCellValueFactory(new PropertyValueFactory<>("returnN"));
-        tableStatisticExam.getColumns().addAll(dateTime, returnYES, returnNO);
-        ////////////
-//        try {
-//            Connection connection =  DriverManager.getConnection(TableDB.DB_URL + TableDB.db, TableDB.USER, TableDB.PASS);
-//            Statement statement1 = connection.createStatement();
-//            Statement statement2 = connection.createStatement();
-//            Statement statement3 = connection.createStatement();
-//            ResultSet r1 = statement1.executeQuery("SELECT date_time FROM counter");
-//            for (int i = 0; r1.next(); i++) {
-//                leftC.getChildren().remove(my_word_en[i]);
-//                rightC.getChildren().remove(my_word_ru[i]);
-//            }
-//            ResultSet r2 = statement2.executeQuery("SELECT * FROM my_words WHERE word_en LIKE '%"+
-//                    textSearch.getText()+"%'");
-//            ResultSet r3 = statement3.executeQuery("SELECT * FROM my_words WHERE word_ru LIKE '%"+
-//                    textSearch.getText()+"%'");
-//            for (int i = 0; r2.next(); i++) {
-//                r3.next();
-//                my_word_en[i] = new Label();
-//                my_word_en[i].setFont(EffectFont.fontTextExam);
-//                my_word_en[i].setTextFill(EffectColor.colorText);
-//                my_word_en[i].setPrefWidth(widthSize-widthSize/2.45);
-//                my_word_en[i].setText(r2.getString("word_en"));
-//                my_word_ru[i].setText(r2.getString("word_ru"));
-//                my_word_en[i].setAlignment(Pos.BASELINE_RIGHT);
-//
-//                leftC.getChildren().addAll(my_word_en[i]);
-//                rightC.getChildren().addAll(my_word_ru[i]);
-//            }
-//            for (int i = 0; r3.next(); i++) {
-//                r2.next();
-//                my_word_ru[i] = new Label();
-//                my_word_ru[i].setFont(EffectFont.fontTextExam);
-//                my_word_ru[i].setTextFill(EffectColor.colorText);
-//                my_word_ru[i].setPrefWidth(widthSize-widthSize/2.45);
-//                my_word_ru[i].setText(r3.getString("word_ru"));
-//                my_word_en[i].setText(r3.getString("word_en"));
-//
-//                leftC.getChildren().addAll(my_word_en[i]);
-//                rightC.getChildren().addAll(my_word_ru[i]);
-//            }
-//            r2.close();
-//            r3.close();
-//        } catch (SQLException e1) {
-//            e1.printStackTrace();
-//        }
-        /////////////
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        list.add(new AddStatisticTable("Тут будет дата и время", "В разработке", "В разработке"));
-        return list;
     }
 }

@@ -1,10 +1,7 @@
 package interfaceRoot;
 
-import db.AddStatisticTable;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -67,9 +64,6 @@ public interface Root
     Button exitInMenu = new Button("В меню");
 
     // Exam
-    Stage winn = new Stage();
-    Group groupp = new Group();
-    Scene scenee = new Scene(groupp, widthSize/3, heightSize/2);
     ScrollPane examPane = new ScrollPane();
     ScrollPane textPane = new ScrollPane();
     ScrollPane leftTextPane = new ScrollPane();
@@ -81,16 +75,11 @@ public interface Root
             "Если вы уверены в своем переводе нажмите на номер предложения!";
     TextField improve = new TextField();
     Label improveClick1 = new Label(str);
-    VBox counter = new VBox();
+    VBox counterVB = new VBox();
     Label counterYES = new Label();
     Label counterNO = new Label();
     Label YES = new Label("Верно:");
     Label NO = new Label("Не верно:");
-
-    TableView<AddStatisticTable> tableStatisticExam = new TableView<AddStatisticTable>();
-    TableColumn<AddStatisticTable, String> dateTime = new TableColumn<>("Дата");
-    TableColumn<AddStatisticTable, String> returnYES = new TableColumn<>("Правельные ответы");
-    TableColumn<AddStatisticTable, String> returnNO = new TableColumn<>("Не правельные ответы");
 
     // Часы:
     DateTimeFormatter format = DateTimeFormatter.ofPattern("dd MMMM yyyy");

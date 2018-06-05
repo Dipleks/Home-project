@@ -2,7 +2,6 @@ package db;
 
 public class AddStatisticTable
 {
-
     private String dateTime;
     private String returnY;
     private String returnN;
@@ -29,5 +28,4 @@ public class AddStatisticTable
                 ", returnN='" + returnN + '\'' +
                 '}';
     }
-
 }
