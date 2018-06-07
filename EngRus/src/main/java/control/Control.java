@@ -50,8 +50,8 @@ public class Control implements RootMethod
                     } catch (SQLException | ClassNotFoundException e1) {
                         e1.printStackTrace();
                     }
-                    app[finalI].getLeftEn();
-                    app[finalI].getRightEn();
+                    app[finalI].getEnRu("LEFT", "EN");
+                    app[finalI].getEnRu("RIGHT", "EN");
                 });
                 ruBut.setOnAction(e ->
                 {
@@ -61,8 +61,8 @@ public class Control implements RootMethod
                     } catch (SQLException | ClassNotFoundException e1) {
                         e1.printStackTrace();
                     }
-                    app[finalI].getLeftRu();
-                    app[finalI].getRightRu();
+                    app[finalI].getEnRu("LEFT", "RU");
+                    app[finalI].getEnRu("RIGHT", "RU");
                 });
                 exit.setOnAction(e -> {
                     try {
@@ -71,8 +71,8 @@ public class Control implements RootMethod
                         e1.printStackTrace();
                     }
                 });
-                app[finalI].getLeftEn();
-                app[finalI].getRightEn();
+                app[finalI].getEnRu("LEFT", "EN");
+                app[finalI].getEnRu("RIGHT", "EN");
                 removeBut();
                 lengthButtonApp.getChildren().removeAll(buttonApp);
                 lengthButtonNeg.getChildren().removeAll(buttonNeg);
@@ -106,8 +106,8 @@ public class Control implements RootMethod
                     } catch (SQLException | ClassNotFoundException e1) {
                         e1.printStackTrace();
                     }
-                    neg[finalI].getLeftEn();
-                    neg[finalI].getRightEn();
+                    neg[finalI].getEnRu("LEFT", "EN");
+                    neg[finalI].getEnRu("RIGHT", "EN");
                 });
                 ruBut.setOnAction(e ->
                 {
@@ -117,8 +117,8 @@ public class Control implements RootMethod
                     } catch (SQLException | ClassNotFoundException e1) {
                         e1.printStackTrace();
                     }
-                    neg[finalI].getLeftRu();
-                    neg[finalI].getRightRu();
+                    neg[finalI].getEnRu("LEFT", "RU");
+                    neg[finalI].getEnRu("RIGHT", "RU");
                 });
                 exit.setOnAction(e -> {
                     try {
@@ -127,8 +127,8 @@ public class Control implements RootMethod
                         e1.printStackTrace();
                     }
                 });
-                neg[finalI].getLeftEn();
-                neg[finalI].getRightEn();
+                neg[finalI].getEnRu("LEFT", "EN");
+                neg[finalI].getEnRu("RIGHT", "EN");
                 removeBut();
                 lengthButtonApp.getChildren().removeAll(buttonApp);
                 lengthButtonNeg.getChildren().removeAll(buttonNeg);
@@ -163,8 +163,8 @@ public class Control implements RootMethod
                     } catch (SQLException | ClassNotFoundException e1) {
                         e1.printStackTrace();
                     }
-                    ques[finalI].getLeftEn();
-                    ques[finalI].getRightEn();
+                    ques[finalI].getEnRu("LEFT", "EN");
+                    ques[finalI].getEnRu("RIGHT", "EN");
                 });
                 ruBut.setOnAction(e ->
                 {
@@ -174,8 +174,8 @@ public class Control implements RootMethod
                     } catch (SQLException | ClassNotFoundException e1) {
                         e1.printStackTrace();
                     }
-                    ques[finalI].getLeftRu();
-                    ques[finalI].getRightRu();
+                    ques[finalI].getEnRu("LEFT", "RU");
+                    ques[finalI].getEnRu("RIGHT", "RU");
                 });
                 exit.setOnAction(e -> {
                     try {
@@ -184,8 +184,8 @@ public class Control implements RootMethod
                         e1.printStackTrace();
                     }
                 });
-                ques[finalI].getLeftEn();
-                ques[finalI].getRightEn();
+                ques[finalI].getEnRu("LEFT", "EN");
+                ques[finalI].getEnRu("RIGHT", "EN");
                 removeBut();
                 lengthButtonApp.getChildren().removeAll(buttonApp);
                 lengthButtonNeg.getChildren().removeAll(buttonNeg);
@@ -280,7 +280,6 @@ public class Control implements RootMethod
         appL.setTextFill(EffectColor.colorTitle);
         appL.setLayoutX((widthSize/2)-(widthSize-widthSize/1.25)/2);
         appL.setLayoutY(heightSize-heightSize/1.15);
-        ROOT.getChildren().add(appL);
 
         negL.setText("Отрицания");
 //        negL.setStyle("-fx-border-color: RED");
@@ -290,7 +289,6 @@ public class Control implements RootMethod
         negL.setTextFill(EffectColor.colorTitle);
         negL.setLayoutX((widthSize/2)-(widthSize-widthSize/1.25)/2);
         negL.setLayoutY(appL.getLayoutY()+heightSize-heightSize/1.2);
-        ROOT.getChildren().add(negL);
 
         quesL.setText("Вопросительные предложения");
 //        quesL.setStyle("-fx-border-color: RED");
@@ -300,6 +298,7 @@ public class Control implements RootMethod
         quesL.setTextFill(EffectColor.colorTitle);
         quesL.setLayoutX((widthSize/2)-(widthSize-widthSize/1.25)/2);
         quesL.setLayoutY(negL.getLayoutY()+heightSize-heightSize/1.2);
-        ROOT.getChildren().add(quesL);
+
+        ROOT.getChildren().addAll(appL, negL, quesL);
     }
 }

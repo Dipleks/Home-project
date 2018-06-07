@@ -6,6 +6,7 @@ import interfaceRoot.RootMethod;
 import javafx.geometry.Insets;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
 
 public class FillingColumnsExercise implements RootMethod
 {
@@ -26,172 +27,71 @@ public class FillingColumnsExercise implements RootMethod
         this.CLOSE = CLOSE;
         this.m = m;
     }
-
-    public void getLeftEn(){
-        getLeftColumnLabEn();
+    public void getEnRu(String leftRight, String ENRU){
+        if (ENRU.equals("EN")) {
+            if (leftRight.equals("LEFT")) {
+                getColumnLabEn(arrayOfOffersLeft, leftColumn, 6, START, "EN", "RU");
+            } else if (leftRight.equals("RIGHT")) {
+                getColumnLabEn(arrayOfOffersRight, rightColumn, 1.9, CLOSE, "EN", "RU");
+            }
+        } else if (ENRU.equals("RU")){
+            if (leftRight.equals("LEFT")) {
+                getColumnLabEn(arrayOfOffersLeft, leftColumn, 6, START, "RU", "EN");
+            } else if (leftRight.equals("RIGHT")){
+                getColumnLabEn(arrayOfOffersRight, rightColumn, 1.9, CLOSE, "RU", "EN");
+            }
+        }
     }
-    public void getRightEn(){
-        getRightColumnLabEn();
-    }
-    public void getLeftRu(){
-        getLeftColumnLabRu();
-    }
-    public void getRightRu(){
-        getRightColumnLabRu();
-    }
-
-    private String methodRuExercise(int a, int b){
-        switch (m) {
-            case "PS":
-                return text.getAppPSfileRu().get(a + b);
-            case "ToBe":
-                return text.getAppToBefileRu().get(a + b);
+    private String methodExercise(int a, int b, String lang){
+        if (lang.equals("EN")) {
+            switch (m) {
+                case "PS":
+                    return text.getAppPSfileEn().get(a + b);
+                case "ToBe":
+                    return text.getAppToBefileEn().get(a + b);
+            }
+        } else if (lang.equals("RU")) {
+            switch (m) {
+                case "PS":
+                    return text.getAppPSfileRu().get(a + b);
+                case "ToBe":
+                    return text.getAppToBefileRu().get(a + b);
+            }
         }
         return "No files";
     }
-    private String methodEnExercise(int a, int b){
-        switch (m) {
-            case "PS":
-                return text.getAppPSfileEn().get(a + b);
-            case "ToBe":
-                return text.getAppToBefileEn().get(a + b);
-        }
-        return "No files";
-    }
-
-    private void getLeftColumnLabEn() {
-        for (int i = 0; i < arrayOfOffersLeft.length; i++) {
-            arrayOfOffersLeft[i] = new Label();
-            arrayOfOffersLeft[i].setFont(EffectFont.fontText);
-            arrayOfOffersLeft[i].setTextFill(EffectColor.colorText);
-//                arrayOfOffersLeft[i].setStyle("-fx-border-color: RED");
-            arrayOfOffersLeft[i].setPrefWidth(widthSize-widthSize/1.45);
-            arrayOfOffersLeft[i].setWrapText(true);
-            arrayOfOffersLeft[i].setText(methodEnExercise(i, START));
+    private void getColumnLabEn(Label[] list, VBox listCol, double coordinateX,
+                                int START_CLOSE, String set, String get) {
+        for (int i = 0; i < list.length; i++) {
+            list[i] = new Label();
+            list[i].setFont(EffectFont.fontText);
+            list[i].setTextFill(EffectColor.colorText);
+//            list[i].setStyle("-fx-border-color: RED");
+            list[i].setPrefWidth(widthSize-widthSize/1.45);
+            list[i].setWrapText(true);
+            list[i].setText(methodExercise(i, START_CLOSE, set));
 
             int finalI = i;
-            arrayOfOffersLeft[i].setCursor(Cursor.HAND);
-            arrayOfOffersLeft[i].setOnMouseClicked(event -> {
+            list[i].setCursor(Cursor.HAND);
+            list[i].setOnMouseClicked(event -> {
                 soundClick();
-                if (arrayOfOffersLeft[finalI].getText().equals(methodEnExercise(finalI, START))){
-                    arrayOfOffersLeft[finalI].setText(methodRuExercise(finalI, START));
-                    arrayOfOffersLeft[finalI].setTextFill(EffectColor.colorTextClick);
+                if (list[finalI].getText().equals(methodExercise(finalI, START_CLOSE, set))){
+                    list[finalI].setText(methodExercise(finalI, START_CLOSE, get));
+                    list[finalI].setTextFill(EffectColor.colorTextClick);
                 } else {
-                    arrayOfOffersLeft[finalI].setText(methodEnExercise(finalI, START));
-                    arrayOfOffersLeft[finalI].setTextFill(EffectColor.colorText);
+                    list[finalI].setText(methodExercise(finalI, START_CLOSE, set));
+                    list[finalI].setTextFill(EffectColor.colorText);
                 }
             });
         }
-//            leftColumn.setStyle("-fx-border-color: RED");
-        leftColumn.setSpacing(heightSize-heightSize/1.009);
-        leftColumn.setLayoutX(widthSize/6);
-        leftColumn.setLayoutY(heightSize-heightSize/1.12);
-        leftColumn.setPadding(new Insets(0, 0, 0, 0));
-        leftColumn.setPrefSize(widthSize/3.2, heightSize/1.25);
-        leftColumn.getChildren().addAll(arrayOfOffersLeft);
+//        listCol.setStyle("-fx-border-color: RED");
+        listCol.setSpacing(heightSize-heightSize/1.009);
+        listCol.setLayoutX(widthSize/coordinateX);
+        listCol.setLayoutY(heightSize-heightSize/1.12);
+        listCol.setPadding(new Insets(0, 0, 0, 0));
+        listCol.setPrefSize(widthSize/3.2, heightSize/1.25);
+        listCol.getChildren().addAll(list);
 
-        ROOT.getChildren().addAll(leftColumn);
+        ROOT.getChildren().addAll(listCol);
     }
-    private void getRightColumnLabEn() {
-        for (int i = 0; i < arrayOfOffersRight.length; i++) {
-            arrayOfOffersRight[i] = new Label();
-            arrayOfOffersRight[i].setFont(EffectFont.fontText);
-            arrayOfOffersRight[i].setTextFill(EffectColor.colorText);
-//                arrayOfOffersRight[i].setStyle("-fx-border-color: RED");
-            arrayOfOffersRight[i].setPrefWidth(widthSize-widthSize/1.45);
-            arrayOfOffersRight[i].setWrapText(true);
-
-            arrayOfOffersRight[i].setText(methodEnExercise(i, CLOSE));
-
-            int finalI = i;
-            arrayOfOffersRight[i].setCursor(Cursor.HAND);
-            arrayOfOffersRight[i].setOnMouseClicked(event -> {
-                Runnable r = this::soundClick;
-                r.run();
-                if (arrayOfOffersRight[finalI].getText().equals(methodEnExercise(finalI, CLOSE))){
-                    arrayOfOffersRight[finalI].setText(methodRuExercise(finalI, CLOSE));
-                    arrayOfOffersRight[finalI].setTextFill(EffectColor.colorTextClick);
-                } else {
-                    arrayOfOffersRight[finalI].setText(methodEnExercise(finalI, CLOSE));
-                    arrayOfOffersRight[finalI].setTextFill(EffectColor.colorText);
-                }
-            });
-        }
-
-//            rightColumn.setStyle("-fx-border-color: RED");
-        rightColumn.setLayoutX(widthSize/1.9);
-        rightColumn.setLayoutY(heightSize-heightSize/1.12);
-        rightColumn.setSpacing(heightSize-heightSize/1.009);
-        rightColumn.setPadding(new Insets(0, 0, 0, 0));
-        rightColumn.setPrefSize(widthSize/3.2, heightSize/1.25);
-        rightColumn.getChildren().addAll(arrayOfOffersRight);
-        ROOT.getChildren().addAll(rightColumn);
-    }
-    private void getLeftColumnLabRu() {
-        for (int i = 0; i < arrayOfOffersLeft.length; i++) {
-            arrayOfOffersLeft[i] = new Label();
-            arrayOfOffersLeft[i].setFont(EffectFont.fontText);
-            arrayOfOffersLeft[i].setTextFill(EffectColor.colorText);
-//            arrayOfOffersLeft[i].setStyle("-fx-border-color: RED");
-            arrayOfOffersLeft[i].setPrefWidth(widthSize-widthSize/1.45);
-            arrayOfOffersLeft[i].setWrapText(true);
-            arrayOfOffersLeft[i].setText(methodRuExercise(i, START));
-            int finalI = i;
-            arrayOfOffersLeft[i].setCursor(Cursor.HAND);
-            arrayOfOffersLeft[i].setOnMouseClicked(event -> {
-                soundClick();
-                if (arrayOfOffersLeft[finalI].getText().equals(methodRuExercise(finalI, START))){
-                    arrayOfOffersLeft[finalI].setText(methodEnExercise(finalI, START));
-                    arrayOfOffersLeft[finalI].setTextFill(EffectColor.colorTextClick);
-                } else {
-                    arrayOfOffersLeft[finalI].setText(methodRuExercise(finalI, START));
-                    arrayOfOffersLeft[finalI].setTextFill(EffectColor.colorText);
-                }
-            });
-        }
-
-//        leftColumn.setStyle("-fx-border-color: RED");
-        leftColumn.setSpacing(heightSize-heightSize/1.009);
-        leftColumn.setLayoutX(widthSize/6);
-        leftColumn.setLayoutY(heightSize-heightSize/1.12);
-        leftColumn.setPadding(new Insets(0, 0, 0, 0));
-        leftColumn.setPrefSize(widthSize/3.2, heightSize/1.25);
-        leftColumn.getChildren().addAll(arrayOfOffersLeft);
-        ROOT.getChildren().addAll(leftColumn);
-    }
-    private void getRightColumnLabRu() {
-        for (int i = 0; i < arrayOfOffersRight.length; i++) {
-            arrayOfOffersRight[i] = new Label();
-            arrayOfOffersRight[i].setFont(EffectFont.fontText);
-            arrayOfOffersRight[i].setTextFill(EffectColor.colorText);
-//            arrayOfOffersRight[i].setStyle("-fx-border-color: RED");
-            arrayOfOffersRight[i].setPrefWidth(widthSize-widthSize/1.45);
-            arrayOfOffersRight[i].setWrapText(true);
-            arrayOfOffersRight[i].setText(methodRuExercise(i, CLOSE));
-            int finalI = i;
-            arrayOfOffersRight[i].setCursor(Cursor.HAND);
-            arrayOfOffersRight[i].setOnMouseClicked(event -> {
-                soundClick();
-                if (arrayOfOffersRight[finalI].getText().equals(methodRuExercise(finalI, CLOSE))){
-                    arrayOfOffersRight[finalI].setText(methodEnExercise(finalI, CLOSE));
-                    arrayOfOffersRight[finalI].setTextFill(EffectColor.colorTextClick);
-                } else {
-                    arrayOfOffersRight[finalI].setText(methodRuExercise(finalI, CLOSE));
-                    arrayOfOffersRight[finalI].setTextFill(EffectColor.colorText);
-                }
-            });
-        }
-
-//        rightColumn.setStyle("-fx-border-color: RED");
-        rightColumn.setLayoutX(widthSize/1.9);
-        rightColumn.setLayoutY(heightSize-heightSize/1.12);
-        rightColumn.setSpacing(heightSize-heightSize/1.009);
-        rightColumn.setPadding(new Insets(0, 0, 0, 0));
-        rightColumn.setPrefSize(widthSize/3.2, heightSize/1.25);
-        rightColumn.getChildren().addAll(arrayOfOffersRight);
-        ROOT.getChildren().addAll(rightColumn);
-    }
-
-
-
 }
