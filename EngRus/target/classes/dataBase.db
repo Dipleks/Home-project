@@ -5,11 +5,15 @@ CREATE DATABASE text_proposal;
 CREATE TABLE IF NOT EXISTS my_words
 (id SERIAL PRIMARY KEY, word_en TEXT, word_ru TEXT);
 
---создаем базу для статистики ответов контрольных:
+--создаем таблицу для статистики ответов контрольных:
 CREATE TABLE IF NOT EXISTS counter
-(id SERIAL PRIMARY KEY, date_time timestamp, correct_answer integer, wrong_answer integer);
+(id SERIAL PRIMARY KEY, date_time timestamp, correct_answer integer, wrong_answer integer, part VARCHAR(12));
 
 --удаление таблицы "Счетчик контрольных":
 DELETE FROM counter;
+
+--создаем таблицу предложений с ошибками:
+CREATE TABLE IF NOT EXISTS counterMistakes
+(id SERIAL PRIMARY KEY, numb text, original text, mistakes text);
 
 --пример ввода даты INSERT INTO counter VALUES ('01.06.2018 14:45', 5, 0);

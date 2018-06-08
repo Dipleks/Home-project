@@ -221,6 +221,10 @@ public class Control implements RootMethod
             int finalI = i;
             buttonExam[i].setOnAction(event -> {
 
+                nameExam.setText(buttonExam[finalI].getText());
+                nameExam.setFont(EffectFont.fontTextExam);
+                nameExam.setTextFill(EffectColor.colorText);
+
                 soundClick();
                 groupRadBut.setSpacing(widthSize-widthSize/1.03);
 //                groupRadBut.setStyle("-fx-border-color: RED");

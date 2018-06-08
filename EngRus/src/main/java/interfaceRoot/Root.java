@@ -63,7 +63,7 @@ public interface Root
     // Control:
     Button exitInMenu = new Button("В меню");
 
-    // Exam
+    // Exam:
     ScrollPane examPane = new ScrollPane();
     ScrollPane textPane = new ScrollPane();
     ScrollPane leftTextPane = new ScrollPane();
@@ -75,6 +75,8 @@ public interface Root
             "Если вы уверены в своем переводе нажмите на номер предложения!";
     TextField improve = new TextField();
     Label improveClick1 = new Label(str);
+    Label nameExam = new Label();
+    // Счётчик:
     VBox counterVB = new VBox();
     Label counterYES = new Label();
     Label counterNO = new Label();

@@ -1,17 +1,32 @@
 package exam;
 
+import db.AddMistakesTable;
+import db.AddStatisticTable;
 import db.CounterExam;
+import db.TableDB;
 import interfaceRoot.EffectColor;
 import interfaceRoot.EffectFont;
 import interfaceRoot.RootMethod;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
+import javafx.scene.Group;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
-import java.sql.SQLException;
+import java.sql.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class FillingColumnsExam implements RootMethod, CounterExam
 {
@@ -21,6 +36,9 @@ public class FillingColumnsExam implements RootMethod, CounterExam
     private int START;
     private String m;
     private Exam exam = new Exam();
+
+    public FillingColumnsExam() {
+    }
 
     //Для контрольных
     public FillingColumnsExam(Label[] arrayOfOffersExam, Label[] number, Label[] correctly, int START, String m) {
@@ -82,6 +100,41 @@ public class FillingColumnsExam implements RootMethod, CounterExam
                     improveClick1.setText(improve.getText());
                     improve.clear();
                 } else if (!improve.getText().equalsIgnoreCase("")){
+                    /////////////
+                    try {
+                        Class.forName("org.postgresql.Driver");
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                    Connection connection = null;
+                    try {
+                        connection = DriverManager.getConnection(TableDB.DB_URL + TableDB.db, TableDB.USER, TableDB.PASS);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                    try {
+                        assert connection != null;
+                        Statement stmt1 = connection.createStatement();
+                        Statement stmt2 = connection.createStatement();
+                        arrayOfOffersExam[finalI].setText(methodEnExam(finalI, START));
+//                        stmt2.executeUpdate("DELETE FROM countermistakes WHERE original = '" + arrayOfOffersExam[finalI].getText() + "';");
+                        stmt1.executeUpdate("INSERT INTO countermistakes " +
+                                    "(numb, original, mistakes)" +
+                                    "VALUES ('"+number[finalI].getText()+"', '"+
+                                arrayOfOffersExam[finalI].getText()+"', '"+improve.getText()+"');");
+                        arrayOfOffersExam[finalI].setText(methodRuExam(finalI, START));
+                    } catch (SQLException e) {
+                        System.out.println("Ошибка в 9 строке 1й части");
+                        e.printStackTrace();
+                    } finally {
+                        try {
+                            assert connection != null;
+                            connection.close();
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    /////////////
                     arrayOfOffersExam[finalI].setTextFill(EffectColor.colorTextClickRED);
                     correctly[finalI].setText("НЕ ВЕРНО!!!");
                     correctly[finalI].setTextFill(EffectColor.colorTextClickRED);
@@ -180,7 +233,7 @@ public class FillingColumnsExam implements RootMethod, CounterExam
         });
         improve.setPrefWidth(widthSize/3);
         hBox.setSpacing(10);
-        hBox.getChildren().addAll(button, improve, exitInMenu);
+        hBox.getChildren().addAll(button, improve, exitInMenu, nameExam);
         improveClick1.setAlignment(Pos.CENTER);
         improveClick1.setTextFill(EffectColor.colorTextClickPERU);
         improveV.getChildren().addAll(improveClick1, hBox);

@@ -1,5 +1,6 @@
 package db;
 
+import exam.FillingColumnsExam;
 import interfaceRoot.EffectColor;
 import interfaceRoot.EffectFont;
 import interfaceRoot.Root;
@@ -10,6 +11,8 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -82,35 +85,48 @@ public interface CounterExam extends Root
     default void statisticsWindow() {
         Stage statistics = new Stage();
         Group rootStatistics = new Group();
-        Scene sceneStatistics = new Scene(rootStatistics, widthSize/3, heightSize/2);
+        Scene sceneStatistics = new Scene(rootStatistics, widthSize/3.5, heightSize/2);
         TableView<AddStatisticTable> tableStatisticExam = new TableView<AddStatisticTable>();
 
-        Button addCounter = new Button("Добавить статистику");
-        Button deleteCounter = new Button("Удалить статистику");
+        Button addCounter = new Button("Добавить");
+        Button deleteCounter = new Button("Удалить все");
+        Button getMistakes = new Button("Последние ошибки");
+//        getMistakes.setStyle("-fx-background-color: #f2e7e7;");
+        getMistakes.setOnAction(e -> {
+            tableMistakes();
+        });
         deleteCounter.setOnAction(event -> {
             counterDeleteStatistic();
             statistics.close();
             statisticsWindow();
         });
-        deleteCounter.setLayoutX(sceneStatistics.getWidth()/2.7);
-        deleteCounter.setLayoutY(sceneStatistics.getHeight()/1.08);
         addCounter.setOnAction(event -> {
             counterAddDB();
             statistics.close();
             statisticsWindow();
         });
-        addCounter.setLayoutX(sceneStatistics.getWidth()/1.5);
-        addCounter.setLayoutY(sceneStatistics.getHeight()/1.08);
+        HBox buttPane = new HBox();
+        buttPane.setSpacing(sceneStatistics.getWidth()/10);
+        buttPane.setLayoutX(10);
+        buttPane.setLayoutY(sceneStatistics.getHeight()/1.08);
+        buttPane.getChildren().addAll(getMistakes, deleteCounter, addCounter);
 
         TableColumn<AddStatisticTable, String> dateTime = new TableColumn<>("Дата");
-        TableColumn<AddStatisticTable, String> returnYES = new TableColumn<>("Правельные ответы");
-        TableColumn<AddStatisticTable, String> returnNO = new TableColumn<>("Не правельные ответы");
+        TableColumn<AddStatisticTable, String> returnYES = new TableColumn<>("Верно");
+        TableColumn<AddStatisticTable, String> returnNO = new TableColumn<>("Не верно");
+        TableColumn<AddStatisticTable, String> returnPart = new TableColumn<>("Часть");
         dateTime.setCellValueFactory(new PropertyValueFactory<>("dateTime"));
-        dateTime.setPrefWidth(sceneStatistics.getWidth()/3);
+        dateTime.setPrefWidth(sceneStatistics.getWidth()/2.5);
+        dateTime.setStyle( "-fx-alignment: CENTER;");
         returnYES.setCellValueFactory(new PropertyValueFactory<>("returnY"));
-        returnYES.setPrefWidth(sceneStatistics.getWidth()/3.05);
+        returnYES.setPrefWidth(sceneStatistics.getWidth()/6);
+        returnYES.setStyle( "-fx-alignment: CENTER;");
         returnNO.setCellValueFactory(new PropertyValueFactory<>("returnN"));
-        returnNO.setPrefWidth(sceneStatistics.getWidth()/3.05);
+        returnNO.setPrefWidth(sceneStatistics.getWidth()/6);
+        returnNO.setStyle( "-fx-alignment: CENTER;");
+        returnPart.setCellValueFactory(new PropertyValueFactory<>("numberPart"));
+        returnPart.setPrefWidth(sceneStatistics.getWidth()/4);
+        returnPart.setStyle( "-fx-alignment: CENTER;");
         tableStatisticExam.setStyle("-fx-background-color: gray;");
 
         ObservableList<AddStatisticTable> list = FXCollections.observableArrayList();
@@ -137,8 +153,9 @@ public interface CounterExam extends Root
                 Date date = new Date(timestamp.getTime());
                 SimpleDateFormat newDateFormat = new SimpleDateFormat("dd MMMM yyyy" + "г. в "+ "HH:mm:ss", Locale.getDefault());
                 String result = newDateFormat.format(date);
+
                 list.add(new AddStatisticTable(result,
-                        rs1.getString("correct_answer"), rs1.getString("wrong_answer")));
+                        rs1.getString("correct_answer"), rs1.getString("wrong_answer"), nameExam.getText()));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -151,12 +168,81 @@ public interface CounterExam extends Root
             }
         }
         tableStatisticExam.setItems(list);
-        tableStatisticExam.getColumns().addAll(dateTime, returnYES, returnNO);
+        tableStatisticExam.getColumns().addAll(dateTime, returnYES, returnNO, returnPart);
 
-        rootStatistics.getChildren().addAll(tableStatisticExam, addCounter, deleteCounter);
+        rootStatistics.getChildren().addAll(tableStatisticExam, buttPane);
         statistics.setTitle("Статистика");
         statistics.initModality(Modality.APPLICATION_MODAL);
         statistics.setScene(sceneStatistics);
         statistics.show();
     }
+    default void tableMistakes(){
+
+        Stage mistakes = new Stage();
+        Group group = new Group();
+        Scene scene = new Scene(group, widthSize/2, heightSize/2);
+
+        TableView<AddMistakesTable> tableMistakes = new TableView<AddMistakesTable>();
+
+        TableColumn<AddMistakesTable, String> returnNumber = new TableColumn<>("№");
+        returnNumber.setCellValueFactory(new PropertyValueFactory<>("numberText"));
+        returnNumber.setPrefWidth(scene.getWidth()/15);
+        returnNumber.setStyle( "-fx-alignment: CENTER;");
+        TableColumn<AddMistakesTable, String> returnOriginal = new TableColumn<>("Правильный текст");
+        returnOriginal.setCellValueFactory(new PropertyValueFactory<>("originalText"));
+        returnOriginal.setPrefWidth(scene.getWidth()/2.15);
+        TableColumn<AddMistakesTable, String> returnMistakes = new TableColumn<>("Ошибка");
+        returnMistakes.setCellValueFactory(new PropertyValueFactory<>("mistakesText"));
+        returnMistakes.setPrefWidth(scene.getWidth()/2.15);
+
+
+        ObservableList<AddMistakesTable> list = FXCollections.observableArrayList();
+        ////////////
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection(TableDB.DB_URL + TableDB.db, TableDB.USER, TableDB.PASS);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            //TODO при вызове метода извлекаются данные из таблицы counterMistakes
+            //TODO данные отсортированны и убраны все дублекаты
+            assert connection != null;
+            Statement stmt1 = connection.createStatement();
+            Statement stmt2 = connection.createStatement();
+            ResultSet rs = stmt1.executeQuery("SELECT DISTINCT ON (original) original FROM counterMistakes;");
+            for (int i = 1; rs.next(); i++) {
+                ResultSet rs1 = stmt2.executeQuery("SELECT DISTINCT ON (original) numb, original, " +
+                        "mistakes FROM counterMistakes WHERE id="+i+";"); //sql запрос
+                rs1.next();
+                list.add(new AddMistakesTable(rs1.getString("numb"), rs1.getString("original"),
+                        rs1.getString("mistakes")));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                assert connection != null;
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+/////////////////
+
+        tableMistakes.setItems(list);
+        tableMistakes.setStyle("-fx-background-color: gray;");
+        tableMistakes.getColumns().addAll(returnNumber, returnOriginal, returnMistakes);
+
+        group.getChildren().addAll(tableMistakes);
+        mistakes.setTitle("Ошибки");
+        mistakes.setScene(scene);
+        mistakes.initModality(Modality.APPLICATION_MODAL);
+        mistakes.show();
+    };
 }
