@@ -2,14 +2,22 @@ package db;
 
 public class AddMistakesTable
 {
-    String numberText;
-    String originalText;
-    String mistakesText;
+    private String dateTime;
+    private String numberText;
+    private String originalText;
+    private String mistakesText;
+    private String numberPart;
 
-    public AddMistakesTable(String numberText, String originalText, String mistakesText) {
+    public AddMistakesTable(String dateTime, String numberText, String originalText, String mistakesText, String numberPart) {
+        this.dateTime = dateTime;
         this.numberText = numberText;
         this.originalText = originalText;
         this.mistakesText = mistakesText;
+        this.numberPart = numberPart;
+    }
+
+    public String getDateTime() {
+        return dateTime;
     }
 
     public String getNumberText() {
@@ -24,12 +32,18 @@ public class AddMistakesTable
         return mistakesText;
     }
 
+    public String getNumberPart() {
+        return numberPart;
+    }
+
     @Override
     public String toString() {
         return "AddMistakesTable{" +
-                "numberText='" + numberText + '\'' +
+                "dateTime='" + dateTime + '\'' +
+                ", numberText='" + numberText + '\'' +
                 ", originalText='" + originalText + '\'' +
                 ", mistakesText='" + mistakesText + '\'' +
+                ", numberPart='" + numberPart + '\'' +
                 '}';
     }
 }

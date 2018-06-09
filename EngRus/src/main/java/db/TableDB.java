@@ -12,11 +12,8 @@ public interface TableDB
     String my_words = "CREATE TABLE IF NOT EXISTS my_words (id SERIAL PRIMARY KEY, word_en TEXT, word_ru TEXT);";
     // Создаем таблицу счетчика:
     String counterExam = "CREATE TABLE IF NOT EXISTS counter " +
-            "(id SERIAL PRIMARY KEY, date_time timestamp, correct_answer integer, " +
-            "wrong_answer integer, part VARCHAR(12));";
-    // Создаем таблицу ошибок:
-    String counterMistakes = "CREATE TABLE IF NOT EXISTS counterMistakes " +
-            "(id SERIAL PRIMARY KEY, numb text, original text, mistakes text);";
+            "(id SERIAL PRIMARY KEY, date_time timestamp, numb text, " +
+            "original text, mistakes text, part VARCHAR(12));";
 ///////////
     // Создаём таблицу Present Simple Approves:
     String appPS = "";

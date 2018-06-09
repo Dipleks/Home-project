@@ -18,9 +18,7 @@ public class CreateDB implements TableDB
         Class.forName("org.postgresql.Driver");
         connection = DriverManager.getConnection(DB_URL + db, USER, PASS);
         Statement statement = connection.createStatement();
-        Statement statementM = connection.createStatement();
         statement.executeUpdate(counterExam);
-        statementM.executeUpdate(counterMistakes);
     }
     // Проверяем создана БД или нет:
     public static boolean connectDB() throws SQLException, ClassNotFoundException {

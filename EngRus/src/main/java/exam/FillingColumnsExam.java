@@ -1,32 +1,20 @@
 package exam;
 
-import db.AddMistakesTable;
-import db.AddStatisticTable;
 import db.CounterExam;
 import db.TableDB;
 import interfaceRoot.EffectColor;
 import interfaceRoot.EffectFont;
 import interfaceRoot.RootMethod;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
-import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 import java.sql.*;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class FillingColumnsExam implements RootMethod, CounterExam
 {
@@ -36,9 +24,6 @@ public class FillingColumnsExam implements RootMethod, CounterExam
     private int START;
     private String m;
     private Exam exam = new Exam();
-
-    public FillingColumnsExam() {
-    }
 
     //Для контрольных
     public FillingColumnsExam(Label[] arrayOfOffersExam, Label[] number, Label[] correctly, int START, String m) {
@@ -91,7 +76,8 @@ public class FillingColumnsExam implements RootMethod, CounterExam
             int finalI = i;
             arrayOfOffersExam[i].setOnMouseClicked(event -> {
                 soundClick();
-                if (improve.getText().equalsIgnoreCase(methodEnExam(finalI, START))){
+                if (improve.getText().replaceAll("[a-zA-Z!.'^]", "").equalsIgnoreCase(methodEnExam(finalI, START).
+                        replaceAll("[a-zA-Z!.'^]", ""))){
                     arrayOfOffersExam[finalI].setTextFill(EffectColor.colorTextClick);
                     correctly[finalI].setText("ВЕРНО!!!");
                     correctly[finalI].setTextFill(EffectColor.colorTextClick);
@@ -101,30 +87,25 @@ public class FillingColumnsExam implements RootMethod, CounterExam
                     improve.clear();
                 } else if (!improve.getText().equalsIgnoreCase("")){
                     /////////////
-                    try {
-                        Class.forName("org.postgresql.Driver");
-                    } catch (ClassNotFoundException e) {
-                        e.printStackTrace();
-                    }
                     Connection connection = null;
                     try {
+                        Class.forName("org.postgresql.Driver");
                         connection = DriverManager.getConnection(TableDB.DB_URL + TableDB.db, TableDB.USER, TableDB.PASS);
-                    } catch (SQLException e) {
+                    } catch (ClassNotFoundException | SQLException e) {
                         e.printStackTrace();
                     }
                     try {
                         assert connection != null;
                         Statement stmt1 = connection.createStatement();
-                        Statement stmt2 = connection.createStatement();
                         arrayOfOffersExam[finalI].setText(methodEnExam(finalI, START));
-//                        stmt2.executeUpdate("DELETE FROM countermistakes WHERE original = '" + arrayOfOffersExam[finalI].getText() + "';");
-                        stmt1.executeUpdate("INSERT INTO countermistakes " +
-                                    "(numb, original, mistakes)" +
-                                    "VALUES ('"+number[finalI].getText()+"', '"+
-                                arrayOfOffersExam[finalI].getText()+"', '"+improve.getText()+"');");
+                        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
+                        String localDateTime = LocalDateTime.now().format(format);
+                        stmt1.executeUpdate("INSERT INTO counter " +
+                                    "(date_time, numb, original, mistakes, part)" +
+                                    "VALUES ('"+localDateTime+"', '"+number[finalI].getText()+"', '"+
+                                arrayOfOffersExam[finalI].getText()+"', '"+improve.getText()+"', '"+ nameExam.getText() +"');");
                         arrayOfOffersExam[finalI].setText(methodRuExam(finalI, START));
                     } catch (SQLException e) {
-                        System.out.println("Ошибка в 9 строке 1й части");
                         e.printStackTrace();
                     } finally {
                         try {

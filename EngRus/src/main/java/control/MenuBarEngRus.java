@@ -1,5 +1,6 @@
 package control;
 
+import db.CounterExam;
 import db.CreateDB;
 import interfaceRoot.RootMethod;
 import texts.TextLevelOne;
@@ -16,7 +17,7 @@ import myWords.FillingColumnsMyWords;
 
 import java.sql.SQLException;
 
-public class MenuBarEngRus implements RootMethod
+public class MenuBarEngRus implements RootMethod, CounterExam
 {
     private final MenuBar menuBar = new MenuBar();
 
