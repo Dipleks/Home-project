@@ -11,7 +11,7 @@ public class AddExerciseExam implements RootMethod
     private FillingColumnsExercise[] appPS = new FillingColumnsExercise[7];
     private FillingColumnsExercise[] negPS = new FillingColumnsExercise[4];
     private FillingColumnsExercise[] quesPS = new FillingColumnsExercise[7];
-    private FillingColumnsExam[] examPS = new FillingColumnsExam[4];
+    private FillingColumnsExam[] examPS = new FillingColumnsExam[5];
 
     private FillingColumnsExercise[] appToBe = new FillingColumnsExercise[6];
     private FillingColumnsExercise[] negToBe = new FillingColumnsExercise[4];
@@ -69,8 +69,9 @@ public class AddExerciseExam implements RootMethod
         examPS[1] = new FillingColumnsExam(new Label[100], new Label[100], new Label[100],  100, "ExamPS");
         examPS[2] = new FillingColumnsExam(new Label[100], new Label[100], new Label[100],  200, "ExamPS");
         examPS[3] = new FillingColumnsExam(new Label[100], new Label[100], new Label[100],  300, "ExamPS");
+        examPS[4] = new FillingColumnsExam(new Label[100], new Label[100], new Label[100],  400, "ExamPS");
 
-        controlExamPS.examMethod(examPS,new Button[4], "AddMenuButtonExamPS");
+        controlExamPS.examMethod(examPS,new Button[5], "AddMenuButtonExamPS");
     }
 
     // ToBe

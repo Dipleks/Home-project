@@ -8,9 +8,13 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import myWords.FillingColumnsMyWords;
+
+import java.io.File;
 import java.sql.*;
 
 public interface RootMethod extends Root
@@ -77,13 +81,11 @@ public interface RootMethod extends Root
     // Звуковой эффект при нажатии на предложение:
     default void soundClick() {
         // TODO делаем код для клика;
-//        Runnable runnable = () -> {
-//            String file = "resources/click.mp3";
-//            Media sound = new Media(new File(file).toURI().toString());
-//            MediaPlayer mediaPlayer = new MediaPlayer(sound);
-//            mediaPlayer.play();
-//        };
-//        runnable.run();
+        // TODO добавить звуковые эффекты в базу данных если не получится сделать стандартными методами
+            String file = "click.mp3";
+            Media sound = new Media(new File(file).toURI().toString());
+            MediaPlayer mediaPlayer = new MediaPlayer(sound);
+            mediaPlayer.play();
     }
     // Часы главного окна:
     default void clock() {

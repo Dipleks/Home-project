@@ -3,30 +3,66 @@ package exam;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Класс со значениями для {@link FillingColumnsExam#methodExam(int, int, String)}
+ * Имеет свойства: <b>examEnPS</b>, <b>examRuPS</b>, <b>examEnToBe</b>, <b>examRuToBe</b>
+ * @author Загороднев Д.М.
+ * @version 2.0
+ */
 public class Exam
 {
+    /** Значения времени PS, языка Английский */
     private Map<Integer, String> examEnPS = new HashMap<>();
+
+    /** Значения времени PS, языка Русский */
     private Map<Integer, String> examRuPS = new HashMap<>();
+
+    /** Значения времени to be, языка Английский */
     private Map<Integer, String> examEnToBe = new HashMap<>();
+
+    /** Значения времени to be, языка Русский */
     private Map<Integer, String> examRuToBe = new HashMap<>();
 
+    /**
+     * Функция получения списка значений на Английском языке времени PS
+     * @return возвращает значения
+     */
     public Map<Integer, String> getExamEnPS(){
         getStrEnPS();
         return examEnPS;
     }
+
+    /**
+     * Функция получения списка значений на Русском языке времени PS
+     * @return возвращает значения
+     */
     public Map<Integer, String> getExamRuPS(){
         getStrRuPS();
         return examRuPS;
     }
+
+    /**
+     * Функция получения списка значений на Английском языке времени to be
+     * @return возвращает значения
+     */
     public Map<Integer, String> getExamEnToBe(){
         getStrEnToBe();
         return examEnToBe;
     }
+
+    /**
+     * Функция получения списка значений на Русском языке времени to be
+     * @return возвращает значения
+     */
     public Map<Integer, String> getExamRuToBe(){
         getStrRuToBe();
         return examRuToBe;
     }
 
+    /**
+     * Функция со значениями на Английском языке времени PS
+     * @return возвращает список значений
+     */
     private Map<Integer, String> getStrEnPS(){
 
         examEnPS.put(0,"How often does he test their knowledge?");
@@ -429,9 +465,114 @@ public class Exam
         examEnPS.put(397,"Do you support me?");
         examEnPS.put(398,"Do you need help?");
         examEnPS.put(399,"He doesn^t need this money now");
+        examEnPS.put(400,"He likes this dress");
+        examEnPS.put(401,"What books does she prefer to read?");
+        examEnPS.put(402,"Why do you like this channel?");
+        examEnPS.put(403,"He tries to find more time for English");
+        examEnPS.put(404,"It really helps me");
+        examEnPS.put(405,"I need to train my memory");
+        examEnPS.put(406,"You need it");
+        examEnPS.put(407,"My mother comes home early");
+        examEnPS.put(408,"I really like this place");
+        examEnPS.put(409,"Does it sometimes happen?");
+        examEnPS.put(410,"Does she like this profession?");
+        examEnPS.put(411,"Who checks all the information?");
+        examEnPS.put(412,"What advice do your teachers give you?");
+        examEnPS.put(413,"My father comes home late");
+        examEnPS.put(414,"We don^t understand it");
+        examEnPS.put(415,"We live in Russia");
+        examEnPS.put(416,"Your mother needs to work less");
+        examEnPS.put(417,"I^d like to become a businessman");
+        examEnPS.put(418,"I want to go there again");
+        examEnPS.put(419,"I know it very well");
+        examEnPS.put(420,"Where does she study?");
+        examEnPS.put(421,"How regularly do your teachers tell you these things?");
+        examEnPS.put(422,"It doesn^t work");
+        examEnPS.put(423,"I want to learn English fast");
+        examEnPS.put(424,"What channels does he usually watch?");
+        examEnPS.put(425,"I work there");
+        examEnPS.put(426,"What motivates you more?");
+        examEnPS.put(427,"My friend wants to check it one more time");
+        examEnPS.put(428,"Do you often go there?");
+        examEnPS.put(429,"I like this video");
+        examEnPS.put(430,"That method seems useless");
+        examEnPS.put(431,"Does she really like it?");
+        examEnPS.put(432,"He^d like to order it online");
+        examEnPS.put(433,"Who do you support?");
+        examEnPS.put(434,"How long does it take you to get to school?");
+        examEnPS.put(435,"I don^t want to live in this country");
+        examEnPS.put(436,"These students show brilliant results");
+        examEnPS.put(437,"Do they agree with us?");
+        examEnPS.put(438,"He explains everything very well");
+        examEnPS.put(439,"How often does he go to the zoo?");
+        examEnPS.put(440,"I go to school");
+        examEnPS.put(441,"My friend has a car");
+        examEnPS.put(442,"I need to solve that problem");
+        examEnPS.put(443,"They like it");
+        examEnPS.put(444,"I don’t want to discuss it");
+        examEnPS.put(445,"I really want to know it");
+        examEnPS.put(446,"He has a dog");
+        examEnPS.put(447,"How do you get there?");
+        examEnPS.put(448,"Does he live there?");
+        examEnPS.put(449,"He^d like to become a businessman");
+        examEnPS.put(450,"Does he like it?");
+        examEnPS.put(451,"I want to practice English now");
+        examEnPS.put(452,"She goes to scholl with great pleasure");
+        examEnPS.put(453,"I want to speak English without mistakes");
+        examEnPS.put(454,"You need to remember it");
+        examEnPS.put(455,"We need it");
+        examEnPS.put(456,"You need to change it");
+        examEnPS.put(457,"She doesn^t want to think about it");
+        examEnPS.put(458,"When do you go to work?");
+        examEnPS.put(459,"I understand you");
+        examEnPS.put(460,"Does she need to come to that place?");
+        examEnPS.put(461,"Why do they depend on you?");
+        examEnPS.put(462,"How long does it take your friend to get there?");
+        examEnPS.put(463,"What kind of books do you read?");
+        examEnPS.put(464,"Why does your mother think so?");
+        examEnPS.put(465,"He wants to do it");
+        examEnPS.put(466,"I like this advice");
+        examEnPS.put(467,"What advice do your friends give you?");
+        examEnPS.put(468,"I^d like to do it");
+        examEnPS.put(469,"He sometimes plays computer games");
+        examEnPS.put(470,"Does he pay for it?");
+        examEnPS.put(471,"I have a car");
+        examEnPS.put(472,"I work very hard");
+        examEnPS.put(473,"They don’t help me");
+        examEnPS.put(474,"Does he like this project?");
+        examEnPS.put(475,"Does this exam seem very difficult?");
+        examEnPS.put(476,"You help me");
+        examEnPS.put(477,"I^d like to practice English");
+        examEnPS.put(478,"I understand");
+        examEnPS.put(479,"We live here");
+        examEnPS.put(480,"How often do these things happen?");
+        examEnPS.put(481,"My father leaves home very early");
+        examEnPS.put(482,"He dosen^t work there");
+        examEnPS.put(483,"He works here");
+        examEnPS.put(484,"Do these lessons help you?");
+        examEnPS.put(485,"I need to check it");
+        examEnPS.put(486,"She also thinks so");
+        examEnPS.put(487,"She has interesting ideas");
+        examEnPS.put(488,"Why do those things happen?");
+        examEnPS.put(489,"He really hates it");
+        examEnPS.put(490,"It looks strange");
+        examEnPS.put(491,"What lessons does your teacher find really useful?");
+        examEnPS.put(492,"He needs more money");
+        examEnPS.put(493,"What seems so interesting?");
+        examEnPS.put(494,"She likes it");
+        examEnPS.put(495,"Does he work in another place?");
+        examEnPS.put(496,"He sometimes wants to do it");
+        examEnPS.put(497,"Do we show good results?");
+        examEnPS.put(498,"You see it");
+        examEnPS.put(499,"His father needs money");
 
         return examEnPS;
     }
+
+    /**
+     * Функция со значениями на Русском языке времени PS
+     * @return возвращает список значений
+     */
     private Map<Integer, String> getStrRuPS(){
         examRuPS.put(0,"Как часто он тестирует их знания?");
         examRuPS.put(1,"Я хочу знать Английский лучше");
@@ -833,14 +974,124 @@ public class Exam
         examRuPS.put(397,"Ты поддерживаешь меня?");
         examRuPS.put(398,"Тебе нужна помощь?");
         examRuPS.put(399,"Ему не нужны эти деньги сейчас");
+        examRuPS.put(400,"Ему нравится это платье");
+        examRuPS.put(401,"Какие книги она предпочитает читать?");
+        examRuPS.put(402,"Почему тебе нравиться этот канал?");
+        examRuPS.put(403,"Он пытается найти больше времени для Английского");
+        examRuPS.put(404,"Это реально помогает мне");
+        examRuPS.put(405,"Мне нужно тренировать свою память");
+        examRuPS.put(406,"Тебе нужно это");
+        examRuPS.put(407,"Моя мама приходит домой рано");
+        examRuPS.put(408,"Мне действительно нравится это место");
+        examRuPS.put(409,"Это иногда происходит?");
+        examRuPS.put(410,"Ей нравится эта профессия?");
+        examRuPS.put(411,"Кто проверят всю информацию?");
+        examRuPS.put(412,"Какой совет твои учителя дают тебе?");
+        examRuPS.put(413,"Мой отец приходит домой поздно");
+        examRuPS.put(414,"Мы не понимаем это");
+        examRuPS.put(415,"Мы живем в России");
+        examRuPS.put(416,"Твоей маме нужно работать меньше");
+        examRuPS.put(417,"Я хотел бы стать бизнесменом");
+        examRuPS.put(418,"Я хочу поехать туда снова");
+        examRuPS.put(419,"Я очень хорошо знаю это");
+        examRuPS.put(420,"Где она учится?");
+        examRuPS.put(421,"Как регулярно твои учителя говорят тебе эти вещи?");
+        examRuPS.put(422,"Это не работает");
+        examRuPS.put(423,"Я хочу выучить Английский быстро");
+        examRuPS.put(424,"Какие каналы он обычно смотрит?");
+        examRuPS.put(425,"Я работаю там");
+        examRuPS.put(426,"Что мотивирует тебя больше?");
+        examRuPS.put(427,"Мой друг хочет проверить это ещё один раз");
+        examRuPS.put(428,"Ты часто ходишь туда?");
+        examRuPS.put(429,"Мне нравится это видео");
+        examRuPS.put(430,"Тот метод кажется бесполезным");
+        examRuPS.put(431,"Её реально нравится это?");
+        examRuPS.put(432,"Он хотел бы заказать это он-лайн");
+        examRuPS.put(433,"Кого ты поддерживаешь?");
+        examRuPS.put(434,"Сколько занимает у тебя по времени добраться до школы?");
+        examRuPS.put(435,"Я не хочу жить в этой стране");
+        examRuPS.put(436,"Эти студенты показывают блестящие результаты");
+        examRuPS.put(437,"Они согласны с нами?");
+        examRuPS.put(438,"Он объясняет все очень хорошо");
+        examRuPS.put(439,"Как часто он ходит в зоопарк?");
+        examRuPS.put(440,"Я хожу в школу");
+        examRuPS.put(441,"У моего друга есть машина");
+        examRuPS.put(442,"Мне нужно решить ту проблему");
+        examRuPS.put(443,"Им нравится это");
+        examRuPS.put(444,"Я не хочу обсуждать это");
+        examRuPS.put(445,"Я действительно хочу это знать");
+        examRuPS.put(446,"У него есть собака");
+        examRuPS.put(447,"Как ты добираешься туда?");
+        examRuPS.put(448,"Он живет там?");
+        examRuPS.put(449,"Он хотел бы стать бизнесменом");
+        examRuPS.put(450,"Ему нравиться это?");
+        examRuPS.put(451,"Я хочу практиковать Английский сейчас");
+        examRuPS.put(452,"Она ходит в школу с большим удовольствием");
+        examRuPS.put(453,"Я хочу говорить по Английски без ощибок");
+        examRuPS.put(454,"Тебе нужно запомнить это");
+        examRuPS.put(455,"Нам нужно это");
+        examRuPS.put(456,"Тебе нужно изменить это");
+        examRuPS.put(457,"Она не хочет об этом думать");
+        examRuPS.put(458,"Когда ты ходишь на работу?");
+        examRuPS.put(459,"Я понимаю тебя");
+        examRuPS.put(460,"Ей нужно прийти в то место?");
+        examRuPS.put(461,"Почему они зависят от тебя?");
+        examRuPS.put(462,"Сколько занимает у твоего по времени добраться туда?");
+        examRuPS.put(463,"Какого рода книги ты читаешь?");
+        examRuPS.put(464,"Почему твоя мама думает так?");
+        examRuPS.put(465,"Он хочет сделать это");
+        examRuPS.put(466,"Мне нравится этот совет");
+        examRuPS.put(467,"Какой совет твои друзья дают тебе?");
+        examRuPS.put(468,"Я хотел бы сделать это");
+        examRuPS.put(469,"Он иногда играет в компьютерные игры");
+        examRuPS.put(470,"Он платит за это?");
+        examRuPS.put(471,"У меня есть машина");
+        examRuPS.put(472,"Я работаю очень усердно");
+        examRuPS.put(473,"Они не помогают мне");
+        examRuPS.put(474,"Ему нравится этот проект?");
+        examRuPS.put(475,"Этот экзамен кажется очень сложным?");
+        examRuPS.put(476,"Ты помогаешь мне");
+        examRuPS.put(477,"Я хотел бы попрактиковать Английский");
+        examRuPS.put(478,"Я помню");
+        examRuPS.put(479,"Мы живем здесь");
+        examRuPS.put(480,"Как часто происходят эти вещи?");
+        examRuPS.put(481,"Мой отец уходит из дома очень рано");
+        examRuPS.put(482,"Он не работает там");
+        examRuPS.put(483,"Он работает здесь");
+        examRuPS.put(484,"Эти уроки помогают тебе?");
+        examRuPS.put(485,"Мне нужно проверить это");
+        examRuPS.put(486,"Она так же думает так");
+        examRuPS.put(487,"У неё есть интресные идеи");
+        examRuPS.put(488,"Почему те вещи происходят?");
+        examRuPS.put(489,"Он действительно не навидит это");
+        examRuPS.put(490,"Это выглядет странным");
+        examRuPS.put(491,"Какие уроки твой учитель находит реально полезными?");
+        examRuPS.put(492,"Ему нужно больше денег");
+        examRuPS.put(493,"Что кажется таким интересным?");
+        examRuPS.put(494,"Ей нравится это");
+        examRuPS.put(495,"Он работает в другом месте?");
+        examRuPS.put(496,"Он иногда хочет сделать это");
+        examRuPS.put(497,"Мы показываем хорошие результаты?");
+        examRuPS.put(498,"Ты видишь это");
+        examRuPS.put(499,"Его отцу нужны деньги");
 
         return examRuPS;
     }
+
+    /**
+     * Функция со значениями на Английском языке времени to be
+     * @return возвращает список значений
+     */
     private Map<Integer, String> getStrEnToBe(){
 
         return examEnToBe;
 
     }
+
+    /**
+     * Функция со значениями на Русском языке времени to be
+     * @return возвращает список значений
+     */
     private Map<Integer, String> getStrRuToBe(){
 
 

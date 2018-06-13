@@ -18,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Exam.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/exam/Exam.java">
+      <file leaf-file-name="RootMethod.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/interfaceRoot/RootMethod.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
+            <state relative-caret-position="308">
+              <caret line="83" column="103" selection-start-line="83" selection-start-column="103" selection-end-line="83" selection-end-column="103" />
             </state>
           </provider>
         </entry>
@@ -57,14 +57,14 @@
       <find>7</find>
       <find>8</find>
       <find>9</find>
-      <find>'</find>
       <find>''</find>
+      <find>'</find>
+      <find />
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/testDB/testDB/JDBCPostgreSQLExample.java" />
         <option value="$PROJECT_DIR$/src/main/java/testDB/testDB/TestA.java" />
         <option value="$PROJECT_DIR$/src/main/java/testDB/addTextInTable/TextAdd2.java" />
         <option value="$PROJECT_DIR$/src/main/java/testDB/newDB/NewDBinJava.java" />
@@ -101,9 +101,6 @@
         <option value="$PROJECT_DIR$/src/main/java/StartEnRu.java" />
         <option value="$PROJECT_DIR$/src/main/java/exam/T.java" />
         <option value="$PROJECT_DIR$/src/main/java/exercise/T.java" />
-        <option value="$PROJECT_DIR$/src/main/java/exercise/FillingColumnsExercise.java" />
-        <option value="$PROJECT_DIR$/src/main/java/control/AddExerciseExam.java" />
-        <option value="$PROJECT_DIR$/src/main/java/interfaceRoot/RootMethod.java" />
         <option value="$PROJECT_DIR$/src/main/java/control/Control.java" />
         <option value="$PROJECT_DIR$/src/main/java/db/AddStatisticTable.java" />
         <option value="$PROJECT_DIR$/src/main/java/interfaceRoot/Root.java" />
@@ -113,8 +110,12 @@
         <option value="$PROJECT_DIR$/src/main/java/db/TableDB.java" />
         <option value="$PROJECT_DIR$/src/main/java/db/CreateDB.java" />
         <option value="$PROJECT_DIR$/src/main/java/db/CounterExam.java" />
-        <option value="$PROJECT_DIR$/src/main/java/exam/Exam.java" />
+        <option value="$PROJECT_DIR$/src/main/java/exercise/FillingColumnsExercise.java" />
         <option value="$PROJECT_DIR$/src/main/java/exam/FillingColumnsExam.java" />
+        <option value="$PROJECT_DIR$/src/main/java/exercise/Exercise.java" />
+        <option value="$PROJECT_DIR$/src/main/java/interfaceRoot/RootMethod.java" />
+        <option value="$PROJECT_DIR$/src/main/java/exam/Exam.java" />
+        <option value="$PROJECT_DIR$/src/main/java/control/AddExerciseExam.java" />
       </list>
     </option>
   </component>
@@ -152,15 +153,32 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="EngRus" type="b2602c69:ProjectViewProjectNode" />
               <item name="EngRus" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EngRus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EngRus" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EngRus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EngRus" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EngRus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EngRus" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="EngRus_jar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EngRus" type="b2602c69:ProjectViewProjectNode" />
@@ -245,6 +263,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -253,27 +272,28 @@
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="engrus" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
-    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/Lessons" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/click.mp3" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus" />
+      <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus\resources" />
+      <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus\src\main" />
+      <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus\src" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus\resources" />
       <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus\src\main\java" />
       <recent name="C:\Users\Ghost\IdeaProjects\EngRus\src\main\java\ghostInter\texts" />
       <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus\src\main\java\ghostInter\controlToBe" />
       <recent name="C:\Users\Ghost\IdeaProjects\EngRus\src\main\java\ghostInter\dataBase\presenSimpl\approvals" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus\resources" />
-      <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus" />
-      <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus\src\main" />
-      <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -435,7 +455,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32936507" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22113943" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22713643" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -511,13 +531,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/exam/ControlExam.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/control/MenuI.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/exam/MethodExam.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/exercise/Exercise.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/texts/TextLevelOne.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -543,44 +556,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/exam/T.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/exercise/T.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/exercise/FillingColumnsExercise.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/control/AddExerciseExam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/control/Control.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="222" selection-start-line="222" selection-end-line="222" />
-          <folding>
-            <element signature="method#exercise#0;class#Control#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/interfaceRoot/RootMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="255" column="55" lean-forward="true" selection-start-line="255" selection-start-column="55" selection-end-line="255" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/myWords/FillingColumnsMyWords.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/control/MenuBarEngRus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -602,17 +577,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/CreateDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/interfaceRoot/Root.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="474">
           <caret line="77" column="10" selection-start-line="77" selection-start-column="10" selection-end-line="77" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/AddStatisticTable.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/myWords/FillingColumnsMyWords.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -635,48 +611,97 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/AddStatisticTable.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/CreateDB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-          <folding>
-            <element signature="e#474#475#0" expanded="true" />
-            <element signature="e#505#506#0" expanded="true" />
-            <element signature="e#539#540#0" expanded="true" />
-            <element signature="e#569#570#0" expanded="true" />
-            <element signature="e#603#604#0" expanded="true" />
-            <element signature="e#633#634#0" expanded="true" />
-            <element signature="e#670#671#0" expanded="true" />
-            <element signature="e#703#704#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="168">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/db/CounterExam.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="83" column="13" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
+        <state relative-caret-position="119">
+          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/control/Control.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3519">
+          <caret line="241" column="29" selection-start-line="241" selection-start-column="29" selection-end-line="241" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/exercise/FillingColumnsExercise.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-219">
+          <caret line="78" column="34" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
           <folding>
-            <element signature="e#3608#3626#0" expanded="true" />
+            <element signature="method#FillingColumnsExercise#0;class#FillingColumnsExercise#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/exercise/Exercise.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1309">
+          <caret line="1312" lean-forward="true" selection-start-line="1312" selection-end-line="1312" />
+          <folding>
+            <element signature="method#getStrEnPS#0;class#Exercise#0" />
+            <element signature="method#getStrRuPS#0;class#Exercise#0" />
+            <element signature="method#getStrEnToBe#0;class#Exercise#0" />
+            <element signature="method#getStrRuToBe#0;class#Exercise#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/exam/FillingColumnsExam.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2792">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="338">
+          <caret line="88" column="32" selection-start-line="88" selection-start-column="32" selection-end-line="88" selection-end-column="32" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#methodRuExam#0;class#FillingColumnsExam#0" />
+            <element signature="method#FillingColumnsExam#0;class#FillingColumnsExam#0" />
+            <element signature="method#getExamColumnLab#0;class#FillingColumnsExam#0" />
+            <element signature="method#counterRun#0;class#FillingColumnsExam#0" />
+            <element signature="method#numberingOfExam#0;class#FillingColumnsExam#0" />
+            <element signature="method#addPaneExam#0;class#FillingColumnsExam#0" />
+            <element signature="method#mistakesINdb#0;class#FillingColumnsExam#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/control/AddExerciseExam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+          <folding>
+            <element signature="method#getExerciseToBe#0;class#AddExerciseExam#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/exam/Exam.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
+        <state relative-caret-position="1003">
+          <caret line="575" column="45" selection-start-line="575" selection-start-column="45" selection-end-line="575" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getExamEnPS#0;class#Exam#0" />
+            <element signature="method#getExamRuPS#0;class#Exam#0" />
+            <element signature="method#getExamEnToBe#0;class#Exam#0" />
+            <element signature="method#getExamRuToBe#0;class#Exam#0" />
+            <element signature="method#getStrEnPS#0;class#Exam#0" />
+            <element signature="method#getStrRuPS#0;class#Exam#0" />
+            <element signature="method#getStrEnToBe#0;class#Exam#0" />
+            <element signature="method#getStrRuToBe#0;class#Exam#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/interfaceRoot/RootMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="83" column="103" selection-start-line="83" selection-start-column="103" selection-end-line="83" selection-end-column="103" />
         </state>
       </provider>
     </entry>

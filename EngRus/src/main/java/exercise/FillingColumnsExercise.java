@@ -8,16 +8,38 @@ import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 
+/**
+ * Класс заполнения колонок упражнений меню "Задания" со свойствами
+ * <b>arrayOfOffersLeft</b>, <b>arrayOfOffersRight</b>, <b>START</b>, <b>CLOSE</b>,
+ * <b>m</b> и <b>text</b>.
+ * @author Загороднев Д.М.
+ * @version 2.0
+ */
 public class FillingColumnsExercise implements RootMethod
 {
+    /** Левый столбец с предложениями */
     private Label[] arrayOfOffersLeft;
+    /** Правый столбец с предложениями */
     private Label[] arrayOfOffersRight;
+    /** Номер предложения с которого начинается столбец */
     private int START;
+    /** Номер предложения на котором столбец заканчивается */
     private int CLOSE;
+    /** Значение определяющее временную форму предложений (PS, To be,...) */
     private String m;
+    /** Класс со списком значений */
     private Exercise text = new Exercise();
 
     //Для заданий
+
+    /**
+     * Конструктор создающий новый объект с параметрами
+     * @param arrayOfOffersLeft - левый столбец предложений
+     * @param arrayOfOffersRight - правый столбец предложений
+     * @param START - начало столбца
+     * @param CLOSE - конец столбца
+     * @param m - временная форма (PS, To be...)
+     */
     public FillingColumnsExercise(Label[] arrayOfOffersLeft, Label[] arrayOfOffersRight,
                                   int START, int CLOSE, String m) {
 
@@ -27,6 +49,12 @@ public class FillingColumnsExercise implements RootMethod
         this.CLOSE = CLOSE;
         this.m = m;
     }
+
+    /**
+     * Метод определяющий язык колонок {@link FillingColumnsExercise#arrayOfOffersLeft#arrayOfOffersRight}
+     * @param leftRight - левая/правая колонка
+     * @param ENRU - язык английский/русский
+     */
     public void getEnRu(String leftRight, String ENRU){
         if (ENRU.equals("EN")) {
             if (leftRight.equals("LEFT")) {
@@ -42,24 +70,42 @@ public class FillingColumnsExercise implements RootMethod
             }
         }
     }
+
+    /**
+     * Функция получения значений {@link Exercise}
+     * @param a - номер предложения
+     * @param b - номер ячейки в которую будет помещено значение
+     * @param lang - язык значения
+     * @return возвращает значение на выбранном языке
+     */
     private String methodExercise(int a, int b, String lang){
         if (lang.equals("EN")) {
             switch (m) {
                 case "PS":
-                    return text.getAppPSfileEn().get(a + b);
+                    return text.getPsFileEn().get(a + b);
                 case "ToBe":
-                    return text.getAppToBefileEn().get(a + b);
+                    return text.getToBeFileEn().get(a + b);
             }
         } else if (lang.equals("RU")) {
             switch (m) {
                 case "PS":
-                    return text.getAppPSfileRu().get(a + b);
+                    return text.getPsFileRu().get(a + b);
                 case "ToBe":
-                    return text.getAppToBefileRu().get(a + b);
+                    return text.getToBeFileRu().get(a + b);
             }
         }
         return "No files";
     }
+
+    /**
+     * Процедура заполнения колонок на выбранном языке {@link FillingColumnsExercise#getEnRu(String, String)}}
+     * @param list - поле со значением {@link FillingColumnsExercise#text}
+     * @param listCol - колонка в которую заполняются значения
+     * @param coordinateX - положение колонки в приложении
+     * @param START_CLOSE - номер значения с которого начинается колонка
+     * @param set - начальный язык значения
+     * @param get - изменённый язык значения
+     */
     private void getColumnLabEn(Label[] list, VBox listCol, double coordinateX,
                                 int START_CLOSE, String set, String get) {
         for (int i = 0; i < list.length; i++) {
