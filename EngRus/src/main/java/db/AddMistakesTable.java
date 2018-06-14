@@ -1,14 +1,16 @@
 package db;
 
+import javafx.scene.layout.HBox;
+
 public class AddMistakesTable
 {
     private String dateTime;
     private String numberText;
     private String originalText;
-    private String mistakesText;
+    private HBox mistakesText;
     private String numberPart;
 
-    public AddMistakesTable(String dateTime, String numberText, String originalText, String mistakesText, String numberPart) {
+    public AddMistakesTable(String dateTime, String numberText, String originalText, HBox mistakesText, String numberPart) {
         this.dateTime = dateTime;
         this.numberText = numberText;
         this.originalText = originalText;
@@ -28,7 +30,7 @@ public class AddMistakesTable
         return originalText;
     }
 
-    public String getMistakesText() {
+    public HBox getMistakesText() {
         return mistakesText;
     }
 
@@ -42,7 +44,7 @@ public class AddMistakesTable
                 "dateTime='" + dateTime + '\'' +
                 ", numberText='" + numberText + '\'' +
                 ", originalText='" + originalText + '\'' +
-                ", mistakesText='" + mistakesText + '\'' +
+                ", mistakesText=" + mistakesText +
                 ", numberPart='" + numberPart + '\'' +
                 '}';
     }

@@ -119,8 +119,8 @@ public class FillingColumnsExam implements RootMethod, CounterExam
             int finalI = i;
             arrayOfOffersExam[i].setOnMouseClicked(event -> {
                 soundClick();
-                if (improve.getText().replaceAll("[a-zA-Z!.'^]", "").equalsIgnoreCase(methodExam(finalI, START, eng).
-                        replaceAll("[a-zA-Z!.'^]", ""))){
+                if (improve.getText().replaceAll("[!?.'^]", "").equalsIgnoreCase(methodExam(finalI, START, eng).
+                        replaceAll("[!?.'^]", ""))){
                     arrayOfOffersExam[finalI].setTextFill(EffectColor.colorTextClick);
                     correctly[finalI].setText("ВЕРНО!!!");
                     correctly[finalI].setTextFill(EffectColor.colorTextClick);

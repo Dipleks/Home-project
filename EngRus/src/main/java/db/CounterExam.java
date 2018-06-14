@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -83,7 +84,7 @@ public interface CounterExam extends Root
         TableColumn<AddMistakesTable, String> dateTime = new TableColumn<>("Дата");
         TableColumn<AddMistakesTable, String> returnNumber = new TableColumn<>("№");
         TableColumn<AddMistakesTable, String> returnOriginal = new TableColumn<>("Правильный текст");
-        TableColumn<AddMistakesTable, String> returnMistakes = new TableColumn<>("Ошибка");
+        TableColumn<AddMistakesTable, HBox> returnMistakes = new TableColumn<>("Ошибка");
         TableColumn<AddMistakesTable, String> returnPart = new TableColumn<>("Часть");
         dateTime.setCellValueFactory(new PropertyValueFactory<>("dateTime"));
         dateTime.setPrefWidth(sceneStatistics.getWidth()/6.7);
@@ -117,7 +118,7 @@ public interface CounterExam extends Root
             assert connection != null;
             Statement stmt2 = connection.createStatement();
             ResultSet rs1 = stmt2.executeQuery("SELECT date_time, numb, original, mistakes, part " +
-                    "FROM (SELECT DISTINCT ON (original) date_time, numb, " +
+                    "FROM (SELECT DISTINCT ON (mistakes) date_time, numb, " +
                     "original, mistakes, part FROM counter) AS td " +
                     "ORDER BY date_time;"); //sql запрос
             while (rs1.next()) {
@@ -127,8 +128,42 @@ public interface CounterExam extends Root
                         Locale.getDefault());
                 String result = newDateFormat.format(date);
 
+                // Выделение цветом ошибок:
+                String original = rs1.getString("original");
+                String mistakes = rs1.getString("mistakes");
+                Label[] originalL = new Label[original.length()];
+                Label[] mistakesL = new Label[mistakes.length()];
+                HBox mistakesCallus = new HBox();
+                int length;
+                if (original.length()<mistakes.length()){
+                    length = original.length();
+                } else {
+                    length = mistakes.length();
+                }
+                for (int i = 0; i < length; i++) {
+                    char c = 0;
+                    char d = 0;
+                    c = original.charAt(i);
+                    d = mistakes.charAt(i);
+                    if (c==d){
+                        originalL[i] = new Label();
+                        mistakesL[i] = new Label();
+                        originalL[i].setText(String.valueOf(c));
+                        mistakesL[i].setText(String.valueOf(d));
+                        mistakesCallus.getChildren().addAll(mistakesL[i]);
+                    } else {
+                        originalL[i] = new Label();
+                        mistakesL[i] = new Label();
+                        originalL[i].setTextFill(Color.RED);
+                        mistakesL[i].setTextFill(Color.RED);
+                        originalL[i].setText(String.valueOf(c));
+                        mistakesL[i].setText(String.valueOf(d));
+                        mistakesCallus.getChildren().addAll(mistakesL[i]);
+                    }
+                }
+
                 list.add(new AddMistakesTable(result, rs1.getString("numb"),
-                        rs1.getString("original"), rs1.getString("mistakes"), rs1.getString("part")));
+                        rs1.getString("original"), mistakesCallus, rs1.getString("part")));
             }
         } catch (SQLException e) {
             e.printStackTrace();

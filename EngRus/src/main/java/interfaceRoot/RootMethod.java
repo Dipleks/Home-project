@@ -82,10 +82,10 @@ public interface RootMethod extends Root
     default void soundClick() {
         // TODO делаем код для клика;
         // TODO добавить звуковые эффекты в базу данных если не получится сделать стандартными методами
-            String file = "click.mp3";
-            Media sound = new Media(new File(file).toURI().toString());
-            MediaPlayer mediaPlayer = new MediaPlayer(sound);
-            mediaPlayer.play();
+//            String file = "click.mp3";
+//            Media sound = new Media(new File(file).toURI().toString());
+//            MediaPlayer mediaPlayer = new MediaPlayer(sound);
+//            mediaPlayer.play();
     }
     // Часы главного окна:
     default void clock() {
