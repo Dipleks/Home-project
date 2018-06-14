@@ -4,7 +4,6 @@
     <root id="archive" name="EngRus.jar">
       <element id="module-output" name="EngRus" />
       <element id="extracted-dir" path="C:/Program Files/Java/jdk1.8.0_162/lib/postgresql-42.2.2.jar" path-in-jar="/" />
-      <element id="file-copy" path="$PROJECT_DIR$/click.mp3" />
     </root>
   </artifact>
 </component>

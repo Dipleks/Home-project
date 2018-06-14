@@ -39,11 +39,10 @@ public class MenuBarEngRus implements RootMethod, CounterExam
     private final MenuItem menuBLACK = new MenuItem("Ночь");
     private final MenuItem about = new MenuItem("О программе");
 
-    public void getMenu() throws SQLException, ClassNotFoundException {
+    public void getMenu() {
         ROOT.getChildren().addAll(getMenuBar());
     }
-
-    private MenuBar getMenuBar() throws SQLException, ClassNotFoundException {
+    private MenuBar getMenuBar() {
 
         getMenuPS();
         getMenu_my_words();
@@ -55,6 +54,10 @@ public class MenuBarEngRus implements RootMethod, CounterExam
         getMenuWHITE();
         getTextsLevelOne();
 
+        menuWHITE.setDisable(true);
+        menuBLACK.setDisable(true);
+        menuHelp.setDisable(true);
+
         menuBar.setMinWidth(widthSize);
         menuTexts.getItems().addAll(textsLevelOne);
         menuSetting.getItems().addAll(menuWHITE, menuBLACK);
@@ -65,17 +68,13 @@ public class MenuBarEngRus implements RootMethod, CounterExam
 
         return menuBar;
     }
-    private void getMenu_my_words() throws SQLException, ClassNotFoundException {
+    private void getMenu_my_words() {
 
         if (CreateDB.connectDB()) {
             menu_my_words.setOnAction(event -> {
                 clearMethod();
                 MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
-                try {
-                    menuBarEngRus.getMenu();
-                } catch (SQLException | ClassNotFoundException e) {
-                    e.printStackTrace();
-                }
+                menuBarEngRus.getMenu();
                 FillingColumnsMyWords fillingColumns = new FillingColumnsMyWords();
                 fillingColumns.getMyWordsList();
             });
@@ -87,11 +86,7 @@ public class MenuBarEngRus implements RootMethod, CounterExam
         menuPS.setOnAction(event -> {
             clearMethod();
             MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
-            try {
-                menuBarEngRus.getMenu();
-            } catch (SQLException | ClassNotFoundException e) {
-                e.printStackTrace();
-            }
+            menuBarEngRus.getMenu();
             AddExerciseExam addExerciseExam = new AddExerciseExam();
             addExerciseExam.AddMenuButtonPS();
         });
@@ -100,11 +95,7 @@ public class MenuBarEngRus implements RootMethod, CounterExam
         examPS.setOnAction(event -> {
             clearMethod();
             MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
-            try {
-                menuBarEngRus.getMenu();
-            } catch (SQLException | ClassNotFoundException e) {
-                e.printStackTrace();
-            }
+            menuBarEngRus.getMenu();
             AddExerciseExam addExerciseExam = new AddExerciseExam();
             addExerciseExam.AddMenuButtonExamPS();
         });
@@ -119,7 +110,8 @@ public class MenuBarEngRus implements RootMethod, CounterExam
             label.setPrefSize(widthSize/4, heightSize/4);
             label.setText("Автор программы Ghost \n" + "\n" + "Программа предназначена " +
                     "\nдля изучения Английского языка." +
-                    "\n\n                                    Версия программы: 2.0");
+                    "\n\n                                    Версия программы: 2.02" +
+                    "\n\n\nИзменения:\nДобавлено выделение ошибок красным цветом.");
             label.setFont(Font.font("Time New Roman", FontWeight.BOLD,
                     FontPosture.ITALIC, heightSize*0.015));
             label.setAlignment(Pos.CENTER);
@@ -136,11 +128,7 @@ public class MenuBarEngRus implements RootMethod, CounterExam
         menuToBe.setOnAction(event -> {
             clearMethod();
             MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
-            try {
-                menuBarEngRus.getMenu();
-            } catch (SQLException | ClassNotFoundException e) {
-                e.printStackTrace();
-            }
+            menuBarEngRus.getMenu();
             AddExerciseExam addExerciseExam = new AddExerciseExam();
             addExerciseExam.AddMenuButtonToBe();
         });
@@ -149,11 +137,7 @@ public class MenuBarEngRus implements RootMethod, CounterExam
         examToBe.setOnAction(event -> {
             clearMethod();
             MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
-            try {
-                menuBarEngRus.getMenu();
-            } catch (SQLException | ClassNotFoundException e) {
-                e.printStackTrace();
-            }
+            menuBarEngRus.getMenu();
             AddExerciseExam addExerciseExam = new AddExerciseExam();
             addExerciseExam.AddMenuButtonExamToBe();
         });
@@ -179,11 +163,7 @@ public class MenuBarEngRus implements RootMethod, CounterExam
         textsLevelOne.setOnAction(event -> {
             clearMethod();
             MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
-            try {
-                menuBarEngRus.getMenu();
-            } catch (SQLException | ClassNotFoundException e) {
-                e.printStackTrace();
-            }
+            menuBarEngRus.getMenu();
             TextLevelOne textLevelOne = new TextLevelOne();
             textLevelOne.text1();
         });

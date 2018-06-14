@@ -13,7 +13,6 @@ public class StartEnRu extends Application implements RootMethod
 {
     private MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
 
-
     @Override
     public void start(Stage primaryStage) {
 
@@ -27,7 +26,7 @@ public class StartEnRu extends Application implements RootMethod
 
             // TODO действие если БД нет вообще на ПК
 
-            System.out.println("test");
+            System.out.println("test2");
         }
 
     }
@@ -35,6 +34,7 @@ public class StartEnRu extends Application implements RootMethod
     public static void main(String[] args) {
         launch(args);
     }
+
     private void showWindow(){
 
         showTextOne.setText("Первый вход в программу!");
@@ -49,19 +49,11 @@ public class StartEnRu extends Application implements RootMethod
             } catch (SQLException | ClassNotFoundException e1) {
                 e1.printStackTrace();
             }
-            try {
-                runMethod();
-            } catch (SQLException | ClassNotFoundException e1) {
-                e1.printStackTrace();
-            }
+            runMethod();
             showStageDB.close();
         });
         noDB.setOnAction(e -> {
-            try {
-                runMethod();
-            } catch (SQLException | ClassNotFoundException e1) {
-                e1.printStackTrace();
-            }
+            runMethod();
             showStageDB.close();
         });
         showNoDB.setSpacing(10);
@@ -78,7 +70,7 @@ public class StartEnRu extends Application implements RootMethod
         showStageDB.setTitle("Вход...");
         showStageDB.show();
     }
-    private void runMethod() throws SQLException, ClassNotFoundException {
+    private void runMethod() {
         menuBarEngRus.getMenu();
         clock();
 

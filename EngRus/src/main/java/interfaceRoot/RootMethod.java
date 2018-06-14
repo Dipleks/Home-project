@@ -1,15 +1,18 @@
 package interfaceRoot;
 
+import db.CreateDB;
 import db.TableDB;
 import control.AddExerciseExam;
 import control.MenuBarEngRus;
 import javafx.animation.Timeline;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import myWords.FillingColumnsMyWords;
@@ -242,7 +245,7 @@ public interface RootMethod extends Root
                         menuBarEngRus.getMenu();
                         FillingColumnsMyWords fillingColumns = new FillingColumnsMyWords();
                         fillingColumns.getMyWordsList();
-                    } catch (SQLException | ClassNotFoundException ex) {
+                    } catch (SQLException ex) {
                         ex.printStackTrace();
                     }
                 });
@@ -310,5 +313,4 @@ public interface RootMethod extends Root
         win.setScene(scene);
         win.show();
     }
-
 }
