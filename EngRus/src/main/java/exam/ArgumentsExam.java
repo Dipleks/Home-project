@@ -1,6 +1,5 @@
 package exam;
 
-import db.AddMistakesTable;
 import db.CreateDB;
 import db.TableDB;
 import interfaceRoot.EffectColor;
@@ -24,30 +23,71 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+/**
+ * Интерфейс с параметрами и методами управления БД для {@link FillingColumnsExam}, со значениями
+ * <b>examPane</b>, <b>improveV</b>, <b>str</b>, <b>improve</b>, <b>improveClick1</b>, <b>nameExam</b>,
+ * <b>counterVB</b>, <b>counterYES</b>, <b>counterNO</b>, <b>YES</b>, <b>NO</b>, <b>numberColumn</b>,
+ * <b>iprColumn</b>, <b>columnExam</b>, <b>groupExam</b>, <b>exitInMenu</b>
+ * @author Загороднев Д.М.
+ * @version 2.0
+ */
 public interface ArgumentsExam extends Root
 {
+    /** Панель с контейнерами значений */
     ScrollPane examPane = new ScrollPane();
+
+    /** Панель с вызовом окна подсказки, текстовым полем, возвратом в меню Контрольных */
     VBox improveV = new VBox();
+
+    /** Текстовое значение окна подсказки */
     String str = "Введите текст и нажмите на предложение из списка! " +
             "Красный - не верно! Зеленый - верно!\n " +
             "Если вы уверены в своем переводе нажмите на номер предложения!";
+
+    /** Текстовое поле проверки */
     TextField improve = new TextField();
+
+    /** Ячека информации для работы с текстовым полем */
     Label improveClick1 = new Label(str);
+
+    /** Ячейка с именем части экзамена */
     Label nameExam = new Label();
-    // Счётчик:
+
+    /** Контейнер для ячеек счетчика ошибок */
     VBox counterVB = new VBox();
+
+    /** Ячека счетчика с информацией о колличестве положительных ответов */
     Label counterYES = new Label();
+
+    /** Ячека счетчика с информацией о колличестве отрицательных ответов */
     Label counterNO = new Label();
+
+    /** Информационная ячейка положительных ответов */
     Label YES = new Label("Верно:");
+
+    /** Информационная ячейка отрицательных ответов */
     Label NO = new Label("Не верно:");
+
+    /** Контейнер для ячеек с номерами значений */
     VBox numberColumn = new VBox();
+
+    /** Контейнер с ячейками положительных/отрицательных ответов */
     VBox iprColumn = new VBox();
+
+    /** Контейнер с ячейками значений */
     VBox columnExam = new VBox();
+
+    /** Контейнер группировки {@link ArgumentsExam#numberColumn}, {@link ArgumentsExam#iprColumn},
+     * {@link ArgumentsExam#columnExam} */
     HBox groupExam = new HBox();
-    // Control:
+
+    /** Кнопка возврата в меню выбора */
     Button exitInMenu = new Button("В меню");
 
-    // Окно подсказки при нажатии на поис при пустом поле:
+    /**
+     * Процедура вызова окна подсказок
+     * @param str - текст подсказки
+     */
     default void panes(String str) {
         Stage win = new Stage();
         Label label = new Label(str);
@@ -62,7 +102,13 @@ public interface ArgumentsExam extends Root
         win.setScene(scene);
         win.show();
     }
-    // Счетчик:
+
+    /**
+     * Процедура вызова {@link ArgumentsExam#counterVB}
+     * Может вызвать иключения:
+     * @throws SQLException - ошибка в работе с базой данных
+     * @throws ClassNotFoundException - отсутствие драйвера JDBC
+     */
     default void counter() throws SQLException, ClassNotFoundException {
         if (CreateDB.newCounterRun()) {
             ROOT.getChildren().remove(counterVB);
@@ -91,7 +137,10 @@ public interface ArgumentsExam extends Root
             counter();
         }
     }
-    // Полное удаление статистики из БД:
+
+    /**
+     * Процедура очистки таблицы базы данных со статистикой
+     */
     default void counterDeleteStatistic(){
         try {
             Connection connection = DriverManager.getConnection(TableDB.DB_URL + TableDB.db, TableDB.USER, TableDB.PASS);
@@ -101,7 +150,10 @@ public interface ArgumentsExam extends Root
             ex.printStackTrace();
         }
     }
-    // Получение статистики контрольных из БД:
+
+    /**
+     * Процедура вызова окна со статистикой
+     */
     default void statisticsWindow() {
         Stage statistics = new Stage();
         Group rootStatistics = new Group();

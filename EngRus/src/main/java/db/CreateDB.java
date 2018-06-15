@@ -2,25 +2,42 @@ package db;
 
 import java.sql.*;
 
+/**
+ * Класс создающий базу данных и таблицы имеет один главный параметр <>connection</>
+ */
 public class CreateDB implements TableDB
 {
+    /** Подключение к БД */
     private static Connection connection;
 
-    // Создаем новую БД:
+    /**
+     * Процедура создания новой БД
+     * @throws SQLException - ошибка в работе с базой данных
+     * @throws ClassNotFoundException - отсутствие драйвера JDBC
+     */
     public static void newDB() throws SQLException, ClassNotFoundException {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement statement = connection.createStatement();
             statement.executeUpdate(NEW_DB);
     }
-    // Создание таблицы счетчика при первом запуске:
+
+    /**
+     * Процедура создающая таблицу {@link exam.AddMistakesTable}
+     * @throws SQLException - ошибка в работе с базой данных
+     * @throws ClassNotFoundException - отсутствие драйвера JDBC
+     */
     public static void newCounterFirstRun() throws SQLException, ClassNotFoundException {
         Class.forName("org.postgresql.Driver");
         connection = DriverManager.getConnection(DB_URL + db, USER, PASS);
         Statement statement = connection.createStatement();
         statement.executeUpdate(counterExam);
     }
-    // Проверяем создана БД или нет:
+
+    /**
+     * Функция проверяющая наличие базы данных
+     * @return - вернет false если БД нет и вернет true если БД создана
+     */
     public static boolean connectDB() {
         try {
             Class.forName("org.postgresql.Driver");
@@ -50,7 +67,11 @@ public class CreateDB implements TableDB
         }
         return false;
     }
-    // Проверка таблицы счетчика при последующих запусках:
+
+    /**
+     * Функция проверяющая наличие таблицы ошибок при запуске приложения
+     * @return - вернет false если таблица отсутствует и вернет true если создана
+     */
     public static boolean newCounterRun() throws SQLException, ClassNotFoundException {
         Class.forName("org.postgresql.Driver");
         connection = DriverManager.getConnection(DB_URL + db, USER, PASS);

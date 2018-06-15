@@ -10,7 +10,7 @@ public class AddExerciseExam
     private FillingColumnsExercise[] appPS = new FillingColumnsExercise[7];
     private FillingColumnsExercise[] negPS = new FillingColumnsExercise[4];
     private FillingColumnsExercise[] quesPS = new FillingColumnsExercise[7];
-    private FillingColumnsExam[] examPS = new FillingColumnsExam[6];
+    private FillingColumnsExam[] examPS = new FillingColumnsExam[7];
 
     private FillingColumnsExercise[] appToBe = new FillingColumnsExercise[6];
     private FillingColumnsExercise[] negToBe = new FillingColumnsExercise[4];
@@ -70,8 +70,9 @@ public class AddExerciseExam
         examPS[3] = new FillingColumnsExam(new Label[100], new Label[100], new Label[100],  300, "ExamPS");
         examPS[4] = new FillingColumnsExam(new Label[100], new Label[100], new Label[100],  400, "ExamPS");
         examPS[5] = new FillingColumnsExam(new Label[100], new Label[100], new Label[100],  500, "ExamPS");
+        examPS[6] = new FillingColumnsExam(new Label[100], new Label[100], new Label[100],  600, "ExamPS");
 
-        controlExamPS.examMethod(examPS,new Button[6], "AddMenuButtonExamPS");
+        controlExamPS.examMethod(examPS,new Button[7], "AddMenuButtonExamPS");
     }
 
     // ToBe

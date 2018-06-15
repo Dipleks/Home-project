@@ -27,7 +27,6 @@ class Control implements Root, ArgumentsExam, ArgumentsExercise
     private Label quesL = new Label();
     private Label examL = new Label();
 
-
     void exercise(final FillingColumnsExercise[] app, final FillingColumnsExercise[] neg, final FillingColumnsExercise[] ques,
                   final Button[] buttonApp, final Button[] buttonNeg, final Button[] buttonQues, String m)
     {
