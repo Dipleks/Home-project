@@ -1,107 +1,37 @@
-package interfaceRoot;
+package myWords;
 
-import db.CreateDB;
-import db.TableDB;
-import control.AddExerciseExam;
 import control.MenuBarEngRus;
-import javafx.animation.Timeline;
-import javafx.geometry.Insets;
+import db.TableDB;
+import interfaceRoot.ClearDisplay;
+import interfaceRoot.EffectColor;
+import interfaceRoot.EffectFont;
+import interfaceRoot.Root;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import myWords.FillingColumnsMyWords;
 
-import java.io.File;
 import java.sql.*;
 
-public interface RootMethod extends Root
+public interface ArgumentsMyWords extends Root
 {
-    // Очистка колонок упражнений:
-    default void clearColumn() throws SQLException, ClassNotFoundException {
-        leftColumn.getChildren().clear();
-        rightColumn.getChildren().clear();
-        ROOT.getChildren().clear();
-        MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
-        menuBarEngRus.getMenu();
-        ROOT.getChildren().addAll(groupRadBut);
-    }
-    // Полная зачистка главного окна:
-    default void clearMethod(){
-        leftC.getChildren().clear();
-        rightC.getChildren().clear();
-        groupMy.getChildren().clear();
-        addElement.getChildren().clear();
-        addTextAndButton.getChildren().clear();
-        leftColumn.getChildren().clear();
-        rightColumn.getChildren().clear();
-        groupRadBut.getChildren().clear();
-        groupExam.getChildren().clear();
-        iprColumn.getChildren().clear();
-        numberColumn.getChildren().clear();
-        improveV.getChildren().clear();
-        counterVB.getChildren().clear();
-        ROOT.getChildren().clear();
-        clock();
-    }
-    // Зачистка окна упражнений:
-    default void methodClearExercise(String m) throws SQLException, ClassNotFoundException {
-        if (m.equals("AddMenuButtonPS")){
-            clearMethod();
-            MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
-            menuBarEngRus.getMenu();
-            AddExerciseExam addExerciseExam = new AddExerciseExam();
-            addExerciseExam.AddMenuButtonPS();
-        } else if (m.equals("AddMenuButtonToBe")){
-            clearMethod();
-            MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
-            menuBarEngRus.getMenu();
-            AddExerciseExam addExerciseExam = new AddExerciseExam();
-            addExerciseExam.AddMenuButtonToBe();
-        }
-    }
-    // Зачистка окна контрольных:
-    default void methodClearExam(String m) throws SQLException, ClassNotFoundException {
-        if (m.equals("AddMenuButtonExamPS")){
-            clearMethod();
-            MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
-            menuBarEngRus.getMenu();
-            AddExerciseExam addExerciseExam = new AddExerciseExam();
-            addExerciseExam.AddMenuButtonExamPS();
-        } else if (m.equals("AddMenuButtonExamToBe")){
-            clearMethod();
-            MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
-            menuBarEngRus.getMenu();
-            AddExerciseExam addExerciseExam = new AddExerciseExam();
-            addExerciseExam.AddMenuButtonExamToBe();
-        }
-    }
-    // Звуковой эффект при нажатии на предложение:
-    default void soundClick() {
-        // TODO делаем код для клика;
-        // TODO добавить звуковые эффекты в базу данных если не получится сделать стандартными методами
-//            String file = "click.mp3";
-//            Media sound = new Media(new File(file).toURI().toString());
-//            MediaPlayer mediaPlayer = new MediaPlayer(sound);
-//            mediaPlayer.play();
-    }
-    // Часы главного окна:
-    default void clock() {
-        uiTimer.setLayoutX(widthSize / 25);
-        uiTimer.setLayoutY(heightSize / 20);
-        uiTimer.setFont(EffectFont.fontTextExam);
-        uiTimer.setTextFill(EffectColor.colorClock);
-        uiTimer.setWrapText(true);
-        uiTimer.setAlignment(Pos.CENTER);
-        timeline.setCycleCount(Timeline.INDEFINITE);
-        timeline.play();
-        ROOT.getChildren().addAll(uiTimer);
-    }
+    // Menu_my_words
+    VBox leftC = new VBox();
+    VBox rightC = new VBox();
+    HBox groupMy = new HBox();
+    VBox addElement = new VBox();
+    HBox addTextAndButton = new HBox();
+    ScrollPane textMy = new ScrollPane();
+    TextField textEn = new TextField();
+    TextField textRu = new TextField();
+    TextField textSearch = new TextField();
+    Label[] my_word_en = new Label[500];
+    Label[] my_word_ru = new Label[500];
+    Button searchWords = new Button("Поиск");
+    Button addWords = new Button("Добавить");
     // Поиск меню my_words:
     default void getSearch(){
         searchWords.setOnAction(e -> {
@@ -240,7 +170,7 @@ public interface RootMethod extends Root
                             rightC.getChildren().remove(my_word_ru[j]);
                         }
                         r.close();
-                        clearMethod();
+                        ClearDisplay.clearMethod();
                         MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
                         menuBarEngRus.getMenu();
                         FillingColumnsMyWords fillingColumns = new FillingColumnsMyWords();
@@ -297,20 +227,5 @@ public interface RootMethod extends Root
                 e.printStackTrace();
             }
         }
-    }
-    // Окно подсказки при нажатии на поис при пустом поле:
-    default void panes(String str) {
-        Stage win = new Stage();
-        Label label = new Label(str);
-        Button button = new Button("Закрыть");
-        button.setOnAction(e -> win.close());
-        VBox group = new VBox();
-        group.setSpacing(20);
-        group.setAlignment(Pos.CENTER);
-        group.getChildren().addAll(label, button);
-        Scene scene = new Scene(group, 250, 150);
-        win.initModality(Modality.APPLICATION_MODAL);
-        win.setScene(scene);
-        win.show();
     }
 }

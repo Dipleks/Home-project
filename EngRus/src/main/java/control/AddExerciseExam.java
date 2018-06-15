@@ -2,11 +2,10 @@ package control;
 
 import exam.FillingColumnsExam;
 import exercise.FillingColumnsExercise;
-import interfaceRoot.RootMethod;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
-public class AddExerciseExam implements RootMethod
+public class AddExerciseExam
 {
     private FillingColumnsExercise[] appPS = new FillingColumnsExercise[7];
     private FillingColumnsExercise[] negPS = new FillingColumnsExercise[4];

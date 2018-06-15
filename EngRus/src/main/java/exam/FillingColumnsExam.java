@@ -1,22 +1,19 @@
 package exam;
 
-import db.CounterExam;
 import db.TableDB;
-import exercise.FillingColumnsExercise;
-import interfaceRoot.EffectColor;
-import interfaceRoot.EffectFont;
-import interfaceRoot.RootMethod;
+import interfaceRoot.*;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+
+import static interfaceRoot.SoundClick.soundClick;
 
 /**
  * Класс заполнения таблицы меню "Контрольные" со свойствами
@@ -24,7 +21,7 @@ import java.time.format.DateTimeFormatter;
  * @author Загороднев Д.М.
  * @version 2.0
  */
-public class FillingColumnsExam implements RootMethod, CounterExam
+public class FillingColumnsExam implements ArgumentsExam
 {
     /** Ячейки для значений таблицы */
     private Label[] arrayOfOffersExam;
@@ -196,7 +193,7 @@ public class FillingColumnsExam implements RootMethod, CounterExam
             number[i].setText("-"+(i+1+START)+"-");
             int finalI = i;
             number[i].setOnMouseClicked(ev -> {
-                soundClick();
+                SoundClick.soundClick();
                 if (arrayOfOffersExam[finalI].getText().equals(methodExam(finalI, START, rus))){
                     arrayOfOffersExam[finalI].setText(methodExam(finalI, START, eng));
                     arrayOfOffersExam[finalI].setTextFill(EffectColor.colorTextImpr);
@@ -221,14 +218,14 @@ public class FillingColumnsExam implements RootMethod, CounterExam
         iprColumn.setPrefSize(widthSize/11, heightSize/1.25);
         iprColumn.getChildren().addAll(correctly);
 
-//          leftColumn.setStyle("-fx-border-color: RED");
-        leftColumn.setSpacing(heightSize-heightSize/1.009);
-        leftColumn.setPadding(new Insets(0, 0, 0, 0));
-        leftColumn.setPrefSize(widthSize/2.5, heightSize/1.25);
-        leftColumn.getChildren().addAll(arrayOfOffersExam);
+//          columnExam.setStyle("-fx-border-color: RED");
+        columnExam.setSpacing(heightSize-heightSize/1.009);
+        columnExam.setPadding(new Insets(0, 0, 0, 0));
+        columnExam.setPrefSize(widthSize/2.5, heightSize/1.25);
+        columnExam.getChildren().addAll(arrayOfOffersExam);
 
         groupExam.setSpacing(heightSize-heightSize/1.009);
-        groupExam.getChildren().addAll(numberColumn, leftColumn, iprColumn);
+        groupExam.getChildren().addAll(numberColumn, columnExam, iprColumn);
 
         examPane.setContent(groupExam);
 //        examPane.setStyle("-fx-background-color: transparent; -fx-background: #FFFFFF;");

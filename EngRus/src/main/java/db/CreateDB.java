@@ -1,7 +1,5 @@
 package db;
 
-import interfaceRoot.RootMethod;
-
 import java.sql.*;
 
 public class CreateDB implements TableDB
@@ -29,7 +27,7 @@ public class CreateDB implements TableDB
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        Statement statement = null;
+        Statement statement;
         try {
             try {
                 connection = DriverManager.getConnection(DB_URL, USER, PASS);

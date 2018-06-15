@@ -1,5 +1,8 @@
-package db;
+package exam;
 
+import db.AddMistakesTable;
+import db.CreateDB;
+import db.TableDB;
 import interfaceRoot.EffectColor;
 import interfaceRoot.EffectFont;
 import interfaceRoot.Root;
@@ -11,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -20,8 +24,44 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public interface CounterExam extends Root
+public interface ArgumentsExam extends Root
 {
+    ScrollPane examPane = new ScrollPane();
+    VBox improveV = new VBox();
+    String str = "Введите текст и нажмите на предложение из списка! " +
+            "Красный - не верно! Зеленый - верно!\n " +
+            "Если вы уверены в своем переводе нажмите на номер предложения!";
+    TextField improve = new TextField();
+    Label improveClick1 = new Label(str);
+    Label nameExam = new Label();
+    // Счётчик:
+    VBox counterVB = new VBox();
+    Label counterYES = new Label();
+    Label counterNO = new Label();
+    Label YES = new Label("Верно:");
+    Label NO = new Label("Не верно:");
+    VBox numberColumn = new VBox();
+    VBox iprColumn = new VBox();
+    VBox columnExam = new VBox();
+    HBox groupExam = new HBox();
+    // Control:
+    Button exitInMenu = new Button("В меню");
+
+    // Окно подсказки при нажатии на поис при пустом поле:
+    default void panes(String str) {
+        Stage win = new Stage();
+        Label label = new Label(str);
+        Button button = new Button("Закрыть");
+        button.setOnAction(e -> win.close());
+        VBox group = new VBox();
+        group.setSpacing(20);
+        group.setAlignment(Pos.CENTER);
+        group.getChildren().addAll(label, button);
+        Scene scene = new Scene(group, 250, 150);
+        win.initModality(Modality.APPLICATION_MODAL);
+        win.setScene(scene);
+        win.show();
+    }
     // Счетчик:
     default void counter() throws SQLException, ClassNotFoundException {
         if (CreateDB.newCounterRun()) {
@@ -37,9 +77,7 @@ public interface CounterExam extends Root
             // Кнопка "Счетчик":
             Button resultExam = new Button("Статистика");
             resultExam.setStyle("-fx-background-color: #c1b8b8;");
-            resultExam.setOnAction(event -> {
-                statisticsWindow();
-            });
+            resultExam.setOnAction(event -> statisticsWindow());
 
             counterVB.setSpacing(10);
             counterVB.setAlignment(Pos.CENTER);
@@ -68,7 +106,7 @@ public interface CounterExam extends Root
         Stage statistics = new Stage();
         Group rootStatistics = new Group();
         Scene sceneStatistics = new Scene(rootStatistics, widthSize/1.4, heightSize/2);
-        TableView<AddMistakesTable> tableStatisticExam = new TableView<AddMistakesTable>();
+        TableView<AddMistakesTable> tableStatisticExam = new TableView<>();
 
         Button deleteCounter = new Button("Очистить статистику");
         deleteCounter.setOnAction(event -> {
@@ -123,7 +161,7 @@ public interface CounterExam extends Root
                     "ORDER BY date_time;"); //sql запрос
             while (rs1.next()) {
                 Timestamp timestamp = rs1.getTimestamp("date_time");
-                Date date = new Date(timestamp.getTime());
+                java.util.Date date = new Date(timestamp.getTime());
                 SimpleDateFormat newDateFormat = new SimpleDateFormat("dd MMMM yyyy" + "г. в "+ "HH:mm:ss",
                         Locale.getDefault());
                 String result = newDateFormat.format(date);
@@ -141,8 +179,8 @@ public interface CounterExam extends Root
                     length = mistakes.length();
                 }
                 for (int i = 0; i < length; i++) {
-                    char c = 0;
-                    char d = 0;
+                    char c;
+                    char d;
                     c = original.charAt(i);
                     d = mistakes.charAt(i);
                     if (c==d){

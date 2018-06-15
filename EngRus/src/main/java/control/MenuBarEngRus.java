@@ -1,8 +1,8 @@
 package control;
 
-import db.CounterExam;
 import db.CreateDB;
-import interfaceRoot.RootMethod;
+import interfaceRoot.Root;
+import interfaceRoot.ClearDisplay;
 import texts.TextLevelOne;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -15,9 +15,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import myWords.FillingColumnsMyWords;
 
-import java.sql.SQLException;
-
-public class MenuBarEngRus implements RootMethod, CounterExam
+public class MenuBarEngRus implements Root
 {
     private final MenuBar menuBar = new MenuBar();
 
@@ -72,7 +70,7 @@ public class MenuBarEngRus implements RootMethod, CounterExam
 
         if (CreateDB.connectDB()) {
             menu_my_words.setOnAction(event -> {
-                clearMethod();
+                ClearDisplay.clearMethod();
                 MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
                 menuBarEngRus.getMenu();
                 FillingColumnsMyWords fillingColumns = new FillingColumnsMyWords();
@@ -84,7 +82,7 @@ public class MenuBarEngRus implements RootMethod, CounterExam
     }
     private void getMenuPS(){
         menuPS.setOnAction(event -> {
-            clearMethod();
+            ClearDisplay.clearMethod();
             MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
             menuBarEngRus.getMenu();
             AddExerciseExam addExerciseExam = new AddExerciseExam();
@@ -93,7 +91,7 @@ public class MenuBarEngRus implements RootMethod, CounterExam
     }
     private void getExamPS(){
         examPS.setOnAction(event -> {
-            clearMethod();
+            ClearDisplay.clearMethod();
             MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
             menuBarEngRus.getMenu();
             AddExerciseExam addExerciseExam = new AddExerciseExam();
@@ -126,7 +124,7 @@ public class MenuBarEngRus implements RootMethod, CounterExam
     }
     private void getMenuToBe(){
         menuToBe.setOnAction(event -> {
-            clearMethod();
+            ClearDisplay.clearMethod();
             MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
             menuBarEngRus.getMenu();
             AddExerciseExam addExerciseExam = new AddExerciseExam();
@@ -135,7 +133,7 @@ public class MenuBarEngRus implements RootMethod, CounterExam
     }
     private void getExamToBe(){
         examToBe.setOnAction(event -> {
-            clearMethod();
+            ClearDisplay.clearMethod();
             MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
             menuBarEngRus.getMenu();
             AddExerciseExam addExerciseExam = new AddExerciseExam();
@@ -161,7 +159,7 @@ public class MenuBarEngRus implements RootMethod, CounterExam
     }
     private void getTextsLevelOne(){
         textsLevelOne.setOnAction(event -> {
-            clearMethod();
+            ClearDisplay.clearMethod();
             MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
             menuBarEngRus.getMenu();
             TextLevelOne textLevelOne = new TextLevelOne();

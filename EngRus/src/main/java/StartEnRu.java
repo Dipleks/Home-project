@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.sql.SQLException;
 
-public class StartEnRu extends Application implements RootMethod
+public class StartEnRu extends Application implements Root
 {
     private MenuBarEngRus menuBarEngRus = new MenuBarEngRus();
 
@@ -72,7 +72,7 @@ public class StartEnRu extends Application implements RootMethod
     }
     private void runMethod() {
         menuBarEngRus.getMenu();
-        clock();
+        ClockDisplay.clock();
 
         ROOT.getChildren().addAll();
 

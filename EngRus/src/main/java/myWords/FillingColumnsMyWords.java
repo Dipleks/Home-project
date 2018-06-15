@@ -1,10 +1,10 @@
 package myWords;
 
-import interfaceRoot.RootMethod;
+import interfaceRoot.ClearDisplay;
 import javafx.geometry.Insets;
 import javafx.scene.layout.HBox;
 
-public class FillingColumnsMyWords implements RootMethod
+public class FillingColumnsMyWords implements ArgumentsMyWords
 {
     // Добавление Базы данных, меню "Мои слова":
     public void getMyWordsList(){

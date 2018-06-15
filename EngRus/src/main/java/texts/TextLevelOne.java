@@ -2,16 +2,24 @@ package texts;
 
 import interfaceRoot.EffectColor;
 import interfaceRoot.EffectFont;
-import interfaceRoot.RootMethod;
+import interfaceRoot.ClearDisplay;
+import interfaceRoot.Root;
 import javafx.concurrent.Task;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.VBox;
 
-public class TextLevelOne implements RootMethod
+public class TextLevelOne implements Root
 {
     private Label s1 = new Label();
     private Label s2 = new Label();
     private Label s3 = new Label();
+    private VBox groupText = new VBox();
+    private ScrollPane textPane = new ScrollPane();
+    private ScrollPane leftTextPane = new ScrollPane();
+    private ScrollPane leftTextPane1 = new ScrollPane();
+    private ScrollPane leftTextPane2 = new ScrollPane();
 
     public void text1(){
         Task task = new Task()

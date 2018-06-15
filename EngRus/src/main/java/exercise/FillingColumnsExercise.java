@@ -1,8 +1,6 @@
 package exercise;
 
-import interfaceRoot.EffectColor;
-import interfaceRoot.EffectFont;;
-import interfaceRoot.RootMethod;
+import interfaceRoot.*;
 import javafx.geometry.Insets;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
@@ -15,7 +13,7 @@ import javafx.scene.layout.VBox;
  * @author Загороднев Д.М.
  * @version 2.0
  */
-public class FillingColumnsExercise implements RootMethod
+public class FillingColumnsExercise implements ArgumentsExercise
 {
     /** Левый столбец с предложениями */
     private Label[] arrayOfOffersLeft;
@@ -29,8 +27,6 @@ public class FillingColumnsExercise implements RootMethod
     private String m;
     /** Класс со списком значений */
     private Exercise text = new Exercise();
-
-    //Для заданий
 
     /**
      * Конструктор создающий новый объект с параметрами
@@ -120,7 +116,7 @@ public class FillingColumnsExercise implements RootMethod
             int finalI = i;
             list[i].setCursor(Cursor.HAND);
             list[i].setOnMouseClicked(event -> {
-                soundClick();
+                SoundClick.soundClick();
                 if (list[finalI].getText().equals(methodExercise(finalI, START_CLOSE, set))){
                     list[finalI].setText(methodExercise(finalI, START_CLOSE, get));
                     list[finalI].setTextFill(EffectColor.colorTextClick);

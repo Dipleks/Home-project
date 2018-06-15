@@ -14,28 +14,4 @@ public interface TableDB
     String counterExam = "CREATE TABLE IF NOT EXISTS counter " +
             "(id SERIAL PRIMARY KEY, date_time timestamp, numb text, " +
             "original text, mistakes text, part VARCHAR(12));";
-///////////
-    // Создаём таблицу Present Simple Approves:
-    String appPS = "";
-
-    // Создаем таблицу Present Simple Negatives:
-    String negPS = "";
-
-    // Создаем таблицу Present Simple Questions:
-    String quesPS = "";
-
-    // Создаем таблицу Present Simple Exams:
-    String examPS = "";
-///////////
-    // Создаём таблицу Form to be Approves:
-    String appToBe = "";
-
-    // Создаем таблицу Form to be Negatives:
-    String negToBe = "";
-
-    // Создаем таблицу Form to be Questions:
-    String quesToBe = "";
-
-    // Создаем таблицу Form to be Exams:
-    String examToBe = "";
 }

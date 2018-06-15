@@ -1,18 +1,16 @@
 package control;
 
+import exam.ArgumentsExam;
 import exam.FillingColumnsExam;
+import exercise.ArgumentsExercise;
 import exercise.FillingColumnsExercise;
-import interfaceRoot.EffectColor;
-import interfaceRoot.EffectFont;
-import interfaceRoot.RootMethod;
+import interfaceRoot.*;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 
-import java.sql.SQLException;
-
-public class Control implements RootMethod
+class Control implements Root, ArgumentsExam, ArgumentsExercise
 {
     private HBox lengthButtonApp = new HBox();
     private HBox lengthButtonNeg = new HBox();
@@ -29,8 +27,9 @@ public class Control implements RootMethod
     private Label quesL = new Label();
     private Label examL = new Label();
 
-    public void exercise(final FillingColumnsExercise[] app, final FillingColumnsExercise[] neg, final FillingColumnsExercise[] ques,
-                         final Button[] buttonApp, final Button[] buttonNeg, final Button[] buttonQues, String m)
+
+    void exercise(final FillingColumnsExercise[] app, final FillingColumnsExercise[] neg, final FillingColumnsExercise[] ques,
+                  final Button[] buttonApp, final Button[] buttonNeg, final Button[] buttonQues, String m)
     {
         methodAppNegQues();
         for (int i = 0; i < buttonApp.length; i++) {
@@ -40,37 +39,23 @@ public class Control implements RootMethod
             buttonApp[i].setPrefHeight(widthSize-widthSize/1.03);
             int finalI = i;
             buttonApp[i].setOnAction(event -> {
-                soundClick();
+                SoundClick.soundClick();
                 radioBut();
                 enBut.setOnAction(e ->
                 {
-                    try {
-                        clearColumn();
-                        clock();
-                    } catch (SQLException | ClassNotFoundException e1) {
-                        e1.printStackTrace();
-                    }
+                    ClearDisplay.clearColumn();
+                    ClockDisplay.clock();
                     app[finalI].getEnRu("LEFT", "EN");
                     app[finalI].getEnRu("RIGHT", "EN");
                 });
                 ruBut.setOnAction(e ->
                 {
-                    try {
-                        clearColumn();
-                        clock();
-                    } catch (SQLException | ClassNotFoundException e1) {
-                        e1.printStackTrace();
-                    }
+                    ClearDisplay.clearColumn();
+                    ClockDisplay.clock();
                     app[finalI].getEnRu("LEFT", "RU");
                     app[finalI].getEnRu("RIGHT", "RU");
                 });
-                exit.setOnAction(e -> {
-                    try {
-                        methodClearExercise(m);
-                    } catch (SQLException | ClassNotFoundException e1) {
-                        e1.printStackTrace();
-                    }
-                });
+                exit.setOnAction(e -> ClearDisplay.methodClearExercise(m));
                 app[finalI].getEnRu("LEFT", "EN");
                 app[finalI].getEnRu("RIGHT", "EN");
                 removeBut();
@@ -95,38 +80,23 @@ public class Control implements RootMethod
             buttonNeg[i].setPrefHeight(widthSize-widthSize/1.03);
             int finalI = i;
             buttonNeg[i].setOnAction(event -> {
-                Runnable r = this::soundClick;
-                r.run();
+                SoundClick.soundClick();
                 radioBut();
                 enBut.setOnAction(e ->
                 {
-                    try {
-                        clearColumn();
-                        clock();
-                    } catch (SQLException | ClassNotFoundException e1) {
-                        e1.printStackTrace();
-                    }
+                    ClearDisplay.clearColumn();
+                    ClockDisplay.clock();
                     neg[finalI].getEnRu("LEFT", "EN");
                     neg[finalI].getEnRu("RIGHT", "EN");
                 });
                 ruBut.setOnAction(e ->
                 {
-                    try {
-                        clearColumn();
-                        clock();
-                    } catch (SQLException | ClassNotFoundException e1) {
-                        e1.printStackTrace();
-                    }
+                    ClearDisplay.clearColumn();
+                    ClockDisplay.clock();
                     neg[finalI].getEnRu("LEFT", "RU");
                     neg[finalI].getEnRu("RIGHT", "RU");
                 });
-                exit.setOnAction(e -> {
-                    try {
-                        methodClearExercise(m);
-                    } catch (SQLException | ClassNotFoundException e1) {
-                        e1.printStackTrace();
-                    }
-                });
+                exit.setOnAction(e -> ClearDisplay.methodClearExercise(m));
                 neg[finalI].getEnRu("LEFT", "EN");
                 neg[finalI].getEnRu("RIGHT", "EN");
                 removeBut();
@@ -152,38 +122,23 @@ public class Control implements RootMethod
             buttonQues[i].setPrefHeight(widthSize-widthSize/1.03);
             int finalI = i;
             buttonQues[i].setOnAction(event -> {
-                Runnable r = this::soundClick;
-                r.run();
+                SoundClick.soundClick();
                 radioBut();
                 enBut.setOnAction(e ->
                 {
-                    try {
-                        clearColumn();
-                        clock();
-                    } catch (SQLException | ClassNotFoundException e1) {
-                        e1.printStackTrace();
-                    }
+                    ClearDisplay.clearColumn();
+                    ClockDisplay.clock();
                     ques[finalI].getEnRu("LEFT", "EN");
                     ques[finalI].getEnRu("RIGHT", "EN");
                 });
                 ruBut.setOnAction(e ->
                 {
-                    try {
-                        clearColumn();
-                        clock();
-                    } catch (SQLException | ClassNotFoundException e1) {
-                        e1.printStackTrace();
-                    }
+                    ClearDisplay.clearColumn();
+                    ClockDisplay.clock();
                     ques[finalI].getEnRu("LEFT", "RU");
                     ques[finalI].getEnRu("RIGHT", "RU");
                 });
-                exit.setOnAction(e -> {
-                    try {
-                        methodClearExercise(m);
-                    } catch (SQLException | ClassNotFoundException e1) {
-                        e1.printStackTrace();
-                    }
-                });
+                exit.setOnAction(e -> ClearDisplay.methodClearExercise(m));
                 ques[finalI].getEnRu("LEFT", "EN");
                 ques[finalI].getEnRu("RIGHT", "EN");
                 removeBut();
@@ -201,7 +156,7 @@ public class Control implements RootMethod
         lengthButtonQues.getChildren().addAll(buttonQues);
         ROOT.getChildren().addAll(lengthButtonQues);
     }
-    public void examMethod(final FillingColumnsExam[] exam, final Button[] buttonExam, String m){
+    void examMethod(final FillingColumnsExam[] exam, final Button[] buttonExam, String m){
 
         this.examL.setText("Контрольные работы");
 //        quesL.setStyle("-fx-border-color: RED");
@@ -225,20 +180,14 @@ public class Control implements RootMethod
                 nameExam.setFont(EffectFont.fontTextExam);
                 nameExam.setTextFill(EffectColor.colorText);
 
-                soundClick();
+                SoundClick.soundClick();
                 groupRadBut.setSpacing(widthSize-widthSize/1.03);
 //                groupRadBut.setStyle("-fx-border-color: RED");
                 groupRadBut.setPadding(new Insets(10, 10, 10, 10));
                 groupRadBut.setLayoutX(widthSize-widthSize/2.8);
                 groupRadBut.setLayoutY(heightSize-heightSize/1.09);
                 ROOT.getChildren().addAll(groupRadBut);
-                exitInMenu.setOnAction(e -> {
-                    try {
-                        methodClearExam(m);
-                    } catch (SQLException | ClassNotFoundException e1) {
-                        e1.printStackTrace();
-                    }
-                });
+                exitInMenu.setOnAction(e -> ClearDisplay.methodClearExam(m));
                 exam[finalI].getExamList();
                 ROOT.getChildren().remove(lengthButtonExam);
                 ROOT.getChildren().removeAll(this.examL);
