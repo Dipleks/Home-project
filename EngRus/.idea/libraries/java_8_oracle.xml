@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="java-8-oracle">
+    <CLASSES>
+      <root url="file:///usr/lib/jvm/java-8-oracle/lib" />
+      <root url="file:///usr/lib/jvm/java-8-oracle/bin" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file:///usr/lib/jvm/java-8-oracle/lib" />
+    </SOURCES>
+    <jarDirectory url="file:///usr/lib/jvm/java-8-oracle/lib" recursive="false" />
+    <jarDirectory url="file:///usr/lib/jvm/java-8-oracle/lib" recursive="false" type="SOURCES" />
+  </library>
+</component>
