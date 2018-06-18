@@ -13,8 +13,6 @@ import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-import static interfaceRoot.SoundClick.soundClick;
-
 /**
  * Класс заполнения таблицы меню "Контрольные" со свойствами
  * <b>arrayOfOffersExam</b>, <b>number</b>, <b>correctly</b>, <b>START</b>, <b>m</b>, <b>exam</b>
@@ -99,8 +97,8 @@ public class FillingColumnsExam implements ArgumentsExam
     private void getExamColumnLab(String rus, String eng) {
         for (int i = 0; i < arrayOfOffersExam.length; i++) {
             arrayOfOffersExam[i] = new Label();
-            arrayOfOffersExam[i].setFont(EffectFont.fontTextExam);
-            arrayOfOffersExam[i].setTextFill(EffectColor.colorText);
+            arrayOfOffersExam[i].setFont(EffectFont.getFontTextExam());
+            arrayOfOffersExam[i].setTextFill(EffectColor.getColorText());
 //            arrayOfOffersExam[i].setStyle("-fx-border-color: RED");
             arrayOfOffersExam[i].setPrefWidth(widthSize-widthSize/2.45);
             arrayOfOffersExam[i].setWrapText(true);
@@ -108,37 +106,37 @@ public class FillingColumnsExam implements ArgumentsExam
             arrayOfOffersExam[i].setCursor(Cursor.HAND);
 
             correctly[i] = new Label();
-            correctly[i].setFont(EffectFont.fontTextExam);
+            correctly[i].setFont(EffectFont.getFontTextExam());
 //            correctly[i].setStyle("-fx-border-color: RED");
             correctly[i].setPrefWidth(widthSize-widthSize/1.45);
             correctly[i].setAlignment(Pos.BASELINE_RIGHT);
 
             int finalI = i;
             arrayOfOffersExam[i].setOnMouseClicked(event -> {
-                soundClick();
+                soundClick.soundClick();
                 if (improve.getText().replaceAll("[!?.'^]", "").equalsIgnoreCase(methodExam(finalI, START, eng).
                         replaceAll("[!?.'^]", ""))){
-                    arrayOfOffersExam[finalI].setTextFill(EffectColor.colorTextClick);
+                    arrayOfOffersExam[finalI].setTextFill(EffectColor.getColorTextClick());
                     correctly[finalI].setText("ВЕРНО!!!");
-                    correctly[finalI].setTextFill(EffectColor.colorTextClick);
-                    improveClick1.setFont(EffectFont.fontTextExam);
-                    improveClick1.setTextFill(EffectColor.colorText);
+                    correctly[finalI].setTextFill(EffectColor.getColorTextClick());
+                    improveClick1.setFont(EffectFont.getFontTextExam());
+                    improveClick1.setTextFill(EffectColor.getColorText());
                     improveClick1.setText(improve.getText());
                     improve.clear();
                 } else if (!improve.getText().equalsIgnoreCase("")){
                     /////////////
                     mistakesINdb(finalI, eng, rus);
                     /////////////
-                    arrayOfOffersExam[finalI].setTextFill(EffectColor.colorTextClickRED);
+                    arrayOfOffersExam[finalI].setTextFill(EffectColor.getColorTextClickRED());
                     correctly[finalI].setText("НЕ ВЕРНО!!!");
-                    correctly[finalI].setTextFill(EffectColor.colorTextClickRED);
-                    improveClick1.setFont(EffectFont.fontTextExam);
-                    improveClick1.setTextFill(EffectColor.colorText);
+                    correctly[finalI].setTextFill(EffectColor.getColorTextClickRED());
+                    improveClick1.setFont(EffectFont.getFontTextExam());
+                    improveClick1.setTextFill(EffectColor.getColorText());
                     improveClick1.setText(improve.getText());
                     improve.clear();
                 } else if (improve.getText().equalsIgnoreCase("")) {
-                    improveClick1.setFont(EffectFont.fontTextExam);
-                    improveClick1.setTextFill(EffectColor.colorTextClickRED);
+                    improveClick1.setFont(EffectFont.getFontTextExam());
+                    improveClick1.setTextFill(EffectColor.getColorTextClickRED());
                     improveClick1.setText("Введите текст для проверки!");
                     panes("Напишите перевод для проверки...");
                 }
@@ -184,8 +182,8 @@ public class FillingColumnsExam implements ArgumentsExam
     private void numberingOfExam(String rus, String eng){
         for (int i = 0; i < number.length; i++) {
             number[i] = new Label();
-            number[i].setFont(EffectFont.fontTextExam);
-            number[i].setTextFill(EffectColor.colorTitle);
+            number[i].setFont(EffectFont.getFontTextExam());
+            number[i].setTextFill(EffectColor.getColorTitle());
 //                    number[i].setStyle("-fx-border-color: RED");
             number[i].setPrefWidth(widthSize-widthSize/1.45);
             number[i].setAlignment(Pos.CENTER);
@@ -193,10 +191,10 @@ public class FillingColumnsExam implements ArgumentsExam
             number[i].setText("-"+(i+1+START)+"-");
             int finalI = i;
             number[i].setOnMouseClicked(ev -> {
-                SoundClick.soundClick();
+                soundClick.soundClick();
                 if (arrayOfOffersExam[finalI].getText().equals(methodExam(finalI, START, rus))){
                     arrayOfOffersExam[finalI].setText(methodExam(finalI, START, eng));
-                    arrayOfOffersExam[finalI].setTextFill(EffectColor.colorTextImpr);
+                    arrayOfOffersExam[finalI].setTextFill(EffectColor.getColorTextImpr());
                 }
             });
         }
@@ -242,7 +240,7 @@ public class FillingColumnsExam implements ArgumentsExam
         hBox.setSpacing(10);
         hBox.getChildren().addAll(button, improve, exitInMenu, nameExam);
         improveClick1.setAlignment(Pos.CENTER);
-        improveClick1.setTextFill(EffectColor.colorTextClickPERU);
+        improveClick1.setTextFill(EffectColor.getColorTextClickPERU());
         improveV.getChildren().addAll(improveClick1, hBox);
         improveV.setSpacing(heightSize-heightSize/1.009);
         improveV.setLayoutX(widthSize-widthSize/1.4);

@@ -38,7 +38,7 @@ class Control implements Root, ArgumentsExam, ArgumentsExercise
             buttonApp[i].setPrefHeight(widthSize-widthSize/1.03);
             int finalI = i;
             buttonApp[i].setOnAction(event -> {
-                SoundClick.soundClick();
+                soundClick.soundClick();
                 radioBut();
                 enBut.setOnAction(e ->
                 {
@@ -79,7 +79,7 @@ class Control implements Root, ArgumentsExam, ArgumentsExercise
             buttonNeg[i].setPrefHeight(widthSize-widthSize/1.03);
             int finalI = i;
             buttonNeg[i].setOnAction(event -> {
-                SoundClick.soundClick();
+                soundClick.soundClick();
                 radioBut();
                 enBut.setOnAction(e ->
                 {
@@ -121,7 +121,7 @@ class Control implements Root, ArgumentsExam, ArgumentsExercise
             buttonQues[i].setPrefHeight(widthSize-widthSize/1.03);
             int finalI = i;
             buttonQues[i].setOnAction(event -> {
-                SoundClick.soundClick();
+                soundClick.soundClick();
                 radioBut();
                 enBut.setOnAction(e ->
                 {
@@ -161,8 +161,8 @@ class Control implements Root, ArgumentsExam, ArgumentsExercise
 //        quesL.setStyle("-fx-border-color: RED");
         this.examL.setPrefWidth(widthSize-widthSize/1.25);
         this.examL.setAlignment(Pos.CENTER);
-        this.examL.setFont(EffectFont.fontTitle);
-        this.examL.setTextFill(EffectColor.colorTitle);
+        this.examL.setFont(EffectFont.getFontTitle());
+        this.examL.setTextFill(EffectColor.getColorTitle());
         this.examL.setLayoutX((widthSize/2)-(widthSize-widthSize/1.25)/2);
         this.examL.setLayoutY(heightSize-heightSize/1.15);
         ROOT.getChildren().add(this.examL);
@@ -176,10 +176,10 @@ class Control implements Root, ArgumentsExam, ArgumentsExercise
             buttonExam[i].setOnAction(event -> {
 
                 nameExam.setText(buttonExam[finalI].getText());
-                nameExam.setFont(EffectFont.fontTextExam);
-                nameExam.setTextFill(EffectColor.colorText);
+                nameExam.setFont(EffectFont.getFontTextExam());
+                nameExam.setTextFill(EffectColor.getColorText());
 
-                SoundClick.soundClick();
+                soundClick.soundClick();
                 groupRadBut.setSpacing(widthSize-widthSize/1.03);
 //                groupRadBut.setStyle("-fx-border-color: RED");
                 groupRadBut.setPadding(new Insets(10, 10, 10, 10));
@@ -228,8 +228,8 @@ class Control implements Root, ArgumentsExam, ArgumentsExercise
 //        appL.setStyle("-fx-border-color: RED");
         appL.setPrefWidth(widthSize-widthSize/1.25);
         appL.setAlignment(Pos.CENTER);
-        appL.setFont(EffectFont.fontTitle);
-        appL.setTextFill(EffectColor.colorTitle);
+        appL.setFont(EffectFont.getFontTitle());
+        appL.setTextFill(EffectColor.getColorTitle());
         appL.setLayoutX((widthSize/2)-(widthSize-widthSize/1.25)/2);
         appL.setLayoutY(heightSize-heightSize/1.15);
 
@@ -237,8 +237,8 @@ class Control implements Root, ArgumentsExam, ArgumentsExercise
 //        negL.setStyle("-fx-border-color: RED");
         negL.setPrefWidth(widthSize-widthSize/1.25);
         negL.setAlignment(Pos.CENTER);
-        negL.setFont(EffectFont.fontTitle);
-        negL.setTextFill(EffectColor.colorTitle);
+        negL.setFont(EffectFont.getFontTitle());
+        negL.setTextFill(EffectColor.getColorTitle());
         negL.setLayoutX((widthSize/2)-(widthSize-widthSize/1.25)/2);
         negL.setLayoutY(appL.getLayoutY()+heightSize-heightSize/1.2);
 
@@ -246,8 +246,8 @@ class Control implements Root, ArgumentsExam, ArgumentsExercise
 //        quesL.setStyle("-fx-border-color: RED");
         quesL.setPrefWidth(widthSize-widthSize/1.25);
         quesL.setAlignment(Pos.CENTER);
-        quesL.setFont(EffectFont.fontTitle);
-        quesL.setTextFill(EffectColor.colorTitle);
+        quesL.setFont(EffectFont.getFontTitle());
+        quesL.setTextFill(EffectColor.getColorTitle());
         quesL.setLayoutX((widthSize/2)-(widthSize-widthSize/1.25)/2);
         quesL.setLayoutY(negL.getLayoutY()+heightSize-heightSize/1.2);
 

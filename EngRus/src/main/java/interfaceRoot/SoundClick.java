@@ -1,13 +1,25 @@
 package interfaceRoot;
 
+import javax.sound.sampled.*;
+import java.io.File;
+import java.io.IOException;
+
 public class SoundClick
 {
-    public static void soundClick() {
+    public void soundClick() {
         // TODO делаем код для клика;
         // TODO добавить звуковые эффекты в базу данных если не получится сделать стандартными методами
-//            String file = "click.mp3";
-//            Media sound = new Media(new File(file).toURI().toString());
-//            MediaPlayer mediaPlayer = new MediaPlayer(sound);
-//            mediaPlayer.play();
+
+        try {
+            File soundFile = new File("click.wav");
+            AudioInputStream ais = AudioSystem.getAudioInputStream(soundFile);
+            Clip clip = AudioSystem.getClip();
+            clip.open(ais);
+            clip.setFramePosition(0);
+            clip.start();
+        } catch (UnsupportedAudioFileException | LineUnavailableException | IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }

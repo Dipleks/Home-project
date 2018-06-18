@@ -67,8 +67,8 @@ public interface ArgumentsMyWords extends Root
                     for (int i = 0; r2.next(); i++) {
                         r3.next();
                         my_word_en[i] = new Label();
-                        my_word_en[i].setFont(EffectFont.fontTextExam);
-                        my_word_en[i].setTextFill(EffectColor.colorText);
+                        my_word_en[i].setFont(EffectFont.getFontTextExam());
+                        my_word_en[i].setTextFill(EffectColor.getColorText());
                         my_word_en[i].setPrefWidth(widthSize-widthSize/2.45);
                         my_word_en[i].setText(r2.getString("word_en"));
                         my_word_ru[i].setText(r2.getString("word_ru"));
@@ -80,8 +80,8 @@ public interface ArgumentsMyWords extends Root
                     for (int i = 0; r3.next(); i++) {
                         r2.next();
                         my_word_ru[i] = new Label();
-                        my_word_ru[i].setFont(EffectFont.fontTextExam);
-                        my_word_ru[i].setTextFill(EffectColor.colorText);
+                        my_word_ru[i].setFont(EffectFont.getFontTextExam());
+                        my_word_ru[i].setTextFill(EffectColor.getColorText());
                         my_word_ru[i].setPrefWidth(widthSize-widthSize/2.45);
                         my_word_ru[i].setText(r3.getString("word_ru"));
                         my_word_en[i].setText(r3.getString("word_en"));
@@ -183,8 +183,8 @@ public interface ArgumentsMyWords extends Root
 
                 my_word_en[i] = new Label();
 //                my_word_en[i].setStyle("-fx-border-color: RED");
-                my_word_en[i].setFont(EffectFont.fontTextExam);
-                my_word_en[i].setTextFill(EffectColor.colorText);
+                my_word_en[i].setFont(EffectFont.getFontTextExam());
+                my_word_en[i].setTextFill(EffectColor.getColorText());
                 my_word_en[i].setPrefWidth(widthSize-widthSize/2.45);
                 my_word_en[i].setAlignment(Pos.BASELINE_RIGHT);
 //                my_word_en[i].setWrapText(true);
@@ -195,8 +195,8 @@ public interface ArgumentsMyWords extends Root
 
                 my_word_ru[i] = new Label();
 //                my_word_ru[i].setStyle("-fx-border-color: RED");
-                my_word_ru[i].setFont(EffectFont.fontTextExam);
-                my_word_ru[i].setTextFill(EffectColor.colorText);
+                my_word_ru[i].setFont(EffectFont.getFontTextExam());
+                my_word_ru[i].setTextFill(EffectColor.getColorText());
                 my_word_ru[i].setPrefWidth(widthSize-widthSize/2.45);
 //                my_word_ru[i].setWrapText(true);
 //                my_word_ru[i].setCursor(Cursor.HAND);

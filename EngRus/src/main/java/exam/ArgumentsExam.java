@@ -112,12 +112,12 @@ public interface ArgumentsExam extends Root
     default void counter() throws SQLException, ClassNotFoundException {
         if (CreateDB.newCounterRun()) {
             ROOT.getChildren().remove(counterVB);
-            YES.setFont(EffectFont.fontTextExam);
-            YES.setTextFill(EffectColor.colorTextClickPERU);
-            NO.setFont(EffectFont.fontTextExam);
-            NO.setTextFill(EffectColor.colorTextClickPERU);
-            counterYES.setFont(EffectFont.fontTextExam);
-            counterNO.setFont(EffectFont.fontTextExam);
+            YES.setFont(EffectFont.getFontTextExam());
+            YES.setTextFill(EffectColor.getColorTextClickPERU());
+            NO.setFont(EffectFont.getFontTextExam());
+            NO.setTextFill(EffectColor.getColorTextClickPERU());
+            counterYES.setFont(EffectFont.getFontTextExam());
+            counterNO.setFont(EffectFont.getFontTextExam());
             counterYES.setText("0");
             counterNO.setText("0");
             // Кнопка "Счетчик":

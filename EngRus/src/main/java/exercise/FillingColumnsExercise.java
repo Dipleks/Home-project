@@ -106,8 +106,8 @@ public class FillingColumnsExercise implements ArgumentsExercise
                                 int START_CLOSE, String set, String get) {
         for (int i = 0; i < list.length; i++) {
             list[i] = new Label();
-            list[i].setFont(EffectFont.fontText);
-            list[i].setTextFill(EffectColor.colorText);
+            list[i].setFont(EffectFont.getFontText());
+            list[i].setTextFill(EffectColor.getColorText());
 //            list[i].setStyle("-fx-border-color: RED");
             list[i].setPrefWidth(widthSize-widthSize/1.45);
             list[i].setWrapText(true);
@@ -116,13 +116,13 @@ public class FillingColumnsExercise implements ArgumentsExercise
             int finalI = i;
             list[i].setCursor(Cursor.HAND);
             list[i].setOnMouseClicked(event -> {
-                SoundClick.soundClick();
+                soundClick.soundClick();
                 if (list[finalI].getText().equals(methodExercise(finalI, START_CLOSE, set))){
                     list[finalI].setText(methodExercise(finalI, START_CLOSE, get));
-                    list[finalI].setTextFill(EffectColor.colorTextClick);
+                    list[finalI].setTextFill(EffectColor.getColorTextClick());
                 } else {
                     list[finalI].setText(methodExercise(finalI, START_CLOSE, set));
-                    list[finalI].setTextFill(EffectColor.colorText);
+                    list[finalI].setTextFill(EffectColor.getColorText());
                 }
             });
         }

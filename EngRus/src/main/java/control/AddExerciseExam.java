@@ -5,37 +5,81 @@ import exercise.FillingColumnsExercise;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
+/**
+ * Класс выводящий список кнопок и колонки с заданиями и контрольными.
+ * Входные параметры класса: <>appPS</>, <>negPS</>, <>quesPS</>, <>examPS</>,
+ * <>appToBe</>, <>negToBe</>, <>quesToBe</>, <>examToBe</>,
+ * <>controlExercisePS</>, <>controlExamPS</>, <>controlExerciseToBe</>, <>controlExamToBe</>
+ */
 public class AddExerciseExam
 {
+    /** утверждения PS */
     private FillingColumnsExercise[] appPS = new FillingColumnsExercise[7];
+
+    /** отрицания PS */
     private FillingColumnsExercise[] negPS = new FillingColumnsExercise[4];
+
+    /** вопросы PS */
     private FillingColumnsExercise[] quesPS = new FillingColumnsExercise[7];
+
+    /** контрольные PS */
     private FillingColumnsExam[] examPS = new FillingColumnsExam[7];
 
+    /** утверждения To Be */
     private FillingColumnsExercise[] appToBe = new FillingColumnsExercise[6];
+
+    /** отрицания To Be */
     private FillingColumnsExercise[] negToBe = new FillingColumnsExercise[4];
+
+    /** вопросы To Be */
     private FillingColumnsExercise[] quesToBe = new FillingColumnsExercise[7];
+
+    /** контрольные To Be */
     private FillingColumnsExam[] examToBe = new FillingColumnsExam[1];
 
+    /** кнопки выбора упражнений PS */
     private Control controlExercisePS = new Control();
+
+    /** кнопки выбора контрольных PS*/
     private Control controlExamPS = new Control();
+
+    /** кнопки выбора упражнений To Be*/
     private Control controlExerciseToBe = new Control();
+
+    /** кнопки выбора контрольных To Be*/
     private Control controlExamToBe = new Control();
 
+    /**
+     * Процедура добавления кнопок упражнений PS
+     */
     public void AddMenuButtonPS(){
         getExercisePS();
     }
+
+    /**
+     * Процедура добавления кнопок контрольных PS
+     */
     public void AddMenuButtonExamPS(){
         getExamPS();
     }
+
+    /**
+     * Процедура добавления кнопок упражнений To Be
+     */
     public void AddMenuButtonToBe(){
         getExerciseToBe();
     }
+
+    /**
+     * Процедура добавления кнопок контрольных To Be
+     */
     public void AddMenuButtonExamToBe(){
         getExamToBe();
     }
 
-    // PS
+    /**
+     * Процедура добавления кнопок и вызова по клику упражнений PS
+     */
     private void getExercisePS(){
 
         appPS[0] = new FillingColumnsExercise(new Label[15], new Label[15],0, 15, "PS");
@@ -62,6 +106,10 @@ public class AddExerciseExam
         controlExercisePS.exercise(appPS, negPS, quesPS,
                 new Button[7], new Button[4], new Button[7], "AddMenuButtonPS");
     }
+
+    /**
+     * Процедура добавления кнопок и вызова по клику контрольных PS
+     */
     private void getExamPS(){
 
         examPS[0] = new FillingColumnsExam(new Label[100], new Label[100], new Label[100],  0, "ExamPS");
@@ -75,7 +123,9 @@ public class AddExerciseExam
         controlExamPS.examMethod(examPS,new Button[7], "AddMenuButtonExamPS");
     }
 
-    // ToBe
+    /**
+     * Процедура добавления кнопок и вызова по клику упражнений To Be
+     */
     private void getExerciseToBe(){
 
         appToBe[0] = new FillingColumnsExercise(new Label[15], new Label[15],0, 15, "ToBe");
@@ -101,6 +151,10 @@ public class AddExerciseExam
         controlExerciseToBe.exercise(appToBe, negToBe, quesToBe,
                 new Button[6], new Button[1], new Button[1], "AddMenuButtonToBe");
     }
+
+    /**
+     * Процедура добавления кнопок и вызова по клику контрольных To Be
+     */
     private void getExamToBe(){
 
         examToBe[0] = new FillingColumnsExam(new Label[100], new Label[100], new Label[100],  0, "ExamToBe");

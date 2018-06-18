@@ -28,8 +28,8 @@ public class TextLevelOne implements Root
             protected Label call() {
                 String strEn1 = "Meet my family. There are five of us – my parents, my elder brother, my baby sister and me. First, meet my mum and dad, Jane and Michael. My mum enjoys reading and my dad enjoys playing chess with my brother Ken. My mum is slim and rather tall. She has long red hair and big brown eyes. She has a very pleasant smile and a soft voice. My mother is very kind and understanding. We are real friends. She is a housewife. As she has three children, she is always busy around the house. She takes care of my baby sister Meg, who is only three months old. My sister is very small and funny. She sleeps, eats and sometimes cries. We all help our mother and let her have a rest in the evening. Then she usually read a book or just watches TV. My father is a doctor. He is tall and handsome. He has short dark hair and gray eyes. He is a very hardworking man. He is rather strict with us, but always fair. My elder brother Ken is thirteen, and he is very clever. He is good at Maths and always helps me with it, because I can hardly understand all these sums and problems. Ken has red hair and brown eyes. My name is Jessica. I am eleven. I have long dark hair and brown eyes. I am not as clever as my brother, though I try to do my best at school too. I am fond of dancing. Our dancing studio won The Best Dancing Studio 2015 competition last month. I am very proud of it. I also like to help my mother with my little sister very much. Our family is very united. We love each other and always try to spend more time together.";
                 String strRu1 = "Знакомьтесь с моей семьей. Нас пятеро – мои родители, мой старший брат, моя маленькая сестра и я. Сначала познакомьтесь с моими мамой и папой, Джейн и Майклом. Моя мама любит читать, а мой папа любит играть в шахматы с моим братом Кеном. Моя мама стройная и довольно высокая. У нее длинные рыжие волосы и большие карие глаза. У нее очень приятная улыбка и нежный голос. Моя мама очень добрая и понимающая. Мы настоящие друзья. Она домохозяйка. Поскольку у нее трое детей, она всегда занята по дому. Она заботится о моей грудной сестренке Мег, которой только три месяца. Моя сестренка очень маленькая и забавная. Она спит, ест и иногда плачет. Мы все помогаем нашей маме и даем ей отдохнуть вечером. Тогда она обычно читает книгу или просто смотрит телевизор. Мой папа врач. Он высокий и красивый. У него короткие темные волосы и серые глаза. Он очень трудолюбивый человек. Он довольно строг с нами, но всегда справедлив. Моему старшему брату Кену тринадцать и он очень умный. Он хорошо разбирается в математике и всегда помогает мне с ней, потому что я едва понимаю все эти примеры и задачи. У Кена рыжие волосы и карие глаза. Меня зовут Джессика. Мне одиннадцать. У меня длинные темные волосы и карие глаза. Я не такая умная, как мой брат, хотя я очень стараюсь в школе тоже. Я увлекаюсь танцами. Наша танцевальная студия выиграла конкурс на Лучшую Танцевальную Студию 2015 в прошлом месяце. Я очень горжусь этим. Я также очень люблю помогать моей маме с моей маленькой сестренкой. Наша семья очень дружная. Мы любим друг друга и всегда пытаемся проводить больше времени вместе.";
-                s1.setFont(EffectFont.fontTextLevel);
-                s1.setTextFill(EffectColor.colorText);
+                s1.setFont(EffectFont.getFontTextLevel());
+                s1.setTextFill(EffectColor.getColorText());
                 s1.setWrapText(true);
                 s1.setPrefWidth(widthSize/1.65);
 //        s1.setStyle("-fx-border-color: RED");
@@ -55,8 +55,8 @@ public class TextLevelOne implements Root
                 String strRu1 = "Каждый день в начальной школе в Америке начинается в 9.30 утра. Уроки у детей длятся до 3.15 дня. В 12 часов у детей обед. Многие мальчики и девочки приносят свой обед с собой. Но некоторые ходят обедать в школьную столовую.\n" +
                         "Миссис Брэдли готовит школьные обеды для своих двоих детей почти каждый рабочий день. Иногда она дает детям деньги, и они едят в школьной столовой. Но обычно дети предпочитают брать обед из дома.\n" +
                         "Этим утром миссис Брэдли делает бутерброды с арахисовым маслом и сыром, любимые (бутерброды) детей. Она кладет две бутылочки яблочного сока, чтобы дети попили. Она собирается положить бутерброды, несколько помидоров черри и два банана в их ланчбоксы (коробки для завтрака). Детям легко носить ланчбокс в школу.";
-                s2.setFont(EffectFont.fontTextLevel);
-                s2.setTextFill(EffectColor.colorText);
+                s2.setFont(EffectFont.getFontTextLevel());
+                s2.setTextFill(EffectColor.getColorText());
                 s2.setWrapText(true);
                 s2.setPrefWidth(widthSize/1.65);
 //        s1.setStyle("-fx-border-color: RED");
@@ -84,8 +84,8 @@ public class TextLevelOne implements Root
                         "Жирафы очень красивые и необычные животные. Они самые высокие сухопутные животные в мире. Жирафы могут достигать в высоту 5.5 метров, и веса 900 кг. Они знамениты своими длинными шеями. Но кто-нибудь знает, что у жирафов очень длинный язык? Они даже могут почистить им уши! Жирафы обычно жёлтые или светло коричневые с тёмными пятнами. Жирафы живут в африканских саваннах. Они могут прожить от 20 до 30 лет. Интересно знать что жирафы спят не более 20 минут за раз. Они садятся на землю и нагибают свою длинную шею.\n" +
                         "Жирафы не охотятся. Они едят листья, траву и фрукты. Благодаря своей длинной шее они могут достать до самых верхних листьев на деревьях, которые не могут съесть другие животные.\n" +
                         "Вы часто можете встретить жирафов в городских зоопарках. Они очень дружелюбные и их очень любят дети.";
-                s3.setFont(EffectFont.fontTextLevel);
-                s3.setTextFill(EffectColor.colorText);
+                s3.setFont(EffectFont.getFontTextLevel());
+                s3.setTextFill(EffectColor.getColorText());
                 s3.setWrapText(true);
                 s3.setPrefWidth(widthSize/1.65);
 //        s1.setStyle("-fx-border-color: RED");

@@ -1307,6 +1307,7 @@ public class Exercise
         toBeFileEn.put(185,"I'm twenty-one");
         toBeFileEn.put(186,"My brother is 21");
         toBeFileEn.put(187,"His wife is 32");
+        //Отрицания
 
         return toBeFileEn;
     }
@@ -1504,6 +1505,7 @@ public class Exercise
         toBeFileRu.put(185,"Мне 21");
         toBeFileRu.put(186,"Моему брату 21");
         toBeFileRu.put(187,"Его жене 32");
+        //Отрицания
 
         return toBeFileRu;
     }
