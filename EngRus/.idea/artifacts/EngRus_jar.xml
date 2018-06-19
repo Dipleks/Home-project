@@ -3,8 +3,7 @@
     <output-path>$PROJECT_DIR$/out/artifacts/EngRus_jar</output-path>
     <root id="archive" name="EngRus.jar">
       <element id="module-output" name="EngRus" />
-      <element id="extracted-dir" path="C:/Program Files/Java/jdk1.8.0_162/lib/postgresql-42.2.2.jar" path-in-jar="/" />
-      <element id="file-copy" path="$PROJECT_DIR$/click.wav" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/postgresql/postgresql/42.2.2/postgresql-42.2.2.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

@@ -17,7 +17,29 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="SoundClick.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/interfaceRoot/SoundClick.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1003">
+              <caret line="59" column="40" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -57,7 +79,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/ghostInter/interfaceRoot/EffectColor.java" />
         <option value="$PROJECT_DIR$/src/main/java/ghostInter/interfaceRoot/RootMethods.java" />
         <option value="$PROJECT_DIR$/src/main/java/ghostInter/control/Base.java" />
         <option value="$PROJECT_DIR$/src/main/java/ghostInter/StartEnRu.java" />
@@ -93,7 +114,6 @@
         <option value="$PROJECT_DIR$/src/main/java/exam/AddMistakesTable.java" />
         <option value="$PROJECT_DIR$/src/main/java/exercise/ArgumentsExercise.java" />
         <option value="$PROJECT_DIR$/src/main/java/db/TableDB.java" />
-        <option value="$PROJECT_DIR$/src/main/java/db/CreateDB.java" />
         <option value="$PROJECT_DIR$/src/main/java/exercise/Exercise.java" />
         <option value="$PROJECT_DIR$/src/main/java/interfaceRoot/EffectColor.java" />
         <option value="$PROJECT_DIR$/src/main/java/interfaceRoot/ClockDisplay.java" />
@@ -107,6 +127,8 @@
         <option value="$PROJECT_DIR$/src/main/java/exercise/FillingColumnsExercise.java" />
         <option value="$PROJECT_DIR$/src/main/java/exam/Exam.java" />
         <option value="$PROJECT_DIR$/src/main/java/exam/ArgumentsExam.java" />
+        <option value="$PROJECT_DIR$/src/main/java/db/CreateDB.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/interfaceRoot/SoundClick.java" />
       </list>
     </option>
@@ -154,11 +176,6 @@
             <path>
               <item name="EngRus" type="b2602c69:ProjectViewProjectNode" />
               <item name="EngRus" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EngRus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EngRus" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EngRus" type="b2602c69:ProjectViewProjectNode" />
@@ -236,7 +253,8 @@
             </path>
             <path>
               <item name="EngRus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="EngRus" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -254,16 +272,9 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus" />
-      <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus\src\main\java" />
-      <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus\src" />
-      <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus\resources" />
-      <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus\src\main" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
@@ -273,6 +284,13 @@
       <recent name="C:\Users\Ghost\IdeaProjects\EngRus\src\main\java\ghostInter\texts" />
       <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus\src\main\java\ghostInter\controlToBe" />
       <recent name="C:\Users\Ghost\IdeaProjects\EngRus\src\main\java\ghostInter\dataBase\presenSimpl\approvals" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus\src\main" />
+      <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus\src" />
+      <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus\resources" />
+      <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus" />
+      <recent name="C:\Users\zagorodnev\IdeaProjectsHome\Home-project\EngRus\src\main\java" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -288,17 +306,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.StartEnRu">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ghostInter.texts.App" />
-      <module name="EngRus" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="texts.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
     <configuration name="StartEnRu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="StartEnRu" />
       <module name="EngRus" />
@@ -306,17 +313,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value=".*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
-    <configuration name="T" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ghostInter.texts.T" />
-      <module name="EngRus" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="texts.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -350,6 +346,12 @@
       </option>
       <patterns />
     </configuration>
+    <configuration name="EngRus-2.02.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/target/EngRus-2.02.jar" />
+    </configuration>
+    <configuration name="EngRus.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/EngRus_jar/EngRus.jar" />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -374,18 +376,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.StartEnRu" />
-      <item itemvalue="Application.T" />
-      <item itemvalue="Application.App" />
       <item itemvalue="Application.Test" />
       <item itemvalue="Application.TestStr" />
+      <item itemvalue="JAR Application.EngRus-2.02.jar" />
+      <item itemvalue="JAR Application.EngRus.jar" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JAR Application.EngRus-2.02.jar" />
         <item itemvalue="Application.StartEnRu" />
+        <item itemvalue="JAR Application.EngRus.jar" />
         <item itemvalue="Application.TestStr" />
         <item itemvalue="Application.Test" />
-        <item itemvalue="Application.App" />
-        <item itemvalue="Application.T" />
       </list>
     </recent_temporary>
   </component>
@@ -412,21 +414,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1394" height="916" extended-state="6" />
+    <frame x="54" y="-8" width="1394" height="916" extended-state="7" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936507" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32804233" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="6" weight="0.13268366" />
+      <window_info anchor="right" id="Maven Projects" order="6" visible="true" weight="0.13268366" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.17460318" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27248678" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32936507" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25637183" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21664168" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -440,7 +443,6 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32671958" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32804233" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -457,27 +459,12 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/CreateDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/testDB/newDB/NewDBinJava.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/db/FirstEntry.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/db/WindowLoadin.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/testDB/addTextInTable/TextAdd.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/testDB/newDB/StrTest.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/testDB/newDB/AddTable.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/testDB/addTextInTable/TextAdd2.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="61" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/texts/T.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/interfaceRoot/RootMethods.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ghostInter/texts/App.java" />
@@ -489,7 +476,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/interfaceRoot/Test.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/exam/T.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/exercise/T.java" />
-    <entry file="file://$PROJECT_DIR$/resources/dataBase.db">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/dataBase.db">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="104" selection-start-line="9" selection-start-column="104" selection-end-line="9" selection-end-column="104" />
@@ -529,17 +516,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/control/AddExerciseExam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="155" column="70" selection-start-line="155" selection-start-column="70" selection-end-line="155" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/control/Control.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
           <caret line="176" lean-forward="true" selection-start-line="176" selection-end-line="176" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -554,13 +537,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/CreateDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="85" column="9" lean-forward="true" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -638,6 +614,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="591">
           <caret line="92" column="35" selection-start-line="92" selection-start-column="35" selection-end-line="92" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getExamEnPS#0;class#Exam#0" />
+            <element signature="method#getExamRuPS#0;class#Exam#0" />
+            <element signature="method#getExamEnToBe#0;class#Exam#0" />
+            <element signature="method#getExamRuToBe#0;class#Exam#0" />
+            <element signature="method#getStrRuPS#0;class#Exam#0" />
+            <element signature="method#getStrEnToBe#0;class#Exam#0" />
+            <element signature="method#getStrRuToBe#0;class#Exam#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -666,16 +652,51 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
           <caret line="236" column="14" selection-start-line="236" selection-start-column="14" selection-end-line="236" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#FillingColumnsExam#0;class#FillingColumnsExam#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/control/AddExerciseExam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="155" column="70" selection-start-line="155" selection-start-column="70" selection-end-line="155" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="2" selection-start-line="1" selection-end-line="1" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/CreateDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/interfaceRoot/SoundClick.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        <state relative-caret-position="357">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="59" column="40" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -690,7 +711,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
+                <option value="0.63495576" />
               </list>
             </option>
           </splitter-proportions>
@@ -698,7 +719,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited />
+          <last-edited>No facets are configured</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -746,7 +767,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>commons-io-2.6-javadoc</last-edited>
+          <last-edited>Maven: org.postgresql:postgresql:42.2.2</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
