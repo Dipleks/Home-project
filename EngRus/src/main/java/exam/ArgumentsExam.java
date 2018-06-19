@@ -97,7 +97,7 @@ public interface ArgumentsExam extends Root
         group.setSpacing(20);
         group.setAlignment(Pos.CENTER);
         group.getChildren().addAll(label, button);
-        Scene scene = new Scene(group, 250, 150);
+        Scene scene = new Scene(group, widthSize/2.5, heightSize/5.5);
         win.initModality(Modality.APPLICATION_MODAL);
         win.setScene(scene);
         win.show();

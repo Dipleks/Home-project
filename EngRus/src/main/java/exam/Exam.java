@@ -90,7 +90,7 @@ public class Exam
         examEnPS.put(22,"Does he want to live abroad?");
         examEnPS.put(23,"What do your friends usually order?");
         examEnPS.put(24,"He works very hard");
-        examEnPS.put(25,"It depend on them");
+        examEnPS.put(25,"It depends on them");
         examEnPS.put(26,"What English books does he have?");
         examEnPS.put(27,"He wants more");
         examEnPS.put(28,"I understand you very well");
